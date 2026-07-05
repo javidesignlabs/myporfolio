@@ -180,10 +180,11 @@ def build_home():
     </div>
   </section>
 '''
+    jsonld = person_jsonld()
     write("index.html", page_shell(
         "Javier de la Cruz — Product Designer | javidesignlabs",
         "Product Designer based between Las Palmas & Madrid. 10+ years turning complex data into intuitive digital products across SaaS, e-commerce and design systems.",
-        root, body, active="index.html", bg_word="JAVI"
+        root, body, active="index.html", bg_word="JAVI", path="", jsonld=jsonld
     ))
 
 
@@ -211,7 +212,7 @@ def build_projects():
     write("projects.html", page_shell(
         "Projects — javidesignlabs",
         "10 documented case studies: design systems, SaaS platforms, e-commerce and TV apps.",
-        root, body, active="projects.html", bg_word="WORK"
+        root, body, active="projects.html", bg_word="WORK", path="projects.html"
     ))
 
 
@@ -276,7 +277,7 @@ def build_about():
     write("about.html", page_shell(
         "About — Javier de la Cruz | javidesignlabs",
         "Product designer with 10+ years across SaaS, e-commerce and design systems. Based between Las Palmas and Madrid.",
-        root, body, active="about.html", bg_word="JAVI"
+        root, body, active="about.html", bg_word="JAVI", path="about.html", jsonld=person_jsonld()
     ))
 
 
@@ -399,9 +400,64 @@ def build_project(p, next_p):
     write(f'projects/{p["slug"]}.html', page_shell(
         f'{p["title"]} — javidesignlabs',
         p["subtitle"],
-        root, body, bg_word="CASE"
+        root, body, bg_word="CASE", path=f'projects/{p["slug"]}.html', jsonld=project_jsonld(p)
     ))
 
+
+
+
+# ----------------------------------------------------------------
+# SEO: JSON-LD, sitemap, robots
+# ----------------------------------------------------------------
+import json as _json
+
+def person_jsonld():
+    base = PROFILE["base_url"].rstrip("/")
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Javier de la Cruz",
+        "alternateName": "Javi de la Cruz",
+        "jobTitle": "Product Designer",
+        "url": base + "/",
+        "image": PROFILE["avatar_about"],
+        "email": "mailto:" + PROFILE["mailto"],
+        "sameAs": [PROFILE["linkedin"], PROFILE["x"]],
+        "worksFor": {"@type": "Organization", "name": "BASF"},
+        "address": [
+            {"@type": "PostalAddress", "addressLocality": "Las Palmas de Gran Canaria", "addressCountry": "ES"},
+            {"@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES"},
+        ],
+        "knowsAbout": ["Product Design", "UX/UI Design", "Design Systems", "SaaS", "Figma", "Prototyping", "User Research"],
+    }
+    return '<script type="application/ld+json">' + _json.dumps(data, ensure_ascii=False) + "</script>"
+
+
+def project_jsonld(p):
+    base = PROFILE["base_url"].rstrip("/")
+    data = {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": p["title"],
+        "description": p["subtitle"],
+        "url": f'{base}/projects/{p["slug"]}.html',
+        "image": p["cover_img"],
+        "author": {"@type": "Person", "name": "Javier de la Cruz", "url": base + "/"},
+        "about": p["category"],
+    }
+    return '<script type="application/ld+json">' + _json.dumps(data, ensure_ascii=False) + "</script>"
+
+
+def build_seo_files():
+    base = PROFILE["base_url"].rstrip("/")
+    urls = ["", "projects.html", "about.html"] + [f'projects/{p["slug"]}.html' for p in PROJECTS]
+    entries = "\n".join(
+        f"  <url><loc>{base}/{u}</loc></url>" for u in urls
+    )
+    sitemap = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{entries}\n</urlset>\n'
+    write("sitemap.xml", sitemap)
+    robots = f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n"
+    write("robots.txt", robots)
 
 # ----------------------------------------------------------------
 def favicon():
@@ -417,4 +473,5 @@ if __name__ == "__main__":
     for i, p in enumerate(PROJECTS):
         build_project(p, PROJECTS[(i + 1) % len(PROJECTS)])
     favicon()
-    print("Done — 14 pages generated.")
+    build_seo_files()
+    print("Done — 14 pages + sitemap.xml + robots.txt generated.")
