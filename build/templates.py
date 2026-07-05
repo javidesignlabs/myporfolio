@@ -22,23 +22,25 @@ def header(root="", active=""):
       <nav class="main-nav" aria-label="Primary">
 {nav_links}
       </nav>
-      <a href="{root}about.html" class="btn"><span>Contact me</span>{ARROW}</a>
+      <a href="{PROFILE['cal']}" target="_blank" rel="noopener" class="btn"><span>Book a call</span>{ARROW}</a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="{root}index.html"><span>Home</span><span class="mono">00</span></a>
 {mobile_links}
+      <a href="{PROFILE['cal']}" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:{PROFILE['mailto']}"><span>Say hello</span><span class="mono">→</span></a>
-  </nav>'''
+  </nav>
+  <a class="fab-call" href="{PROFILE['cal']}" target="_blank" rel="noopener">Book a call {ARROW}</a>'''
 
 
 def footer(root="", bg_word="JAVI"):
     return f'''  <footer class="site-footer">
     <span class="big-bg-word" aria-hidden="true">{bg_word}</span>
-    <div class="container footer-cta">
+    <div class="container footer-cta fit-bound">
       <span class="mono">Available for new projects — Las Palmas ↔ Madrid</span>
-      <h2 class="t-hero"><a href="mailto:{PROFILE['mailto']}">Let's work <span class="outline">together</span></a></h2>
+      <h2 class="t-hero"><a href="mailto:{PROFILE['mailto']}"><span class="fit" data-max="200">Let's work</span><br><span class="fit outline" data-max="200">together</span></a></h2>
       <a class="footer-email" href="mailto:{PROFILE['mailto']}">{PROFILE['email_display']}</a>
     </div>
     <div class="container footer-meta">

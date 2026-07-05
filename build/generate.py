@@ -97,10 +97,10 @@ def build_home():
           </div>
         </div>
       </div>
-      <h1 class="t-hero">
-        <span class="hero-line"><span>Design that</span></span>
-        <span class="hero-line"><span class="row"><span class="outline">ships</span> &amp;</span></span>
-        <span class="hero-line"><span><span class="accent">performs</span></span></span>
+      <h1 class="t-hero fit-bound">
+        <span class="hero-line"><span class="fit" data-max="230">Design that</span></span>
+        <span class="hero-line"><span class="fit" data-max="230"><span class="outline">ships</span> &amp;</span></span>
+        <span class="hero-line"><span class="fit" data-max="230"><span class="accent">performs</span></span></span>
       </h1>
       <div class="hero-sub">
         <p data-reveal>I'm Javi — I turn complex data and messy workflows into intuitive digital products. 10+ years across SaaS, e-commerce, design systems and TV apps.</p>

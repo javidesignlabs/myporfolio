@@ -3,16 +3,47 @@
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
+  /* ---- fit-text: scale each .fit line to exactly fill its container ---- */
+  const fitAll = () => {
+    document.querySelectorAll('.fit').forEach(el => {
+      const bound = el.closest('.fit-bound') || el.parentElement;
+      const cs = getComputedStyle(bound);
+      const avail = bound.clientWidth - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
+      const max = parseFloat(el.dataset.max || '230');
+      el.style.fontSize = '100px';
+      let size = Math.min(100 * (avail / el.scrollWidth) * 0.995, max);
+      el.style.fontSize = size.toFixed(2) + 'px';
+      // second pass: correct any glyph-hinting drift at large sizes
+      const real = el.getBoundingClientRect().width;
+      if (real > avail) {
+        size = size * (avail / real) * 0.995;
+        el.style.fontSize = size.toFixed(2) + 'px';
+      }
+    });
+  };
+  fitAll();
+  window.addEventListener('resize', fitAll);
+  window.addEventListener('load', fitAll);
+  if (document.fonts) {
+    document.fonts.ready.then(fitAll);
+    document.fonts.addEventListener('loadingdone', fitAll);
+  }
+  setTimeout(fitAll, 350);
+  setTimeout(fitAll, 1200);
+
   /* ---- load sequence ---- */
   window.addEventListener('load', () => {
     requestAnimationFrame(() => document.body.classList.add('is-loaded'));
   });
-  // Fallback in case load already fired or hangs on slow images
   setTimeout(() => document.body.classList.add('is-loaded'), 900);
 
-  /* ---- sticky header ---- */
+  /* ---- sticky header + floating call button ---- */
   const header = document.querySelector('.site-header');
-  const onScroll = () => header && header.classList.toggle('is-scrolled', window.scrollY > 24);
+  const fab = document.querySelector('.fab-call');
+  const onScroll = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
+    if (fab) fab.classList.toggle('show', window.scrollY > 600);
+  };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
