@@ -83,7 +83,7 @@ def build_home():
     body = f'''
   <section class="hero" style="padding-top:0;padding-bottom:0;">
     <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="container" style="padding-bottom:clamp(28px,5vh,56px);">
+    <div class="container hero-inner">
       <div class="hero-top">
         <div class="hero-meta">
           <span class="mono">Product Designer</span>

@@ -46,10 +46,10 @@ button{ font-family:inherit; cursor:pointer; background:none; border:none; color
 .container{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); }
 
 /* ---------- type scale ---------- */
-h1,h2,h3{ margin:0; font-family:var(--font-display); font-weight:800; line-height:.94; letter-spacing:-.015em; text-transform:uppercase; }
-.t-hero { font-size: clamp(3.4rem, 11.5vw, 10.5rem); }
-.t-giant{ font-size: clamp(2.6rem, 7.5vw, 6.5rem); }
-.t-sect { font-size: clamp(2rem, 5vw, 4.2rem); }
+h1,h2,h3{ margin:0; font-family:var(--font-display); font-weight:800; line-height:.94; letter-spacing:-.015em; text-transform:uppercase; overflow-wrap:break-word; }
+.t-hero { font-size: clamp(2.35rem, 11vw, 10.5rem); }
+.t-giant{ font-size: clamp(1.9rem, 6.4vw, 5.6rem); }
+.t-sect { font-size: clamp(1.8rem, 5vw, 4.2rem); }
 .t-item { font-size: clamp(1.35rem, 3.2vw, 2.6rem); }
 p{ margin:0; }
 
@@ -206,10 +206,10 @@ body.is-loaded .hero-line > span{ transform:none; }
 .hero{
   min-height:100svh;
   display:flex; flex-direction:column; justify-content:flex-end;
-  padding-top:120px;
   position:relative;
   overflow:hidden;
 }
+.hero-inner{ padding-top: 108px; padding-bottom: clamp(28px, 5vh, 56px); }
 .hero-grid-bg{
   position:absolute; inset:0; pointer-events:none;
   background-image:
@@ -611,7 +611,7 @@ body.has-cursor .cursor-dot{ opacity:1; }
   .work-row{ grid-template-columns: 1fr 44px; grid-template-areas: "thumb thumb" "year year" "title go" "cat cat"; row-gap:8px; }
   .work-row .year{ grid-area:year; }
   .work-row h3{ grid-area:title; }
-  .work-row .cat{ grid-area:cat; text-align:left; }
+  .work-row .cat{ grid-area:cat; text-align:left; white-space:normal; }
   .work-row .go{ grid-area:go; justify-self:end; }
   .work-thumb-inline{
     display:block; grid-area:thumb;
