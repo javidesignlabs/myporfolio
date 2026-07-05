@@ -3,86 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 — Page not found | designlabs</title>
-<meta name="description" content="This page is out of my design grid.">
+<title>404 — javidesignlabs</title>
+<meta name="description" content="Page not found.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="404 — javidesignlabs">
+<meta property="og:description" content="Page not found.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://framerusercontent.com/assets/uS6WF7ZvN6a9RVXQZqkFvQBQIRs.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body id="top">
   <header class="site-header">
     <div class="container">
-      <a href="index.html" class="brand"><svg viewBox="0 0 30 30" fill="none"><path d="M6 22V8l5 4v10c0 3-2 5-5 5" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/><path d="M15 4v6M21 6l-3 4M27 9l-5 3" stroke="var(--lime-dim)" stroke-width="2.4" stroke-linecap="round"/></svg><span>designlabs</span></a>
+      <a href="index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="projects.html">Projects</a>
         <a href="about.html">About & Contact</a>
       </nav>
-      <div class="header-right">
-        <span class="header-email">Email: <b>hello@javidesignlabs.com</b></span>
-        <a href="about.html" class="btn btn-dark">Contact me<span class="btn-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M12 4H5M12 4v7" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-      </div>
+      <a href="about.html" class="btn"><span>Contact me</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About & Contact</a>
-      <a href="about.html">Contact me</a>
-    </nav>
   </header>
+  <nav class="mobile-nav" aria-label="Mobile">
+      <a href="index.html"><span>Home</span><span class="mono">00</span></a>
+      <a href="projects.html"><span>Projects</span><span class="mono">01</span></a>
+      <a href="about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="mailto:javierdelacruztellez@gmail.com"><span>Say hello</span><span class="mono">→</span></a>
+  </nav>
+<main>
 
-  <section class="error-hero">
+  <section class="err">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="container">
-      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" fill="#F3F1EA"/><circle cx="400" cy="250" r="190" fill="none" stroke="#DEDBD1" stroke-width="2" stroke-dasharray="6 10"/>
-<text x="400" y="280" font-family="Plus Jakarta Sans, sans-serif" font-size="120" font-weight="700" fill="#0C0C09" text-anchor="middle">404</text></svg>
-      <h2>Page not found</h2>
-      <p>Sorry, this page is out of my design grid</p>
-      <a href="index.html" class="btn">Back to homepage<span class="btn-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M12 4H5M12 4v7" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <span class="mono">Error 404</span>
+      <h1 class="t-hero">Off the <span class="outline">grid</span></h1>
+      <p>This page is outside my design grid. Let's get you back on track.</p>
+      <a href="index.html" class="btn"><span>Back to homepage</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
     </div>
   </section>
 
+</main>
   <footer class="site-footer">
-    <div class="footer-top">
-      <div class="container">
-        <a href="#top" class="back-to-top">Back to top <span class="circle"><svg viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      </div>
+    <span class="big-bg-word" aria-hidden="true">404</span>
+    <div class="container footer-cta">
+      <span class="mono">Available for new projects — Las Palmas ↔ Madrid</span>
+      <h2 class="t-hero"><a href="mailto:javierdelacruztellez@gmail.com">Let's work <span class="outline">together</span></a></h2>
+      <a class="footer-email" href="mailto:javierdelacruztellez@gmail.com">hello@javidesignlabs.com</a>
     </div>
-      <div class="marquee">
-    <div class="marquee-track"><span><b>User-Centered</b> Design</span><span><b>Data-Driven</b> Design Decisions</span><span><b>Figma</b> &amp; Prototyping Expert</span><span><b>SaaS</b> Platform UX</span><span><b>User-Centered</b> Design</span><span><b>Data-Driven</b> Design Decisions</span><span><b>Figma</b> &amp; Prototyping Expert</span><span><b>SaaS</b> Platform UX</span></div>
-  </div>
-    <div class="footer-cta">
-      <div class="container">
+    <div class="container footer-meta">
+      <div class="footer-person">
+        <img src="https://framerusercontent.com/images/P6TXEOXYaHG6z5IeGjc5TZIwFXM.jpg" alt="Javier de la Cruz">
         <div>
-          <h2>Let's work<br>together</h2>
-          <p class="sub">Let's make an impact</p>
-        </div>
-        <div class="footer-right">
-          <div class="footer-person">
-            <img src="https://framerusercontent.com/images/P6TXEOXYaHG6z5IeGjc5TZIwFXM.jpg" alt="Javier de la C.">
-            <div>
-              <b>Javier de la C.</b>
-              <span>Product Designer</span>
-              <a class="li" href="https://www.linkedin.com/in/jdelacruztel/?locale=en_US" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-            </div>
-          </div>
-          <div class="footer-contact">
-            <span class="eyebrow">Contact me</span>
-            <p class="email">hello@javidesignlabs.com</p>
-            <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn">Book a call<span class="btn-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4M12 4H5M12 4v7" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-          </div>
+          <b>Javier de la C.</b>
+          <small>Product Designer</small>
         </div>
       </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/jdelacruztel/?locale=en_US" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/bynneh" target="_blank" rel="noopener">X</a>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener">Book a call</a>
+        <a href="https://www.dropbox.com/scl/fi/cnsw0qy0hy00ilttjgrl9/Resume_2025.pdf?rlkey=vtqt9nx7dcgjkg0xly9ipgd5j&st=5209p04e&dl=0" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <a href="#top" class="to-top">Back to top ↑</a>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <span>&copy; <span id="year"></span> Javi de la Cruz — designlabs</span>
-        <a href="404.html">404</a>
-      </div>
+    <div class="container footer-meta" style="border-top:none;padding-top:0;">
+      <span class="mono">© <span id="year"></span> Javi de la Cruz — javidesignlabs</span>
+      <span class="mono">Designed &amp; built with care</span>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

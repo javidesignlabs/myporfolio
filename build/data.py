@@ -23,6 +23,25 @@ NAV = [
     ("About & Contact", "about.html"),
 ]
 
+CLIENTS = ["MotoGP", "Bolttech", "BASF", "Desigual", "Inari.io", "Bershka", "WorldSBK", "Gluecharm"]
+
+# Real, sourced metrics pulled from the case studies / career history
+PROOF = [
+    ("45", "%", "resource-management gain from the Bolttech supply-chain SaaS", "Bolttech · 2021–23"),
+    ("23", "%", "conversion lift after redesigning Desigual's product card", "Desigual · 2013–16"),
+    ("17", "%", "retention increase from the MotoGP renewal redesign", "Dorna Sports · 2016–21"),
+    ("15", "%", "faster access times across Bolttech partner portals", "Bolttech · 2021–23"),
+]
+
+CAPABILITIES = [
+    "Product & UX/UI design",
+    "Design systems & tokens",
+    "SaaS platforms",
+    "Prototyping in Figma",
+    "User research & testing",
+    "Design-to-dev handoff",
+]
+
 PROJECTS = [
     {
         "slug": "saas-supply-chain",
