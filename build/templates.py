@@ -61,7 +61,7 @@ def footer(root="", bg_word="JAVI"):
     </div>
     <div class="container footer-meta" style="border-top:none;padding-top:0;">
       <span class="mono">© <span id="year"></span> Javi de la Cruz — javidesignlabs</span>
-      <span class="mono">Designed &amp; built with care</span>
+      <a class="mono" href="{root}privacy.html" style="color:var(--smoke);">Privacy</a>
     </div>
   </footer>'''
 
@@ -79,7 +79,7 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 <link rel="canonical" href="{canonical}">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://framerusercontent.com; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://framerusercontent.com; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
 <link rel="icon" href="{root}assets/img/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
@@ -87,9 +87,8 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="https://framerusercontent.com/assets/uS6WF7ZvN6a9RVXQZqkFvQBQIRs.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" href="{root}assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{root}assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/css/style.css">
 {jsonld}
 </head>

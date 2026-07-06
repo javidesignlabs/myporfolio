@@ -450,7 +450,7 @@ def project_jsonld(p):
 
 def build_seo_files():
     base = PROFILE["base_url"].rstrip("/")
-    urls = ["", "projects.html", "about.html"] + [f'projects/{p["slug"]}.html' for p in PROJECTS]
+    urls = ["", "projects.html", "about.html", "privacy.html"] + [f'projects/{p["slug"]}.html' for p in PROJECTS]
     entries = "\n".join(
         f"  <url><loc>{base}/{u}</loc></url>" for u in urls
     )
@@ -458,6 +458,60 @@ def build_seo_files():
     write("sitemap.xml", sitemap)
     robots = f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n"
     write("robots.txt", robots)
+
+
+def build_privacy():
+    body = f'''
+  <section class="page-hero" style="padding-bottom:0;">
+    <div class="container">
+      <span class="mono">Legal</span>
+      <h1 class="t-giant">Privacy</h1>
+      <p class="lede" data-reveal>The short version: this site doesn't track you.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container proj-body">
+      <aside class="proj-rail">
+        <div class="rail-field"><span class="mono">Site owner</span><span>Javier de la Cruz</span></div>
+        <div class="rail-field"><span class="mono">Contact</span><span>{PROFILE['email_display']}</span></div>
+        <div class="rail-field"><span class="mono">Location</span><span>Las Palmas / Madrid, Spain</span></div>
+      </aside>
+      <div class="proj-content">
+        <div class="pblock">
+          <span class="mono">Cookies</span>
+          <p>This website does not set any cookies — no analytics cookies, no tracking cookies, no advertising cookies, and no technical cookies. That is why you don't see a cookie banner: there is nothing to consent to.</p>
+        </div>
+        <div class="pblock">
+          <span class="mono">Analytics &amp; tracking</span>
+          <p>No analytics or tracking tools of any kind are used. Your visit is not recorded, profiled, or shared with third parties by this site.</p>
+        </div>
+        <div class="pblock">
+          <span class="mono">Fonts</span>
+          <p>All fonts are self-hosted on this site. No requests are made to Google Fonts or any other third-party font service, so your IP address is never shared with a font provider.</p>
+        </div>
+        <div class="pblock">
+          <span class="mono">Third-party content</span>
+          <p>Project images and photos on this site are served from Framer's content delivery network (framerusercontent.com). When your browser loads those images, it makes a standard HTTP request to that CDN, which — like any web request — includes your IP address. No other data is transmitted.</p>
+          <p>External links (LinkedIn, X, Cal.com, Dropbox, client websites) take you to third-party sites governed by their own privacy policies.</p>
+        </div>
+        <div class="pblock">
+          <span class="mono">Hosting</span>
+          <p>This site is hosted on GitHub Pages. GitHub may collect technical information such as IP addresses in its server logs for security purposes, as described in <b>GitHub's privacy statement</b>.</p>
+        </div>
+        <div class="pblock">
+          <span class="mono">Contact</span>
+          <p>If you email me or book a call, I will use your contact details only to reply to you. Questions about this policy: {PROFILE['email_display']}.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+'''
+    write("privacy.html", page_shell(
+        "Privacy — javidesignlabs",
+        "This site sets no cookies and uses no tracking. Fonts are self-hosted; here's exactly what happens when you visit.",
+        "", body, bg_word="LEGAL", path="privacy.html"
+    ))
+
 
 # ----------------------------------------------------------------
 def favicon():
@@ -473,5 +527,6 @@ if __name__ == "__main__":
     for i, p in enumerate(PROJECTS):
         build_project(p, PROJECTS[(i + 1) % len(PROJECTS)])
     favicon()
+    build_privacy()
     build_seo_files()
-    print("Done — 14 pages + sitemap.xml + robots.txt generated.")
+    print("Done — 15 pages + sitemap.xml + robots.txt generated.")

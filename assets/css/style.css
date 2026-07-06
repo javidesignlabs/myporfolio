@@ -1,7 +1,16 @@
 /* ============================================================
    JAVIDESIGNLABS — design system v2
    Display: Syne · Body: Instrument Sans · Data: Space Mono
+   Self-hosted fonts (GDPR: no third-party font requests)
    ============================================================ */
+@font-face{ font-family:"Syne"; font-style:normal; font-weight:700; font-display:swap; src:url("../fonts/syne-latin-700-normal.woff2") format("woff2"); }
+@font-face{ font-family:"Syne"; font-style:normal; font-weight:800; font-display:swap; src:url("../fonts/syne-latin-800-normal.woff2") format("woff2"); }
+@font-face{ font-family:"Instrument Sans"; font-style:normal; font-weight:400; font-display:swap; src:url("../fonts/instrument-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face{ font-family:"Instrument Sans"; font-style:normal; font-weight:500; font-display:swap; src:url("../fonts/instrument-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face{ font-family:"Instrument Sans"; font-style:normal; font-weight:600; font-display:swap; src:url("../fonts/instrument-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face{ font-family:"Space Mono"; font-style:normal; font-weight:400; font-display:swap; src:url("../fonts/space-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face{ font-family:"Space Mono"; font-style:normal; font-weight:700; font-display:swap; src:url("../fonts/space-mono-latin-700-normal.woff2") format("woff2"); }
+
 :root{
   --void:       #0B0B09;
   --void-2:     #121210;
@@ -211,12 +220,13 @@ body.is-loaded .hero-line > span{ transform:none; }
 .mobile-nav.open{ opacity:1; visibility:visible; }
 .mobile-nav a{
   font-family:var(--font-display); font-weight:800; text-transform:uppercase;
-  font-size: clamp(2rem, 9vw, 3.4rem);
+  font-size: clamp(1.45rem, 8vw, 3.4rem);
   line-height:1.15;
   color:var(--cream);
   border-bottom:1px solid var(--line);
   padding:14px 0;
   display:flex; justify-content:space-between; align-items:center;
+  gap:12px;
 }
 .mobile-nav a .mono{ font-size:.65rem; }
 .mobile-nav a:hover{ color:var(--lime); }
@@ -653,4 +663,11 @@ body.has-cursor .cursor-dot{ opacity:1; }
   .hero-top{ flex-direction:column; }
   .sect-head{ flex-direction:column; align-items:flex-start; }
   .footer-meta{ flex-direction:column; align-items:flex-start; }
+  .proof-grid{ grid-template-columns:1fr; }
+  .step{ grid-template-columns:1fr; gap:8px; }
 }
+
+/* grid blowout safety: children may shrink below min-content */
+.proof-grid > *, .process-wrap > *, .caps-grid > *, .about-grid > *,
+.proj-body > *, .quote-rail > *, .impact-grid > *, .step > *,
+.work-row > *, .tl-row > *{ min-width:0; }
