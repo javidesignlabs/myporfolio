@@ -86,7 +86,7 @@ def build_home():
     <div class="container hero-inner">
       <div class="hero-top">
         <div class="hero-meta">
-          <span class="mono">Product Designer</span>
+          <span class="mono">Senior Product Designer · Design Systems</span>
           <span class="mono">Las Palmas ↔ Madrid · Since 2011</span>
         </div>
         <div class="hero-card">
@@ -103,7 +103,7 @@ def build_home():
         <span class="hero-line"><span class="fit" data-max="230"><span class="accent">performs</span></span></span>
       </h1>
       <div class="hero-sub">
-        <p data-reveal>I'm Javi — I turn complex data and messy workflows into intuitive digital products. 10+ years across SaaS, e-commerce, design systems and TV apps.</p>
+        <p data-reveal>I'm Javi — Senior Product Designer specialized in design systems, connecting Product, Design and Engineering to ship scalable digital experiences. 10+ years across SaaS, e-commerce and TV apps.</p>
         <a href="projects.html" class="btn" data-reveal><span>Explore the work</span>{ARROW}</a>
       </div>
     </div>
@@ -144,8 +144,8 @@ def build_home():
       <div class="caps-copy">
         <span class="mono" style="display:block;margin-bottom:18px;">What I do</span>
         <h2 class="t-sect" style="margin-bottom:26px;">Complex in, <span class="accent">clear</span> out</h2>
-        <p data-reveal>My 360º approach covers information architecture, design systems, usability and interface optimization for B2B and B2C environments.</p>
-        <p data-reveal>I work embedded with engineering — Figma to production, tokens to components — bringing a proactive mindset to agile teams.</p>
+        <p data-reveal>I help teams build better digital products through scalable design systems, reusable component libraries and user-centered experiences.</p>
+        <p data-reveal>My role combines UX design, design system strategy, stakeholder collaboration and design operations — ensuring consistency across products while accelerating delivery for both designers and developers.</p>
       </div>
       <ul class="caps-list">
 {caps_items}
@@ -182,8 +182,8 @@ def build_home():
 '''
     jsonld = person_jsonld()
     write("index.html", page_shell(
-        "Javier de la Cruz — Product Designer | javidesignlabs",
-        "Product Designer based between Las Palmas & Madrid. 10+ years turning complex data into intuitive digital products across SaaS, e-commerce and design systems.",
+        "Javier de la Cruz — Senior Product Designer · Design Systems | javidesignlabs",
+        "Senior Product Designer specialized in Design Systems, based between Las Palmas & Madrid. 10+ years creating scalable digital experiences by connecting Product, Design and Engineering.",
         root, body, active="index.html", bg_word="JAVI", path="", jsonld=jsonld
     ))
 
@@ -248,9 +248,9 @@ def build_about():
         </div>
       </div>
       <div class="about-copy">
-        <p data-reveal>I'm a <b>product designer</b> with over 10 years of experience designing digital products — specialized in <b>web, mobile and SaaS platforms</b>.</p>
-        <p data-reveal>My 360º approach covers information architecture, design systems, usability, and interface optimization for B2B and B2C environments. I excel in cross-functional collaboration, bringing a proactive mindset and a strong commitment to innovation in agile settings.</p>
-        <p data-reveal>Based between <b>Las Palmas de Gran Canaria and Madrid</b>, currently designing at BASF.</p>
+        <p data-reveal>I'm a <b>Senior Product Designer specialized in Design Systems</b>, helping organizations create scalable digital experiences by connecting <b>Product, Design and Engineering</b>.</p>
+        <p data-reveal>With 10+ years across web, mobile and SaaS platforms, my work combines UX design, design system strategy, stakeholder collaboration and design operations — ensuring consistency across products while accelerating delivery for designers and developers alike.</p>
+        <p data-reveal>Based between <b>Las Palmas de Gran Canaria and Madrid</b>, currently at <b>BASF Digital Solutions</b>.</p>
         <div class="about-ctas" data-reveal>
           <a href="{PROFILE['cal']}" target="_blank" rel="noopener" class="btn"><span>Book a call</span>{ARROW}</a>
           <a href="{PROFILE['resume']}" target="_blank" rel="noopener" class="btn btn--ghost"><span>Download resume</span>{ARROW}</a>
@@ -276,7 +276,7 @@ def build_about():
 '''
     write("about.html", page_shell(
         "About — Javier de la Cruz | javidesignlabs",
-        "Product designer with 10+ years across SaaS, e-commerce and design systems. Based between Las Palmas and Madrid.",
+        "Senior Product Designer specialized in Design Systems. 10+ years across SaaS, e-commerce and component libraries. Based between Las Palmas and Madrid.",
         root, body, active="about.html", bg_word="JAVI", path="about.html", jsonld=person_jsonld()
     ))
 
@@ -418,17 +418,17 @@ def person_jsonld():
         "@type": "Person",
         "name": "Javier de la Cruz",
         "alternateName": "Javi de la Cruz",
-        "jobTitle": "Product Designer",
+        "jobTitle": "Senior Product Designer",
         "url": base + "/",
         "image": PROFILE["avatar_about"],
         "email": "mailto:" + PROFILE["mailto"],
         "sameAs": [PROFILE["linkedin"], PROFILE["x"]],
-        "worksFor": {"@type": "Organization", "name": "BASF"},
+        "worksFor": {"@type": "Organization", "name": "BASF Digital Solutions"},
         "address": [
             {"@type": "PostalAddress", "addressLocality": "Las Palmas de Gran Canaria", "addressCountry": "ES"},
             {"@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES"},
         ],
-        "knowsAbout": ["Product Design", "UX/UI Design", "Design Systems", "SaaS", "Figma", "Prototyping", "User Research"],
+        "knowsAbout": ["Design Systems", "Component Libraries", "Design Tokens", "DesignOps", "Product Design", "UX/UI Design", "SaaS", "Figma", "User Research"],
     }
     return '<script type="application/ld+json">' + _json.dumps(data, ensure_ascii=False) + "</script>"
 

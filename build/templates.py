@@ -48,7 +48,7 @@ def footer(root="", bg_word="JAVI"):
         <img src="{PROFILE['avatar_footer']}" alt="Javier de la Cruz">
         <div>
           <b>Javier de la C.</b>
-          <small>Product Designer</small>
+          <small>Senior Product Designer</small>
         </div>
       </div>
       <div class="footer-links">

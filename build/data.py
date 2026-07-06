@@ -36,12 +36,12 @@ PROOF = [
 ]
 
 CAPABILITIES = [
-    "Product & UX/UI design",
     "Design systems & tokens",
-    "SaaS platforms",
-    "Prototyping in Figma",
-    "User research & testing",
-    "Design-to-dev handoff",
+    "Component libraries & docs",
+    "UX standards & guidelines",
+    "Product & UX/UI design",
+    "Design-to-dev workflows",
+    "Cross-team adoption & DesignOps",
 ]
 
 PROJECTS = [
@@ -528,8 +528,8 @@ PROJECTS = [
 ]
 
 CAREER = [
-    ("2025 / Pres.", "BASF / Product Designer",
-     "Leading the UX/UI strategy for the global migration of OneCMS, unifying BASF websites across all regions under a cohesive design and content structure. Designing DemoPlot, a SaaS platform for agricultural data management in Brazil and Mexico, with a focus on usability, visualization, and mobile responsiveness. Consolidating multiple legacy design systems into a single, token-based BASF Global Design System, enabling consistent and scalable UI delivery. Supporting the PIC Project (USA), improving supply chain workflows and dashboard usability for internal stakeholders. Collaborating in Agile/Scrum teams with 2-week sprints, aligning Figma workflows with Azure DevOps for efficient handoff and iteration."),
+    ("2025 / Pres.", "BASF Digital Solutions / Senior Product Designer",
+     "Senior Product Designer specialized in Design Systems, helping the organization create scalable digital experiences by connecting Product, Design and Engineering. I define and evolve design systems, build and document reusable component libraries, and create UX standards and design guidelines. Working closely with Product Owners, UX teams and developers, I transform business requirements into scalable digital experiences, drive adoption of design systems across products and teams, and continuously improve design-to-development workflows. The role combines UX design, design system strategy, stakeholder collaboration and design operations to ensure consistency across products while accelerating delivery for both designers and developers."),
     ("2023 / 2024", "Inari.io / Product Designer",
      "Led the design of ORCA, a reinsurance SaaS platform, transforming complex data into optimised and automated designs and workflows, which increased operational efficiency by 25%. Designing wireframes, prototypes and mockups for development with Figma. Created user flows and navigation with Miro. Conducted user research (interviews, card sorting and other research methods). Actively participated in Design thinking ceremonies with Stakeholders, BO's and users. Worked on creating and updating the design system for Inari, developing and designing new components using atomic design."),
     ("2021 / 2023", "Bolttech / Product Designer",
