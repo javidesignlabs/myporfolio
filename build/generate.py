@@ -478,12 +478,13 @@ def build_privacy():
       </aside>
       <div class="proj-content">
         <div class="pblock">
-          <span class="mono">Cookies</span>
-          <p>This website does not set any cookies — no analytics cookies, no tracking cookies, no advertising cookies, and no technical cookies. That is why you don't see a cookie banner: there is nothing to consent to.</p>
+          <span class="mono">Cookies &amp; analytics</span>
+          <p>This site uses <b>Microsoft Clarity</b> to understand how visitors use it (heatmaps and anonymized session recordings) — but <b>only if you accept</b> in the consent banner. If you decline or ignore the banner, no analytics script is loaded and no cookies are set. Clarity masks typed text by default.</p>
+          <p>Your choice is stored locally in your browser (not on any server). You can change it at any time: <a href="#" data-consent-reset style="color:var(--lime);text-decoration:underline;text-underline-offset:3px;">manage consent</a>.</p>
         </div>
         <div class="pblock">
-          <span class="mono">Analytics &amp; tracking</span>
-          <p>No analytics or tracking tools of any kind are used. Your visit is not recorded, profiled, or shared with third parties by this site.</p>
+          <span class="mono">What Clarity collects (with your consent)</span>
+          <p>Page views, clicks, scrolls and mouse movement, device/browser type, and a cookie-based identifier to group your session. Data is processed by Microsoft under their <b>privacy terms</b>. It is used solely to improve this site's design — never for advertising.</p>
         </div>
         <div class="pblock">
           <span class="mono">Fonts</span>

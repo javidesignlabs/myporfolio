@@ -66,9 +66,22 @@ def footer(root="", bg_word="JAVI"):
   </footer>'''
 
 
+def consent_banner(root=""):
+    if not PROFILE.get("clarity_id"):
+        return ""
+    return f'''  <div class="consent" id="consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p>I use <b>Microsoft Clarity</b> (heatmaps &amp; session recordings) to understand how this site is used. It sets cookies only if you accept. <a href="{root}privacy.html">Privacy</a></p>
+    <div class="consent-actions">
+      <button class="btn" data-consent="granted"><span>Accept</span></button>
+      <button class="btn btn--ghost" data-consent="denied"><span>Decline</span></button>
+    </div>
+  </div>'''
+
+
 def page_shell(title, description, root, body, active="", bg_word="JAVI", path="", jsonld=""):
     base = PROFILE["base_url"].rstrip("/")
     canonical = f"{base}/{path}" if path else f"{base}/"
+    clarity_meta = f'<meta name="clarity-id" content="{PROFILE["clarity_id"]}">' if PROFILE.get("clarity_id") else ""
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -77,9 +90,10 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{canonical}">
+{clarity_meta}
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://framerusercontent.com; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://framerusercontent.com https://*.clarity.ms; connect-src 'self' https://*.clarity.ms; base-uri 'self'; form-action 'none'; object-src 'none'">
 <link rel="icon" href="{root}assets/img/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
@@ -98,6 +112,7 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 {body}
 </main>
 {footer(root, bg_word)}
+{consent_banner(root)}
 <script src="{root}assets/js/main.js"></script>
 </body>
 </html>'''

@@ -8,6 +8,9 @@ javidesignlabs.com (Framer) CDN — these are Javi's own published assets.
 PROFILE = {
     # Change BASE_URL to "https://javidesignlabs.com" when you point your custom domain here
     "base_url": "https://javidesignlabs.github.io/myporfolio",
+    # Microsoft Clarity: paste your project ID from clarity.microsoft.com (Settings → Overview).
+    # Leave empty ("") to disable analytics entirely (no banner will be shown).
+    "clarity_id": "xja19yd80b",
     "avatar_hero": "https://framerusercontent.com/images/Bv3kCGt7CVS9r8dtdbxDJa5hHY.jpeg",
     "avatar_about": "https://framerusercontent.com/images/UdHGJxJMIvCQPbsnF3793NhTyzw.jpg",
     "avatar_footer": "https://framerusercontent.com/images/P6TXEOXYaHG6z5IeGjc5TZIwFXM.jpg",

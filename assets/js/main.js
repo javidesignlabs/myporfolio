@@ -158,4 +158,43 @@
   /* ---- footer year ---- */
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
+
+  /* ---- analytics consent (Microsoft Clarity, opt-in only) ---- */
+  const banner = document.getElementById('consent');
+  const clarityId = document.querySelector('meta[name="clarity-id"]')?.content;
+  const KEY = 'jdl-consent';
+
+  const loadClarity = () => {
+    if (!clarityId || window.clarity) return;
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", clarityId);
+  };
+
+  if (banner && clarityId) {
+    const choice = localStorage.getItem(KEY);
+    if (choice === 'granted') loadClarity();
+    else if (choice !== 'denied') banner.hidden = false;
+
+    banner.querySelectorAll('[data-consent]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const v = btn.dataset.consent;
+        localStorage.setItem(KEY, v);
+        banner.hidden = true;
+        if (v === 'granted') loadClarity();
+      });
+    });
+  }
+
+  // "Manage consent" link (privacy page): clears the stored choice and reopens the banner
+  document.querySelectorAll('[data-consent-reset]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault();
+      localStorage.removeItem(KEY);
+      if (banner) banner.hidden = false;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+  });
 })();

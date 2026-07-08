@@ -602,6 +602,24 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 .err .t-hero{ line-height:.85; }
 .err p{ color:var(--cream-dim); margin:22px 0 34px; max-width:420px; }
 
+/* ---------- consent banner ---------- */
+.consent{
+  position:fixed; z-index:110;
+  left:18px; right:18px; bottom:18px;
+  max-width:520px; margin:0 auto;
+  background:var(--panel);
+  border:1px solid var(--line-hard);
+  border-radius:18px;
+  padding:20px 22px;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
+  display:flex; flex-direction:column; gap:16px;
+}
+.consent[hidden]{ display:none; }
+.consent p{ font-size:.9rem; color:var(--cream-dim); line-height:1.55; }
+.consent p a{ color:var(--lime); text-decoration:underline; text-underline-offset:3px; }
+.consent-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.consent-actions .btn{ padding:11px 18px; }
+
 /* ---------- cursor ---------- */
 .cursor-dot{
   position:fixed; z-index:200; top:0; left:0;
