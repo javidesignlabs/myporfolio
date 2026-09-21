@@ -9,6 +9,7 @@ OUT = os.path.join(os.path.dirname(__file__), "..")
 
 # Short year labels per project (real eras from the case studies)
 YEARS = {
+    "familyhub": "Ongoing",
     "saas-supply-chain": "2022–23",
     "bolttech-design-system": "2021–23",
     "partner-portals": "2021–23",
@@ -20,6 +21,11 @@ YEARS = {
     "desigual-product-card": "2013–16",
     "desigual-store-locator": "2014",
 }
+
+
+def img_src(p, root):
+    src = p["cover_img"]
+    return src if src.startswith("http") else root + src
 
 
 def write(path, content):
@@ -39,8 +45,8 @@ def client_strip():
 def work_rows(projects, root):
     rows = []
     for p in projects:
-        rows.append(f'''<a class="work-row" href="{root}projects/{p["slug"]}.html" data-img="{p["cover_img"]}" data-reveal>
-  <span class="work-thumb-inline"><img src="{p["cover_img"]}" alt="" loading="lazy"></span>
+        rows.append(f'''<a class="work-row" href="{root}projects/{p["slug"]}.html" data-img="{img_src(p, root)}" data-reveal>
+  <span class="work-thumb-inline"><img src="{img_src(p, root)}" alt="" loading="lazy"></span>
   <span class="year">{YEARS[p["slug"]]}</span>
   <h3>{p["title"]}</h3>
   <span class="cat">{p["tag"]} · {p["company"]}</span>
@@ -319,6 +325,13 @@ def build_project(p, next_p):
     learn_li = "\n".join(f"<li>{li}</li>" for li in p["learnings"])
     intro = "\n".join(f"<p>{t}</p>" for t in p["intro"])
 
+    gallery = ""
+    if p.get("gallery"):
+        shots = "\n".join(
+            f'<figure class="shot" data-reveal><img src="{root}assets/img/{p["slug"]}/{k}.webp" alt="{cap.split(" — ")[0]}" loading="lazy" width="510" height="963"><figcaption>{cap}</figcaption></figure>'
+            for k, cap in p["gallery"])
+        gallery = f'<div class="pblock"><span class="mono">Screens</span><div class="shot-grid">{shots}</div></div>'
+
     website_btn = ""
     if p["website"]:
         website_btn = f'<a href="{p["website"]}" target="_blank" rel="noopener" class="btn"><span>Visit website</span>{ARROW}</a>'
@@ -330,7 +343,7 @@ def build_project(p, next_p):
       <h1 class="t-giant">{p["title"]}</h1>
       <p class="lede" data-reveal>{p["subtitle"]}</p>
       <div class="proj-cover" data-reveal>
-        <img src="{p["cover_img"]}" alt="{p["title"]}">
+        <img src="{img_src(p, root)}" alt="{p["title"]}">
       </div>
     </div>
   </section>
@@ -373,6 +386,7 @@ def build_project(p, next_p):
           <span class="mono">Design &amp; implementation</span>
           {design}
         </div>
+        {gallery}
         <div class="pblock" data-reveal>
           <span class="mono">Impact</span>
           <div class="impact-grid">
@@ -441,7 +455,7 @@ def project_jsonld(p):
         "name": p["title"],
         "description": p["subtitle"],
         "url": f'{base}/projects/{p["slug"]}.html',
-        "image": p["cover_img"],
+        "image": img_src(p, base + "/"),
         "author": {"@type": "Person", "name": "Javier de la Cruz", "url": base + "/"},
         "about": p["category"],
     }
