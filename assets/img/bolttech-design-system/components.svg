@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="'Instrument Sans',system-ui,sans-serif">
+  <rect width="1200" height="700" fill="#121210"/>
+  <text x="56" y="60" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">COMPONENT VARIANTS — ONE BUTTON, EVERY STATE</text>
+
+  <!-- matrix header -->
+  <g fill="#6B6A62" font-size="13" font-family="'Space Mono',monospace">
+    <text x="252" y="118">DEFAULT</text><text x="432" y="118">HOVER</text><text x="612" y="118">FOCUS</text><text x="792" y="118">LOADING</text><text x="972" y="118">DISABLED</text>
+  </g>
+
+  <!-- row labels -->
+  <g fill="#C9C7BC" font-size="15" font-weight="600">
+    <text x="56" y="172">Primary</text>
+    <text x="56" y="268">Secondary</text>
+    <text x="56" y="364">Tertiary</text>
+    <text x="56" y="460">Destructive</text>
+  </g>
+
+  <!-- PRIMARY -->
+  <g transform="translate(240,146)">
+    <rect width="140" height="44" rx="8" fill="#5B2A8C"/><text x="70" y="28" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Continue</text>
+    <g transform="translate(180,0)"><rect width="140" height="44" rx="8" fill="#47206E"/><text x="70" y="28" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+    <g transform="translate(360,0)"><rect width="140" height="44" rx="8" fill="#5B2A8C"/><rect x="-4" y="-4" width="148" height="52" rx="11" fill="none" stroke="#C8FF4D" stroke-width="2.5"/><text x="70" y="28" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+    <g transform="translate(540,0)"><rect width="140" height="44" rx="8" fill="#5B2A8C" opacity=".8"/><circle cx="60" cy="22" r="7" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="26 14"/><text x="88" y="27" fill="#fff" font-size="13" text-anchor="middle">…</text></g>
+    <g transform="translate(720,0)"><rect width="140" height="44" rx="8" fill="#3A3A33"/><text x="70" y="28" fill="#6B6A62" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+  </g>
+
+  <!-- SECONDARY -->
+  <g transform="translate(240,242)">
+    <rect width="140" height="44" rx="8" fill="none" stroke="#5B2A8C" stroke-width="2"/><text x="70" y="28" fill="#C9C7BC" font-size="14" font-weight="600" text-anchor="middle">Continue</text>
+    <g transform="translate(180,0)"><rect width="140" height="44" rx="8" fill="#241038" stroke="#5B2A8C" stroke-width="2"/><text x="70" y="28" fill="#EFEDE3" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+    <g transform="translate(360,0)"><rect width="140" height="44" rx="8" fill="none" stroke="#5B2A8C" stroke-width="2"/><rect x="-4" y="-4" width="148" height="52" rx="11" fill="none" stroke="#C8FF4D" stroke-width="2.5"/><text x="70" y="28" fill="#C9C7BC" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+    <g transform="translate(540,0)"><rect width="140" height="44" rx="8" fill="none" stroke="#5B2A8C" stroke-width="2" opacity=".7"/><circle cx="60" cy="22" r="7" fill="none" stroke="#C9C7BC" stroke-width="2.5" stroke-dasharray="26 14"/><text x="88" y="27" fill="#C9C7BC" font-size="13" text-anchor="middle">…</text></g>
+    <g transform="translate(720,0)"><rect width="140" height="44" rx="8" fill="none" stroke="#3A3A33" stroke-width="2"/><text x="70" y="28" fill="#4A4A42" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+  </g>
+
+  <!-- TERTIARY -->
+  <g transform="translate(240,338)">
+    <rect width="140" height="44" rx="8" fill="none"/><text x="70" y="28" fill="#9B7FC4" font-size="14" font-weight="600" text-anchor="middle">Continue</text>
+    <g transform="translate(180,0)"><rect width="140" height="44" rx="8" fill="#1B1420"/><text x="70" y="28" fill="#B79BE0" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+    <g transform="translate(360,0)"><rect width="140" height="44" rx="8" fill="none"/><rect x="-4" y="-4" width="148" height="52" rx="11" fill="none" stroke="#C8FF4D" stroke-width="2.5"/><text x="70" y="28" fill="#9B7FC4" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+    <g transform="translate(540,0)"><circle cx="60" cy="22" r="7" fill="none" stroke="#9B7FC4" stroke-width="2.5" stroke-dasharray="26 14"/><text x="88" y="27" fill="#9B7FC4" font-size="13" text-anchor="middle">…</text></g>
+    <g transform="translate(720,0)"><text x="70" y="28" fill="#4A4A42" font-size="14" font-weight="600" text-anchor="middle">Continue</text></g>
+  </g>
+
+  <!-- DESTRUCTIVE -->
+  <g transform="translate(240,434)">
+    <rect width="140" height="44" rx="8" fill="#B23A3A"/><text x="70" y="28" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Delete</text>
+    <g transform="translate(180,0)"><rect width="140" height="44" rx="8" fill="#8C2B2B"/><text x="70" y="28" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Delete</text></g>
+    <g transform="translate(360,0)"><rect width="140" height="44" rx="8" fill="#B23A3A"/><rect x="-4" y="-4" width="148" height="52" rx="11" fill="none" stroke="#C8FF4D" stroke-width="2.5"/><text x="70" y="28" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Delete</text></g>
+    <g transform="translate(540,0)"><rect width="140" height="44" rx="8" fill="#B23A3A" opacity=".8"/><circle cx="60" cy="22" r="7" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="26 14"/><text x="88" y="27" fill="#fff" font-size="13" text-anchor="middle">…</text></g>
+    <g transform="translate(720,0)"><rect width="140" height="44" rx="8" fill="#3A3A33"/><text x="70" y="28" fill="#6B6A62" font-size="14" font-weight="600" text-anchor="middle">Delete</text></g>
+  </g>
+
+  <line x1="56" y1="520" x2="1144" y2="520" stroke="rgba(239,237,227,.12)"/>
+  <text x="56" y="560" fill="#C8FF4D" font-size="14" font-family="'Space Mono',monospace">WHY THE FULL MATRIX</text>
+  <text x="56" y="594" fill="#85847A" font-size="15">Shipping only the default state is what caused the inconsistency in the first place: every team</text>
+  <text x="56" y="618" fill="#85847A" font-size="15">invented its own hover, its own disabled, its own loading. Specifying all five states per variant</text>
+  <text x="56" y="642" fill="#85847A" font-size="15">removes the invention — and makes the focus ring non-negotiable rather than an afterthought.</text>
+  <text x="56" y="678" fill="#6B6A62" font-size="13.5">Illustrative — redrawn generically from the system's structure.</text>
+</svg>

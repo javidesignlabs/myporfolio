@@ -4,12 +4,23 @@
   const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
   /* ---- fit-text: scale each .fit line to exactly fill its container ---- */
+  // The hero headline fills the width, but must not eat the whole first screen:
+  // cap it by available height so the work below always peeks above the fold.
+  const heroCap = () => {
+    const lines = document.querySelectorAll('.hero .fit').length;
+    if (!lines) return Infinity;
+    const RESERVE = 560; // header, eyebrow row, sub-line, ticker and the peek
+    return Math.max(44, (window.innerHeight - RESERVE) / lines);
+  };
+
   const fitAll = () => {
+    const hCap = heroCap();
     document.querySelectorAll('.fit').forEach(el => {
       const bound = el.closest('.fit-bound') || el.parentElement;
       const cs = getComputedStyle(bound);
       const avail = bound.clientWidth - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
-      const max = parseFloat(el.dataset.max || '230');
+      let max = parseFloat(el.dataset.max || '230');
+      if (el.closest('.hero')) max = Math.min(max, hCap);
       el.style.fontSize = '100px';
       let size = Math.min(100 * (avail / el.scrollWidth) * 0.995, max);
       el.style.fontSize = size.toFixed(2) + 'px';

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="'Instrument Sans',system-ui,sans-serif">
+  <rect width="1200" height="760" fill="#121210"/>
+  <text x="56" y="62" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">ANATOMY OF ONE HANDOFF PAGE</text>
+
+  <!-- doc frame -->
+  <rect x="56" y="100" width="640" height="580" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <rect x="56" y="100" width="640" height="54" rx="16" fill="#0B0B09"/>
+  <rect x="56" y="138" width="640" height="16" fill="#0B0B09"/>
+  <circle cx="84" cy="127" r="6" fill="#C8FF4D"/>
+  <text x="104" y="132" fill="#C9C7BC" font-size="14" font-family="'Space Mono',monospace">Card Container — v2.1</text>
+
+  <text x="88" y="196" fill="#EFEDE3" font-size="19" font-weight="600">Anatomy</text>
+  <rect x="88" y="212" width="310" height="104" rx="10" fill="#0B0B09"/>
+  <rect x="108" y="232" width="270" height="64" rx="8" fill="none" stroke="#C8FF4D" stroke-dasharray="4 4"/>
+  <rect x="120" y="244" width="40" height="40" rx="6" fill="#2A2A22"/>
+  <rect x="172" y="250" width="120" height="10" rx="5" fill="#3A3A33"/>
+  <rect x="172" y="268" width="80" height="8" rx="4" fill="#2A2A22"/>
+  <text x="418" y="238" fill="#85847A" font-size="13.5">Slots, spacing and</text>
+  <text x="418" y="258" fill="#85847A" font-size="13.5">which parts are optional</text>
+
+  <text x="88" y="356" fill="#EFEDE3" font-size="19" font-weight="600">States</text>
+  <g>
+    <rect x="88" y="372" width="136" height="56" rx="9" fill="#0B0B09"/><text x="104" y="405" fill="#C9C7BC" font-size="13">Default</text>
+    <rect x="236" y="372" width="136" height="56" rx="9" fill="#0B0B09" stroke="#C8FF4D"/><text x="252" y="405" fill="#C9C7BC" font-size="13">Hover</text>
+    <rect x="384" y="372" width="136" height="56" rx="9" fill="#0B0B09" stroke="#2B6CB0" stroke-width="2"/><text x="400" y="405" fill="#C9C7BC" font-size="13">Focus</text>
+    <rect x="532" y="372" width="136" height="56" rx="9" fill="#0B0B09" opacity=".45"/><text x="548" y="405" fill="#C9C7BC" font-size="13" opacity=".5">Disabled</text>
+  </g>
+
+  <text x="88" y="476" fill="#EFEDE3" font-size="19" font-weight="600">Props &amp; tokens</text>
+  <g font-family="'Space Mono',monospace" font-size="12.5">
+    <rect x="88" y="492" width="580" height="34" rx="7" fill="#0B0B09"/>
+    <text x="106" y="514" fill="#C8FF4D">elevation</text><text x="250" y="514" fill="#6B6A62">"flat" | "raised"</text><text x="470" y="514" fill="#85847A">surface.raised</text>
+    <rect x="88" y="532" width="580" height="34" rx="7" fill="#0B0B09"/>
+    <text x="106" y="554" fill="#C8FF4D">padding</text><text x="250" y="554" fill="#6B6A62">"sm" | "md" | "lg"</text><text x="470" y="554" fill="#85847A">space-300…500</text>
+    <rect x="88" y="572" width="580" height="34" rx="7" fill="#0B0B09"/>
+    <text x="106" y="594" fill="#C8FF4D">interactive</text><text x="250" y="594" fill="#6B6A62">boolean</text><text x="470" y="594" fill="#85847A">action.*</text>
+  </g>
+
+  <text x="88" y="648" fill="#EFEDE3" font-size="19" font-weight="600">Accessibility</text>
+  <text x="88" y="668" fill="#85847A" font-size="13.5">Focus order, roles, contrast ratios, and what a screen reader announces.</text>
+
+  <!-- right rail: why -->
+  <rect x="728" y="100" width="416" height="580" rx="16" fill="#0B0B09" stroke="rgba(239,237,227,.12)"/>
+  <text x="760" y="150" fill="#C8FF4D" font-size="15" font-family="'Space Mono',monospace">WHY THIS SHAPE</text>
+  <text x="760" y="196" fill="#EFEDE3" font-size="17" font-weight="600">Written where devs</text>
+  <text x="760" y="220" fill="#EFEDE3" font-size="17" font-weight="600">already work</text>
+  <text x="760" y="250" fill="#85847A" font-size="14">The docs live in the engineering</text>
+  <text x="760" y="272" fill="#85847A" font-size="14">wiki, next to the tickets — not in</text>
+  <text x="760" y="294" fill="#85847A" font-size="14">a separate tool nobody opens.</text>
+
+  <text x="760" y="348" fill="#EFEDE3" font-size="17" font-weight="600">Every page identical</text>
+  <text x="760" y="378" fill="#85847A" font-size="14">Same five sections, same order,</text>
+  <text x="760" y="400" fill="#85847A" font-size="14">every component. You learn the</text>
+  <text x="760" y="422" fill="#85847A" font-size="14">shape once and then you can</text>
+  <text x="760" y="444" fill="#85847A" font-size="14">skim any of them.</text>
+
+  <text x="760" y="498" fill="#EFEDE3" font-size="17" font-weight="600">Generated, not typed</text>
+  <text x="760" y="528" fill="#85847A" font-size="14">Specs are pulled from the Figma</text>
+  <text x="760" y="550" fill="#85847A" font-size="14">file itself, so the doc cannot</text>
+  <text x="760" y="572" fill="#85847A" font-size="14">quietly drift from the component.</text>
+  <rect x="760" y="600" width="330" height="44" rx="10" fill="#171713"/>
+  <text x="780" y="628" fill="#C8FF4D" font-size="12.5" font-family="'Space Mono',monospace">14 components documented</text>
+
+  <text x="56" y="726" fill="#6B6A62" font-size="14">Illustrative diagram — the page structure, redrawn generically. No production content shown.</text>
+</svg>

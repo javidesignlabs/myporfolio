@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="'Instrument Sans',system-ui,sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15150F"/><stop offset="1" stop-color="#0B0B09"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#g)"/>
+
+  <!-- faint grid -->
+  <g stroke="rgba(239,237,227,.06)">
+    <path d="M0 200h1600M0 400h1600M0 600h1600M0 800h1600"/>
+    <path d="M200 0v1000M400 0v1000M600 0v1000M800 0v1000M1000 0v1000M1200 0v1000M1400 0v1000"/>
+  </g>
+
+  <!-- one source, many surfaces -->
+  <rect x="640" y="400" width="320" height="200" rx="20" fill="#C8FF4D"/>
+  <text x="800" y="480" fill="#0B0B09" font-size="30" font-weight="800" text-anchor="middle" letter-spacing="-.5">ONE SOURCE</text>
+  <text x="800" y="520" fill="#0B0B09" font-size="17" text-anchor="middle" opacity=".75">tokens · components · docs</text>
+  <text x="800" y="556" fill="#0B0B09" font-size="14" text-anchor="middle" opacity=".55" font-family="'Space Mono',monospace">bound in Figma and in code</text>
+
+  <!-- connector lines to four surfaces -->
+  <g stroke="#C8FF4D" stroke-width="2" opacity=".55" fill="none">
+    <path d="M640 460 C 520 460, 460 300, 360 272"/>
+    <path d="M640 540 C 520 540, 460 700, 360 728"/>
+    <path d="M960 460 C 1080 460, 1140 300, 1240 272"/>
+    <path d="M960 540 C 1080 540, 1140 700, 1240 728"/>
+  </g>
+
+  <!-- surface A: portal -->
+  <g transform="translate(120,180)">
+    <rect width="240" height="184" rx="14" fill="#171713" stroke="rgba(239,237,227,.14)"/>
+    <rect x="0" y="0" width="240" height="34" rx="14" fill="#0B0B09"/><rect y="20" width="240" height="14" fill="#0B0B09"/>
+    <rect x="18" y="52" width="92" height="10" rx="5" fill="#3A3A33"/>
+    <rect x="18" y="78" width="204" height="40" rx="8" fill="#0B0B09"/>
+    <rect x="18" y="128" width="204" height="40" rx="8" fill="#0B0B09"/>
+    <rect x="150" y="140" width="56" height="16" rx="8" fill="#2B6CB0"/>
+    <text x="0" y="214" fill="#85847A" font-size="15">Customer portal</text>
+  </g>
+
+  <!-- surface B: marketing site -->
+  <g transform="translate(120,636)">
+    <rect width="240" height="184" rx="14" fill="#171713" stroke="rgba(239,237,227,.14)"/>
+    <rect x="18" y="20" width="204" height="70" rx="8" fill="#0B0B09"/>
+    <rect x="18" y="102" width="130" height="10" rx="5" fill="#3A3A33"/>
+    <rect x="18" y="122" width="180" height="8" rx="4" fill="#2A2A22"/>
+    <rect x="18" y="144" width="80" height="24" rx="12" fill="#C8FF4D" opacity=".75"/>
+    <text x="0" y="214" fill="#85847A" font-size="15">Marketing sites</text>
+  </g>
+
+  <!-- surface C: data platform -->
+  <g transform="translate(1240,180)">
+    <rect width="240" height="184" rx="14" fill="#171713" stroke="rgba(239,237,227,.14)"/>
+    <rect x="18" y="22" width="90" height="56" rx="8" fill="#0B0B09"/>
+    <rect x="118" y="22" width="104" height="56" rx="8" fill="#0B0B09"/>
+    <rect x="18" y="90" width="204" height="74" rx="8" fill="#0B0B09"/>
+    <path d="M34 150 L74 126 L114 138 L154 108 L194 118" stroke="#C8FF4D" stroke-width="2.5" fill="none"/>
+    <text x="0" y="214" fill="#85847A" font-size="15">Data platforms</text>
+  </g>
+
+  <!-- surface D: mobile -->
+  <g transform="translate(1300,636)">
+    <rect width="120" height="184" rx="18" fill="#171713" stroke="rgba(239,237,227,.14)"/>
+    <rect x="14" y="30" width="92" height="12" rx="6" fill="#3A3A33"/>
+    <rect x="14" y="54" width="92" height="40" rx="8" fill="#0B0B09"/>
+    <rect x="14" y="102" width="92" height="40" rx="8" fill="#0B0B09"/>
+    <rect x="14" y="152" width="92" height="18" rx="9" fill="#2B6CB0"/>
+    <text x="-60" y="214" fill="#85847A" font-size="15">Field &amp; mobile tools</text>
+  </g>
+
+  <text x="800" y="900" fill="#EFEDE3" font-size="24" text-anchor="middle" font-weight="600">Consolidating legacy design systems into one token-based library</text>
+  <text x="800" y="936" fill="#6B6A62" font-size="16" text-anchor="middle">Illustrative — no production interfaces shown</text>
+</svg>

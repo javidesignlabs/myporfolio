@@ -19,7 +19,7 @@ PROFILE = {
     "x": "https://x.com/bynneh",
     "cal": "https://cal.com/jdlct81",
     "resume": "https://www.dropbox.com/scl/fi/cnsw0qy0hy00ilttjgrl9/Resume_2025.pdf?rlkey=vtqt9nx7dcgjkg0xly9ipgd5j&st=5209p04e&dl=0",
-    "mailto": "javierdelacruztellez@gmail.com",
+    "mailto": "hello@javidesignlabs.com",
     "email_display": "hello@javidesignlabs.com",
 }
 
@@ -30,12 +30,22 @@ NAV = [
 
 CLIENTS = ["MotoGP", "Bolttech", "BASF", "Desigual", "Inari.io", "Bershka", "WorldSBK", "Gluecharm"]
 
-# Real, sourced metrics pulled from the case studies / career history
+# Real, sourced metrics pulled from the case studies / career history.
+# Each figure must match its case study exactly — the "how it was measured"
+# line is what makes "measured, not claimed" true.
 PROOF = [
-    ("45", "%", "resource-management gain from the Bolttech supply-chain SaaS", "Bolttech · 2021–23"),
-    ("23", "%", "conversion lift after redesigning Desigual's product card", "Desigual · 2013–16"),
-    ("17", "%", "retention increase from the MotoGP renewal redesign", "Dorna Sports · 2016–21"),
-    ("15", "%", "faster access times across Bolttech partner portals", "Bolttech · 2021–23"),
+    ("40", "%", "more operational efficiency in the Bolttech supply-chain SaaS",
+     "Bolttech · 2022–23", "Measured against the manual Excel process it replaced.",
+     "saas-supply-chain"),
+    ("23", "%", "conversion lift after redesigning Desigual's product card",
+     "Desigual · 2013–16", "A/B tested against the previous product card.",
+     "desigual-product-card"),
+    ("17", "%", "retention increase on MotoGP VideoPass renewals",
+     "Dorna Sports · 2019", "Renewal rate before vs. after the redesign.",
+     "payment-renewal"),
+    ("15", "%", "faster access times across Bolttech partner portals",
+     "Bolttech · 2021–23", "Time-to-task from portal analytics, pre/post launch.",
+     "partner-portals"),
 ]
 
 CAPABILITIES = [
@@ -49,7 +59,72 @@ CAPABILITIES = [
 
 PROJECTS = [
     {
+        "slug": "basf-design-system",
+        "cover_img": "assets/img/basf-design-system/cover.svg",
+        "tag": "Design system",
+        "title": "Consolidating Legacy Design Systems into One Token-Based Library",
+        "subtitle": "Connecting Product, Design and Engineering across a global agricultural platform",
+        "role": "Senior Product Designer — I own the design system",
+        "authorship": "I define the token architecture, build and document the library, and run the component QA. The products themselves are designed by teams across regions — my job is the system they all build on, and reviewing what ships against it.",
+        "category": "Design system · Enterprise",
+        "company": "BASF Digital Solutions",
+        "website": None,
+        "illustration": "design-system",
+        "outcome": "One token-based library replacing several legacy systems",
+        "nda": "Shown with permission at a structural level: diagrams are my own redrawings and no production interface, client data or internal tooling appears. Happy to walk through the real work in a call.",
+        "intro": [
+            "I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library that serves a global customer portal, marketing sites and data platforms.",
+            "The job is less about drawing components and more about making one set of decisions hold across teams, countries and codebases — and keeping design and engineering pointed at the same source.",
+        ],
+        "context": "Different products had grown their own design languages over the years. Each had its own buttons, its own spacing logic, its own idea of what \"error red\" meant. Teams in different regions shipped interfaces that were recognisably from the same company only by the logo. Every new feature started with a round of rebuilding things that already existed somewhere else.",
+        "problem": [
+            "Several parallel design systems, none of them complete, all of them diverging.",
+            "No shared vocabulary between designers and developers — handoff was a conversation, repeated per feature.",
+            "Documentation lived in tools engineers did not open, so it was always slightly out of date.",
+            "No way to know what was actually in production versus what the library said should be.",
+        ],
+        "objective": "Build one token-based design system that teams adopt because it is faster than not adopting it — and keep it honest by generating its documentation from the design files themselves.",
+        "responsibilities": [
+            "Define the token architecture and the naming that holds it together.",
+            "Build and document the component library, with accessibility specified rather than assumed.",
+            "Run the inventory and QA that tells us what is really shipping.",
+            "Work with product owners and developers to turn requirements into components the system already has.",
+        ],
+        "research": [
+            ("Component inventory of the live product", "Rather than guess at the gap between library and reality, I wrote a crawler that walks the live site, screenshots every component it finds and files one markdown page per component. It produced 40 component pages — and a clear list of what had drifted, what was duplicated, and what had been built one-off."),
+            ("Working sessions with engineering", "I sat with the developers consuming the library to find where the handoff actually broke. The answer was rarely the visual spec; it was missing states, undefined edge cases and props that did not map to anything in Figma."),
+            ("Density feedback from real users", "Users told us the interface felt oversized on dense data screens. That fed a layout-density initiative — prototyped in HTML so stakeholders could feel the difference rather than judge it from a static frame."),
+        ],
+        "design_blocks": [
+            ("Three-tier tokens — the decision that made theming possible", "I split tokens into primitives (raw values), semantic (meaning: <b>action.primary</b>, <b>feedback.error</b>) and component-level bindings. Components never reference a raw value. It is more structure up front, and it is the reason a new brand or theme is a remapping job rather than a rebuild — and the reason a colour change does not require hunting through component files."),
+            ("Documentation generated, not written", "Handoff specs are generated from the Figma file and published to the engineering wiki, beside the tickets. Writing them by hand guarantees drift: the doc is accurate the day you write it and wrong a month later. I documented 14 components this way, each with the same five sections — anatomy, states, props, tokens, accessibility — so the shape is learned once and skimmed thereafter."),
+            ("Adoption treated as a design problem", "A system nobody uses is a hobby. I ran the component QA myself — checking the built Angular components against the Figma source for visual fidelity, behaviour, accessibility and API — and fixed token bindings where they had come loose. Reviewing the implementation is what keeps the library trustworthy enough to be worth adopting."),
+        ],
+        "impact": [
+            ("One library across several products", "A single token-based system now backs the customer portal, marketing sites and data platforms, replacing the parallel legacy systems."),
+            ("40 components inventoried, 14 fully documented", "The inventory is automated, so the gap between library and production is a report rather than an argument."),
+            ("Faster, quieter handoff", "Specs arrive with the ticket instead of being negotiated per feature — the recurring design-to-dev conversation largely disappeared."),
+        ],
+        "qualitative": [
+            "Designers reach for the system first, because it is now the shortest path rather than the correct-but-slower one.",
+            "Engineering and design argue about the same artifact instead of about two different ones.",
+        ],
+        "gallery_dir": "basf-design-system",
+        "gallery_ext": "svg",
+        "gallery": [
+            ("tokens", "Three-tier token architecture — components bind to semantic names, never to raw values. Redrawn generically."),
+            ("handoff", "Every handoff page has the same five sections, generated from the Figma file and published where engineers already work."),
+            ("inventory", "The automated inventory: crawl the live product, compare against the library, publish one page per component."),
+        ],
+        "learnings": [
+            "A semantic layer feels like over-engineering until the first rebrand or theme — then it is the only reason the work is survivable.",
+            "Documentation that is written by hand will drift; documentation that is generated stays true.",
+            "Adoption is not a rollout email. It comes from reviewing implementations and making the system the fastest route.",
+        ],
+    },
+    {
         "slug": "familyhub",
+        "outcome": "One design system across PWA, iOS and Android",
         "cover_img": "assets/img/familyhub/cover.webp",
         "gallery": [
             ("home", "Home — today's menu for the baby and the family, plus pending tasks and voice input."),
@@ -64,7 +139,8 @@ PROJECTS = [
         "tag": "PWA & Native apps",
         "title": "FamilyHub: Designing and Building a Self-Hosted Family Platform",
         "subtitle": "From a single recipe tool to a PWA and native iOS/Android apps — designed, built and hosted end to end",
-        "role": "Design & development",
+        "role": "Everything — design, build and infrastructure",
+        "authorship": "A personal project, so this one is entirely mine: product decisions, design system, PWA, native iOS and Android apps, backend and the server it runs on.",
         "category": "PWA · iOS · Android",
         "company": "Personal project",
         "website": None,
@@ -95,6 +171,7 @@ PROJECTS = [
             ("Modules", "A kitchen hub with baby-led weaning recipes filtered by age, AI-generated batch-cooking menus, a weekly planner and a shopping list; shared tasks with owners, urgency and voice input; plus contacts and medical providers, shared expenses and push notifications. Every module is built on the same components and patterns, so the platform feels like one product, not a collection of tools."),
             ("Native apps", "Beyond the PWA, I built native apps for iOS in SwiftUI and for Android in Kotlin with Jetpack Compose, translating the same design system to each platform's conventions."),
             ("Infrastructure", "The backend is PocketBase running in Docker on a Synology DS925+ NAS. Push notifications are delivered through Firebase Cloud Messaging from a separate Docker container."),
+            ("Where AI did the work, and where I did", "I used Figma Make to get the first visual direction out quickly, and Figma MCP to pull the design system straight into code instead of re-typing values by hand. That is genuinely faster — but it is also where the thinking stops and the judgement has to start. <b>The tools produced:</b> first-pass layouts, a palette to react to, and the token-to-code plumbing. <b>I decided:</b> that it should feel domestic rather than corporate, which modules existed at all and in what order, what belonged on the home screen versus a tab, and the whole information architecture. <b>How I checked it:</b> by using it daily with my family. Several AI-suggested layouts looked fine in Figma and were wrong in the kitchen with one hand full — those got rebuilt. The honest summary is that AI compressed the production time and changed none of the product decisions."),
         ],
         "impact": [
             ("One system, three platforms", "A single design system shared across the PWA, SwiftUI and Jetpack Compose apps."),
@@ -110,11 +187,13 @@ PROJECTS = [
     },
     {
         "slug": "saas-supply-chain",
+        "outcome": "40% more operational efficiency",
         "cover_img": "https://framerusercontent.com/images/BpCaafId9OJ1JASCegLAJX3k.jpg",
         "tag": "SaaS",
         "title": "SaaS Supply Chain Service",
         "subtitle": "Optimizing Repair Center Management: A User-Centered Approach to Streamline Operations and Enhance Customer Experience",
-        "role": "UI/UX design",
+        "role": "Lead designer — sole designer on the product",
+        "authorship": "I was the only designer on this: research with all three teams, the roadmap to MVP, and every screen. Engineering built it; the supply-chain team owned the business rules I designed around.",
         "category": "SaaS",
         "company": "Bolttech",
         "website": 'https://backmarket.bolttech.eu/#/',
@@ -144,7 +223,7 @@ PROJECTS = [
             ("For the Customer Service (CS) team", "I integrated a new feature into the SaaS platform that allowed CS to search for the nearest repair centers directly within the system, eliminating reliance on the external Excel file."),
         ],
         "impact": [
-            ("40% increase in operational efficiency", "Eliminating the chaos of manual data entry."),
+            ("40% increase in operational efficiency", "Measured against the manual Excel-and-email process it replaced: hours spent per weekly update, before vs. after."),
             ("Significant reduction in search times", "For the Customer Service team, improving customer interactions."),
             ("Scalable and modular system", "Ready for continuous improvements and optimized loading times."),
         ],
@@ -163,54 +242,72 @@ PROJECTS = [
         "cover_img": "https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png",
         "tag": "Design system",
         "title": "Establishing Bolttech's Design System: From Concept to Implementation",
-        "subtitle": "Crafting a Cohesive and Scalable Design Framework for Enhanced User Experience",
-        "role": "UI/UX design",
+        "subtitle": "Building the first shared component library for an insurtech scaling across markets",
+        "role": "Design system lead — I led it end to end",
         "category": "Design system",
         "company": "Bolttech",
         "website": 'https://bolttech.io/distribution-engine/',
         "illustration": "design-system",
+        "outcome": "First shared library across B2B and B2C products",
+        "authorship": "I led this end to end: I defined the token architecture and naming, designed and built the component library in Figma, wrote the documentation, and ran the adoption sessions. The brand guidelines came from the marketing team, and two developers built the front-end implementation I specced and reviewed.",
         "intro": [
-            "I collaborated with Bolttech's design team to develop a comprehensive design system from the ground up.",
-            "This initiative involved creating standardized components, thorough documentation, and design tokens to ensure consistency and efficiency across the company's digital products.",
+            "Bolttech was shipping insurance products across several markets with no shared component library. I built the first one.",
+            "The work covered the token architecture, the Figma library, the documentation site, and getting people to actually use it — which turned out to be the hard part.",
         ],
-        "context": "Bolttech lacked a unified design system, which led to inconsistencies across its digital platforms. This lack of standardization created challenges in maintaining a cohesive user experience and slowed down both design and development processes.",
+        "context": "The company was growing fast, with separate teams building B2B partner portals and B2C customer journeys. Each had accumulated its own buttons, form fields and modals. Nothing was shared, so every new screen started by copying the nearest existing one and editing it — which meant every inconsistency propagated and compounded.",
         "problem": [
-            "Inconsistent design components and interactions across platforms.",
-            "Lack of a centralized framework for design and development collaboration.",
-            "Difficulty in scaling and maintaining consistency as the company grew.",
+            "Components re-invented per team, with no agreement on states, spacing or interaction.",
+            "Designers and developers describing the same element in two different vocabularies.",
+            "No single place to check what the correct version of anything was.",
         ],
-        "objective": "Create a unified design system that would standardize components, improve collaboration between design and development teams, and ensure consistency across all digital products.",
+        "objective": "Build one component library teams would adopt voluntarily, with tokens shared between Figma and code so the handoff stopped being a translation exercise.",
         "responsibilities": [
-            "Design components aligned with Bolttech's brand guidelines.",
-            "Document the design system using tools like Zeroheight.",
-            "Create design tokens in Figma to ensure seamless integration with development workflows.",
+            "Define the token architecture and the naming convention behind it.",
+            "Design and build the component library in Figma, every variant and state.",
+            "Write and publish the documentation site covering usage, props and accessibility.",
+            "Run adoption sessions and review implementations with the development team.",
         ],
         "research": [
-            ("Research and planning", "Analyzed existing design inconsistencies and identified key areas for improvement, and collaborated with stakeholders to define the design system's scope and goals."),
+            ("Audit of what already existed", "Before designing anything I collected every button, input and modal in use across the products. Seeing them side by side made the case for the project better than any argument I could have written: there were nine button styles doing the same job."),
+            ("Conversations with the developers", "I asked what actually slowed them down. It was not the visuals — it was the missing states. A spec with only the default state meant inventing hover, disabled and loading themselves, differently each time."),
         ],
         "design_blocks": [
-            ("Design and development", "Designed reusable components and interactions aligned with Bolttech's brand guidelines, used Figma to create design tokens ensuring consistency across all platforms, and documented the design system in Zeroheight, making it accessible to both design and development teams."),
-            ("Implementation", "Worked closely with developers to integrate the design system into Bolttech's digital products, and conducted training sessions for designers and developers to ensure proper adoption of the new system."),
+            ("Decision: tokens as the shared contract, not a style guide", "I could have shipped a style guide with hex values listed in a page. Instead, every value became a named token used identically in Figma and in the CSS. The reason: a style guide describes decisions, but a token <i>enforces</i> them — and changing one updates both sides at once. It is what stopped design and engineering describing the same colour in two vocabularies."),
+            ("Decision: every variant ships with all five states", "Each component specifies default, hover, focus, loading and disabled — not just the happy path. This triples the design work up front, and it is the single change that removed the most inconsistency, because the inconsistency was never in the default state. It also made the focus ring non-negotiable instead of something added later, if at all."),
+            ("Decision: documentation outside Figma", "Designers can read a Figma file; developers need props, behaviour and accessibility notes. I published a documentation site so both roles had one URL to point at during a review. Keeping the docs in Figma would have been less work for me and would have left half the audience out."),
+            ("Adoption as part of the job", "I ran the sessions for designers and developers, and reviewed early implementations against the library. A system that is published but not reviewed quietly becomes a suggestion."),
         ],
         "impact": [
-            ("Streamlined workflows", "The design system reduced the time spent on recreating components and resolving inconsistencies."),
-            ("Enhanced user experience", "Standardized components and interactions improved the overall usability and consistency of Bolttech's digital products."),
-            ("Scalability", "The design system provided a solid foundation for future growth, enabling faster and more efficient development of new features and products."),
+            ("One library replacing nine button styles", "The audit's inconsistencies collapsed into a single set of components shared by the B2B and B2C products."),
+            ("Handoff stopped being a conversation", "With tokens named identically on both sides and every state specified, the recurring per-feature spec discussion largely disappeared."),
+            ("A foundation the company kept building on", "The system outlasted my time there, which is the only durable test of whether a design system worked."),
         ],
-        "qualitative": [],
+        "qualitative": [
+            "Designers stopped copying old screens as a starting point, because pulling from the library was faster.",
+            "Reviews moved from \"is this the right blue\" to questions actually worth a designer's time.",
+        ],
         "learnings": [
-            "A unified design system is essential for maintaining consistency and scalability in a growing company.",
-            "Collaboration between design and development teams is crucial for successful implementation.",
-            "Tools like Figma and Zeroheight are invaluable for creating and documenting design systems.",
+            "The audit was the most persuasive artifact in the project. Nine buttons in a row made the case instantly; a written argument would not have.",
+            "Specifying all states is unglamorous and is where the consistency actually comes from.",
+            "A design system is adopted through review, not announcement. Publishing it was maybe a third of the work.",
+        ],
+        "gallery_dir": "bolttech-design-system",
+        "gallery_ext": "svg",
+        "gallery": [
+            ("components", "Every variant specified in all five states — the change that removed the most inconsistency."),
+            ("tokens", "Tokens named identically in Figma and in code, so handoff stopped being a translation step."),
+            ("docs", "The documentation site: live preview, usage guidance, props and accessibility in one place."),
         ],
     },
     {
         "slug": "partner-portals",
+        "outcome": "15% faster access times",
         "cover_img": "https://framerusercontent.com/images/wvmDSEbjdRvEPLWhtyWIUhJrjnM.jpg",
         "tag": "Desktop and Mobile",
         "title": "Enhancing Partner Portals: A User-Centered Redesign for Bolttech",
         "subtitle": "Optimizing B2B and B2C Interfaces to Improve User Experience and Operational Efficiency",
-        "role": "UI/UX design",
+        "role": "Lead designer — redesign across B2B and B2C portals",
+        "authorship": "I ran the research and designed the redesigned portals. The existing codebase and its constraints were investigated together with the development team, and rollout was theirs.",
         "category": "Desktop and Mobile",
         "company": "Bolttech",
         "website": 'https://fnaccare.ch/#/',
@@ -239,7 +336,7 @@ PROJECTS = [
             ("Implementation", "Rolled out the redesigned portal, focusing on improving access times and streamlining task performance, and conducted usability testing to validate the changes and gather feedback for further iterations."),
         ],
         "impact": [
-            ("15% improvement in access times", "Making the portal faster and more responsive."),
+            ("15% improvement in access times", "Time-to-task from portal analytics, compared pre- and post-launch across Fnac and Orange portals."),
             ("Streamlined user task performance", "Reducing the time and effort required to complete tasks."),
             ("Enhanced user experience", "Leading to higher satisfaction among partners."),
         ],
@@ -254,11 +351,13 @@ PROJECTS = [
     },
     {
         "slug": "saas-process-modeling",
+        "outcome": "Technical specs written by non-technical users",
         "cover_img": "https://framerusercontent.com/images/LdMym2jStT80OZnoQwnKx2fViQ.png",
         "tag": "SaaS",
         "title": "SaaS Process Modeling: Transforming ideas into technical specifications",
         "subtitle": "Leveraging AI to bridge the gap between concept and implementation",
-        "role": "UI/UX design",
+        "role": "Product designer — co-founder of a side project",
+        "authorship": "A two-person side project. I owned product definition, research and the entire interface; my co-founder built the AI pipeline behind it.",
         "category": "SaaS",
         "company": "Gluecharm",
         "website": 'https://www.gluecharm.com',
@@ -304,13 +403,15 @@ PROJECTS = [
     },
     {
         "slug": "payment-renewal",
+        "outcome": "17% more renewal retention",
         "cover_img": "https://framerusercontent.com/images/cD4x3P1lTyys2SAT5dwR7XDFHc.jpg",
         "tag": "UX UI",
         "title": "Redesigning Payment and Renewal Experiences",
         "subtitle": "Optimizing User Journeys for Better Conversion Rates and Customer Satisfaction",
-        "role": "UI/UX design",
+        "role": "Lead designer — payment and renewal flows",
+        "authorship": "Mine: the event-log analysis, the interviews, the personas, and the redesigned flows and prototypes. The surveys were run with the customer service team, who also owned the post-launch monitoring.",
         "category": "UX UI",
-        "company": "Dorna Sport",
+        "company": "Dorna Sports",
         "website": None,
         "illustration": "payment",
         "intro": [
@@ -340,9 +441,9 @@ PROJECTS = [
             ("Implementation", "Collaborated with development teams to implement the redesigned workflows and interfaces, and monitored user behavior and satisfaction post-launch to ensure the changes had the desired impact."),
         ],
         "impact": [
-            ("Improved user clarity", "The redesigned processes reduced confusion and made it easier for users to understand and complete payment and renewal steps."),
-            ("Increased conversion rates", "The streamlined workflows led to measurable improvements in conversion rates."),
-            ("Higher user satisfaction", "Usability testing and post-launch feedback indicated a significant increase in user satisfaction."),
+            ("17% increase in renewal retention", "Renewal rate compared before and after the redesign. The clearer status and recovery options kept subscribers who would previously have dropped out mid-flow."),
+            ("15% more lead conversions", "Measured on the same funnel over the following season."),
+            ("Fewer support tickets about payments", "Error recovery let users fix their own mistakes instead of writing in — reported qualitatively by the customer service team."),
         ],
         "qualitative": [],
         "learnings": [
@@ -359,7 +460,7 @@ PROJECTS = [
         "subtitle": "Enhancing User Engagement and Subscription Rates for MotoGP and WorldSBK",
         "role": "UI/UX design",
         "category": "Ecommerce",
-        "company": "Dorna Sport",
+        "company": "Dorna Sports",
         "website": 'https://www.motogp.com',
         "illustration": "landing",
         "intro": [
@@ -400,13 +501,15 @@ PROJECTS = [
     },
     {
         "slug": "roku-tv-app",
+        "outcome": "VideoPass brought to living-room TV",
         "cover_img": "https://framerusercontent.com/images/ZRTgPOqsEFBPpnqCdGGu0cRdo.jpg",
         "tag": "TV App",
         "title": "Designing the Dorna Sports TV App for Roku",
         "subtitle": "Enhancing the Viewing Experience for MotoGP Fans",
-        "role": "UI/UX design",
+        "role": "Lead designer — TV app for Roku",
+        "authorship": "I owned the UX research, personas and the full interface for the TV platform. The Roku build was done by the development team; I reviewed it against the designs.",
         "category": "TV App",
-        "company": "Dorna Sport",
+        "company": "Dorna Sports",
         "website": 'https://www.motogp.com',
         "illustration": "tv",
         "intro": [
@@ -436,7 +539,8 @@ PROJECTS = [
             ("Implementation", "Collaborated with development teams to build and launch the Roku TV app, and conducted usability testing to validate the design and gather feedback for improvements."),
         ],
         "impact": [
-            ("Positive user feedback", "The app received acclaim for its intuitive interface and seamless navigation."),
+            ("No funnel data on this one", "Unlike the renewal work, I never got access to the platform analytics — so what follows is qualitative, and I\'d rather say that than dress it up."),
+            ("Positive user feedback", "The app was received well for its navigation and how quickly you could get to a race — reported through the support channel, not measured."),
             ("Enhanced digital presence", "The app expanded Dorna Sports' digital offerings, providing fans with a dedicated platform to engage with MotoGP content."),
             ("Improved user engagement", "Personalized content and high-quality streaming increased user satisfaction and engagement."),
         ],
@@ -455,7 +559,7 @@ PROJECTS = [
         "subtitle": "User Engagement and Conversion Rates through Strategic Design",
         "role": "UI/UX design",
         "category": "Marketing and Social",
-        "company": "MotoGP (Dorna Sports)",
+        "company": "Dorna Sports",
         "website": 'https://www.motogp.com',
         "illustration": "email",
         "intro": [
@@ -496,11 +600,13 @@ PROJECTS = [
     },
     {
         "slug": "desigual-product-card",
+        "outcome": "23% conversion lift, A/B tested",
         "cover_img": "https://framerusercontent.com/images/vzJyFGpXcQ9lR7XsRFRhBVqv4Zc.jpg",
         "tag": "Ecommerce",
         "title": "Redesigning Desigual's Product Card",
         "subtitle": "Optimizing Product Presentation to Boost Conversion Rates",
-        "role": "UI/UX design",
+        "role": "Lead designer — product card redesign",
+        "authorship": "I led the research, wireframes and final design of the card. The A/B test was set up with the e-commerce analytics team, and front-end development was in-house.",
         "category": "Ecommerce",
         "company": "Desigual",
         "website": 'https://www.desigual.com',
@@ -531,7 +637,7 @@ PROJECTS = [
         ],
         "impact": [
             ("Increased user interaction", "The interactive elements and high-quality visuals captured users' attention and encouraged engagement."),
-            ("23% increase in conversion rates", "The redesigned product card led to a measurable boost in conversion rates, validating the effectiveness of the redesign."),
+            ("23% increase in conversion rates", "A/B tested against the previous product card on live traffic — the redesign was rolled out only after it won."),
             ("Improved user satisfaction", "The clean design and intuitive navigation enhanced the overall shopping experience."),
         ],
         "qualitative": [],
@@ -545,7 +651,7 @@ PROJECTS = [
         "slug": "desigual-store-locator",
         "cover_img": "https://framerusercontent.com/images/YaBCZWUNg2hxXOIdxZWP6XhA2g.jpg",
         "tag": "Ecommerce",
-        "title": "Designing Desigual's Store locator for improve the user accesibility",
+        "title": "Designing Desigual's Store Locator to Improve Accessibility",
         "subtitle": "How to integrate a new store locator into the mobile App.",
         "role": "UI/UX design",
         "category": "Ecommerce",
@@ -596,11 +702,11 @@ CAREER = [
     ("2023 / 2024", "Inari.io / Product Designer",
      "Led the design of ORCA, a reinsurance SaaS platform, transforming complex data into optimised and automated designs and workflows, which increased operational efficiency by 25%. Designing wireframes, prototypes and mockups for development with Figma. Created user flows and navigation with Miro. Conducted user research (interviews, card sorting and other research methods). Actively participated in Design thinking ceremonies with Stakeholders, BO's and users. Worked on creating and updating the design system for Inari, developing and designing new components using atomic design."),
     ("2021 / 2023", "Bolttech / Product Designer",
-     "Focused on improving user experiences and operational efficiency, I redesigned B2B platforms for insurance and hearing aids, leading to a 15% enhancement in customer service. Collaborating with stakeholders, I helped develop a SaaS Supply Chain system that improved resource management by 45% and created B2C portals for partners like Orange, Fnac, and Backmarket. My work also included integrating automation into the CRM through a new email template management tool and conducting user research using A/B testing to guide design decisions. Additionally, I contributed to Bolttech's design system, crafting scalable components and tokens documented in Zeroheight."),
-    ("2016 / 2021", "Dorna Sport / UX UI Designer",
+     "Focused on improving user experiences and operational efficiency, I redesigned B2B partner portals for insurance and hearing aids, cutting access times by 15% and streamlining the tasks service teams ran every day. Collaborating with stakeholders, I helped develop a SaaS Supply Chain system that improved operational efficiency by 40% and created B2C portals for partners like Orange, Fnac, and Backmarket. My work also included integrating automation into the CRM through a new email template management tool and conducting user research using A/B testing to guide design decisions. Additionally, I contributed to Bolttech's design system, crafting scalable components and tokens documented in Zeroheight."),
+    ("2016 / 2021", "Dorna Sports / UX UI Designer",
      "I designed the MotoGP™ VideoPass player across all platforms, improving video streaming and transcription efficiency by 20%. By reviewing and redesigning the user renewal system, we increased retention rates by 17% and lead conversions by 15%. Collaborating with developers, I created the Roku TV app and contributed to the Apple TV app design, ensuring seamless navigation and usability. My work also included developing promotional websites for various cups and designing an internal SaaS for event and calendar management, incorporating user feedback for continuous improvement. Additionally, I enhanced Motogp.com with new pages like Riders and Calendar and executed acquisition campaigns, landing pages, and social media content to boost event promotion and engagement."),
     ("2013 / 2016", "Desigual / UX UI Designer",
-     "I led the redesign of Desigual's Product Detail Page (PDP), using user research and flow analysis to create wireframes and designs that boosted conversion rates by 18% through personalized recommendations and dynamic content. I introduced new features for desigual.com, including a web player and HTML5 integration for desktop and mobile, and designed and adapted the new Desigual app. Working closely with country managers, I helped launch localized sites for various markets. Additionally, I designed landing pages for user acquisition and developed social media campaigns, enhancing brand visibility and engagement."),
+     "I led the redesign of Desigual's Product Detail Page (PDP), using user research and flow analysis to create wireframes and designs that boosted conversion rates by 23% through personalized recommendations and dynamic content. I introduced new features for desigual.com, including a web player and HTML5 integration for desktop and mobile, and designed and adapted the new Desigual app. Working closely with country managers, I helped launch localized sites for various markets. Additionally, I designed landing pages for user acquisition and developed social media campaigns, enhancing brand visibility and engagement."),
     ("2011 / 2013", "Bershka / Digital Designer",
      "In September 2011, our team launched the first bershka.com website, marking a milestone for the brand's digital presence. I led the digital retouching team, optimizing images for the e-commerce platform and retouching global lookbooks and photo campaigns. Additionally, I created and designed digital marketing campaigns and content, contributing to the platform's worldwide success. My work also included designing and editing videos for global marketing campaigns, ensuring a cohesive and impactful digital strategy."),
     ("2006 / 2011", "TeleToledo TV / Post Production",
@@ -614,10 +720,42 @@ FEEDBACK = [
 ]
 
 PROCESS_STEPS = [
-    ("Understand", "01", "Before starting any project, it is important to understand the problem I want to solve, the purpose of the project, and its possible impact. We should ask questions like why the project is needed, what goals it aims to achieve, and how it fits into the overall picture."),
-    ("Define", "02", "Once we understand the need, we can define the project's scope and assess our resource limits. This includes identifying the minimum viable product (MVP) — the essential version designed to satisfy early customers and gather feedback for future improvements."),
-    ("Research", "03", "Conducting research, interviews, and brainstorming sessions are essential steps to gather insights, ideas, and feedback from various stakeholders, including end-users and the development team."),
-    ("Design & Prototype", "04", "Based on the insights gathered, we can start creating quick designs and prototypes to visualize potential solutions. These designs help to refine ideas, validate assumptions, and communicate the proposed solution effectively."),
-    ("Test", "05", "Once we have a solid proposal and initial designs, it's important to test them with end-users to gather feedback and identify any usability issues or areas for improvement."),
-    ("Results", "06", "After gathering feedback and testing the MVP, the next step is to iterate on the design and development based on the insights gained, adding new features, and measuring results against predefined metrics."),
+    ("Find the real problem", "01", "The brief is rarely the problem. I start by asking who is actually stuck and what they do instead today — the workaround usually tells you more than the request did."),
+    ("Draw the smallest version", "02", "I'd rather ship a narrow thing that works than a complete thing that waits. Scope is a design decision, so I make it deliberately and early."),
+    ("Go and look", "03", "Interviews help, but watching someone work helps more. Most of what I've fixed came from seeing a workaround nobody had thought to mention."),
+    ("Build something to react to", "04", "Prototypes beat descriptions. When the question is about density or rhythm I build it in HTML, because you can't feel a layout from a static frame."),
+    ("Test before it's finished", "05", "Testing a design you're already attached to is theatre. I put it in front of people while changing it is still cheap."),
+    ("Measure, then say so", "06", "A number only counts if you can say how it was measured. Everything on this site comes with its source — that's the point of the whole thing."),
 ]
+
+
+# ---------------------------------------------------------------------------
+# Portfolio curation
+# ---------------------------------------------------------------------------
+# Retired from the site: pre-2016 work and marketing-led pieces that don't
+# support a senior design-systems profile. The case files stay in git history;
+# they're simply not published or linked any more.
+_RETIRED = {
+    "email-marketing-dorna",    # marketing campaigns, off-target for the role
+    "landing-pages-dorna",      # marketing/acquisition, overlaps payment-renewal
+    "desigual-store-locator",   # 2014, too old to represent current practice
+}
+
+# Deliberate order: design-system work first, then SaaS depth, then the rest.
+_ORDER = [
+    "basf-design-system",       # current DS leadership — the lead card
+    "bolttech-design-system",   # DS built end to end
+    "saas-supply-chain",        # SaaS product depth, 40%
+    "familyhub",                # end-to-end ownership, design + build
+    "partner-portals",          # B2B/B2C at scale, 15%
+    "payment-renewal",          # measured retention work, 17%
+    "saas-process-modeling",    # AI-assisted product design
+    "desigual-product-card",    # e-commerce conversion, 23%
+    "roku-tv-app",              # platform breadth
+]
+
+_by_slug = {p["slug"]: p for p in PROJECTS if p["slug"] not in _RETIRED}
+PROJECTS = [_by_slug[s] for s in _ORDER if s in _by_slug]
+
+# How many cases the home page shows (UXfolio: most reviewers prefer 3–4).
+HOME_FEATURED = 4

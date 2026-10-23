@@ -2,13 +2,14 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 
-from data import PROJECTS, CAREER, FEEDBACK, PROCESS_STEPS, PROFILE, CLIENTS, PROOF, CAPABILITIES
+from data import PROJECTS, CAREER, FEEDBACK, PROCESS_STEPS, PROFILE, CLIENTS, PROOF, CAPABILITIES, HOME_FEATURED
 from templates import page_shell, ARROW, PLUS
 
 OUT = os.path.join(os.path.dirname(__file__), "..")
 
 # Short year labels per project (real eras from the case studies)
 YEARS = {
+    "basf-design-system": "2025–now",
     "familyhub": "Ongoing",
     "saas-supply-chain": "2022–23",
     "bolttech-design-system": "2021–23",
@@ -42,13 +43,24 @@ def client_strip():
   </div>'''
 
 
+def work_span():
+    """Earliest year across the published cases — keeps the label honest when the
+    project list is curated."""
+    import re as _re
+    years = [int(m.group()) for slug in (p["slug"] for p in PROJECTS)
+             for m in _re.finditer(r"(?:19|20)\d{2}", YEARS[slug])]
+    return f"{min(years)} — today" if years else "today"
+
 def work_rows(projects, root):
     rows = []
     for p in projects:
         rows.append(f'''<a class="work-row" href="{root}projects/{p["slug"]}.html" data-img="{img_src(p, root)}" data-reveal>
   <span class="work-thumb-inline"><img src="{img_src(p, root)}" alt="" loading="lazy"></span>
   <span class="year">{YEARS[p["slug"]]}</span>
-  <h3>{p["title"]}</h3>
+  <span class="row-main">
+    <h3>{p["title"]}</h3>
+    <span class="outcome">{p["outcome"]}</span>
+  </span>
   <span class="cat">{p["tag"]} · {p["company"]}</span>
   <span class="go">{ARROW}</span>
 </a>''')
@@ -60,13 +72,14 @@ def work_rows(projects, root):
 # ----------------------------------------------------------------
 def build_home():
     root = ""
-    featured = PROJECTS[:6]
+    featured = PROJECTS[:HOME_FEATURED]
 
-    proof_cells = "\n".join(f'''<div class="proof-cell" data-reveal>
+    proof_cells = "\n".join(f'''<a class="proof-cell" href="projects/{slug}.html" data-reveal>
   <div class="num">{n}<small>{unit}</small></div>
   <p class="what">{what}</p>
-  <span class="mono src">{src}</span>
-</div>''' for n, unit, what, src in PROOF)
+  <p class="how">{how}</p>
+  <span class="mono src">{src} <i>Read the case →</i></span>
+</a>''' for n, unit, what, src, how, slug in PROOF)
 
     caps_items = "\n".join(
         f'<li data-reveal><span class="mono">0{i+1}</span>{c}</li>'
@@ -134,7 +147,7 @@ def build_home():
     <div class="container">
       <div class="sect-head">
         <div>
-          <span class="mono">Selected work · 2014 — today</span>
+          <span class="mono">Selected work · {work_span()}</span>
           <h2 class="t-sect">Case <span class="outline">studies</span></h2>
         </div>
         <a href="projects.html" class="btn btn--ghost"><span>All projects</span>{ARROW}</a>
@@ -217,7 +230,7 @@ def build_projects():
 '''
     write("projects.html", page_shell(
         "Projects — javidesignlabs",
-        "10 documented case studies: design systems, SaaS platforms, e-commerce and TV apps.",
+        f"{len(PROJECTS)} documented case studies: design systems, SaaS platforms, e-commerce and TV apps.",
         root, body, active="projects.html", bg_word="WORK", path="projects.html"
     ))
 
@@ -273,6 +286,9 @@ def build_about():
           <span class="mono">2006 — today</span>
           <h2 class="t-sect">My <span class="outline">career</span></h2>
         </div>
+        <p class="provenance" data-reveal>Where a figure below has a case study, that case
+          explains how it was measured — <a href="projects.html">see the work</a>. The rest come
+          from internal reporting at the time and I can walk you through any of them.</p>
       </div>
       <div class="timeline">
 {timeline}
@@ -327,10 +343,25 @@ def build_project(p, next_p):
 
     gallery = ""
     if p.get("gallery"):
+        gdir = p.get("gallery_dir", p["slug"])
+        ext = p.get("gallery_ext", "webp")
+        wide = ext != "webp"
+        dims = '' if wide else ' width="510" height="963"'
         shots = "\n".join(
-            f'<figure class="shot" data-reveal><img src="{root}assets/img/{p["slug"]}/{k}.webp" alt="{cap.split(" — ")[0]}" loading="lazy" width="510" height="963"><figcaption>{cap}</figcaption></figure>'
+            f'<figure class="shot" data-reveal><img src="{root}assets/img/{gdir}/{k}.{ext}" alt="{cap.split(" — ")[0]}" loading="lazy"{dims}><figcaption>{cap}</figcaption></figure>'
             for k, cap in p["gallery"])
-        gallery = f'<div class="pblock"><span class="mono">Screens</span><div class="shot-grid">{shots}</div></div>'
+        label = "Artifacts" if wide else "Screens"
+        cls = "shot-grid wide" if wide else "shot-grid"
+        gallery = f'<div class="pblock"><span class="mono">{label}</span><div class="{cls}">{shots}</div></div>'
+
+    authorship = ""
+    if p.get("authorship"):
+        authorship = (f'<div class="pblock authorship" data-reveal>'
+                      f'<span class="mono">What was mine</span><p>{p["authorship"]}</p></div>')
+
+    nda = ""
+    if p.get("nda"):
+        nda = f'<div class="pblock nda-note" data-reveal><span class="mono">On confidentiality</span><p>{p["nda"]}</p></div>'
 
     website_btn = ""
     if p["website"]:
@@ -362,6 +393,8 @@ def build_project(p, next_p):
           <span class="mono">Overview</span>
           {intro}
         </div>
+        {authorship}
+        {nda}
         <div class="pblock" data-reveal>
           <span class="mono">Context</span>
           <p>{p["context"]}</p>
@@ -529,6 +562,26 @@ def build_privacy():
 
 
 # ----------------------------------------------------------------
+def build_redirects():
+    """Retired cases keep a tiny redirect page so old links don't dead-end.
+    They are deliberately noindex and absent from the sitemap."""
+    from data import _RETIRED
+    for slug in sorted(_RETIRED):
+        write(f"projects/{slug}.html", f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Moved — javidesignlabs</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{PROFILE["base_url"].rstrip("/")}/projects.html">
+<meta http-equiv="refresh" content="0; url=../projects.html">
+</head>
+<body style="background:#0B0B09;color:#EFEDE3;font-family:system-ui,sans-serif;padding:3rem">
+<p>This case study has been retired. <a href="../projects.html" style="color:#C8FF4D">See the current work →</a></p>
+</body>
+</html>''')
+
+
 def favicon():
     svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0B0B09"/><circle cx="16" cy="16" r="6" fill="#C8FF4D"/></svg>'''
     write("assets/img/favicon.svg", svg)
@@ -543,5 +596,6 @@ if __name__ == "__main__":
         build_project(p, PROJECTS[(i + 1) % len(PROJECTS)])
     favicon()
     build_privacy()
+    build_redirects()
     build_seo_files()
-    print("Done — 15 pages + sitemap.xml + robots.txt generated.")
+    print(f"Done — {len(PROJECTS) + 5} pages + sitemap.xml + robots.txt generated.")

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="'Instrument Sans',system-ui,sans-serif">
+  <rect width="1200" height="760" fill="#121210"/>
+  <text x="56" y="62" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">AUTOMATED COMPONENT INVENTORY</text>
+
+  <!-- step 1 -->
+  <rect x="56" y="110" width="250" height="210" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <text x="80" y="152" fill="#C8FF4D" font-size="13" font-family="'Space Mono',monospace">01</text>
+  <text x="80" y="184" fill="#EFEDE3" font-size="19" font-weight="600">Crawl</text>
+  <text x="80" y="214" fill="#85847A" font-size="14">A script walks every</text>
+  <text x="80" y="236" fill="#85847A" font-size="14">page of the live site</text>
+  <text x="80" y="258" fill="#85847A" font-size="14">and screenshots each</text>
+  <text x="80" y="280" fill="#85847A" font-size="14">component it finds.</text>
+
+  <path d="M322 215 h44" stroke="#C8FF4D" stroke-width="2.5"/><path d="M360 208 l10 7 -10 7z" fill="#C8FF4D"/>
+
+  <!-- step 2 -->
+  <rect x="386" y="110" width="250" height="210" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <text x="410" y="152" fill="#C8FF4D" font-size="13" font-family="'Space Mono',monospace">02</text>
+  <text x="410" y="184" fill="#EFEDE3" font-size="19" font-weight="600">Compare</text>
+  <text x="410" y="214" fill="#85847A" font-size="14">Each live component</text>
+  <text x="410" y="236" fill="#85847A" font-size="14">is matched against the</text>
+  <text x="410" y="258" fill="#85847A" font-size="14">library — flagging what</text>
+  <text x="410" y="280" fill="#85847A" font-size="14">drifted or duplicated.</text>
+
+  <path d="M652 215 h44" stroke="#C8FF4D" stroke-width="2.5"/><path d="M690 208 l10 7 -10 7z" fill="#C8FF4D"/>
+
+  <!-- step 3 -->
+  <rect x="716" y="110" width="250" height="210" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <text x="740" y="152" fill="#C8FF4D" font-size="13" font-family="'Space Mono',monospace">03</text>
+  <text x="740" y="184" fill="#EFEDE3" font-size="19" font-weight="600">Publish</text>
+  <text x="740" y="214" fill="#85847A" font-size="14">One markdown file per</text>
+  <text x="740" y="236" fill="#85847A" font-size="14">component, pushed to</text>
+  <text x="740" y="258" fill="#85847A" font-size="14">the wiki the engineers</text>
+  <text x="740" y="280" fill="#85847A" font-size="14">already read.</text>
+
+  <!-- result grid -->
+  <text x="56" y="392" fill="#EFEDE3" font-size="21" font-weight="600">What came back</text>
+  <text x="56" y="420" fill="#85847A" font-size="14.5">40 components, each with a screenshot, where it appears, and whether it matches the library.</text>
+
+  <g>
+    <!-- legend -->
+    <circle cx="64" cy="456" r="6" fill="#C8FF4D"/><text x="78" y="461" fill="#85847A" font-size="13">In the library</text>
+    <circle cx="214" cy="456" r="6" fill="#E8A33D"/><text x="228" y="461" fill="#85847A" font-size="13">Drifted from it</text>
+    <circle cx="372" cy="456" r="6" fill="#D64545"/><text x="386" y="461" fill="#85847A" font-size="13">One-off, not in the system</text>
+  </g>
+
+  <g id="tiles"></g>
+  <!-- 40 tiles: 10 x 4 -->
+  <g>
+    <!-- row generator written out explicitly -->
+    <g transform="translate(56,484)">
+      <g><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="60" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(110,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="48" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(220,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/><rect x="12" y="30" width="66" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(330,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="52" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(440,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#D64545"/><rect x="12" y="30" width="58" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(550,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="44" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(660,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="70" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(770,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/><rect x="12" y="30" width="50" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(880,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="62" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(990,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="56" height="6" rx="3" fill="#2A2A22"/></g>
+    </g>
+    <g transform="translate(56,548)">
+      <g><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="54" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(110,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#D64545"/><rect x="12" y="30" width="64" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(220,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="46" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(330,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="68" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(440,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/><rect x="12" y="30" width="52" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(550,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="60" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(660,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="48" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(770,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="66" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(880,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/><rect x="12" y="30" width="42" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(990,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="58" height="6" rx="3" fill="#2A2A22"/></g>
+    </g>
+    <g transform="translate(56,612)">
+      <g><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="62" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(110,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="50" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(220,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="56" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(330,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/><rect x="12" y="30" width="44" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(440,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="70" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(550,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#D64545"/><rect x="12" y="30" width="54" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(660,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="48" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(770,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="64" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(880,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/><rect x="12" y="30" width="52" height="6" rx="3" fill="#2A2A22"/></g>
+      <g transform="translate(990,0)"><rect width="98" height="54" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/><rect x="12" y="30" width="60" height="6" rx="3" fill="#2A2A22"/></g>
+    </g>
+    <g transform="translate(56,676)">
+      <g><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(110,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(220,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#E8A33D"/></g>
+      <g transform="translate(330,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(440,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(550,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(660,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#D64545"/></g>
+      <g transform="translate(770,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(880,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+      <g transform="translate(990,0)"><rect width="98" height="40" rx="8" fill="#171713" stroke="rgba(239,237,227,.1)"/><circle cx="14" cy="14" r="5" fill="#C8FF4D"/></g>
+    </g>
+  </g>
+
+  <text x="56" y="742" fill="#6B6A62" font-size="13.5">Illustrative diagram — component names and screenshots removed; the distribution shown is representative.</text>
+</svg>

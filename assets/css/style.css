@@ -86,7 +86,7 @@ p{ margin:0; }
 [data-reveal].is-in{ opacity:1; transform:none; }
 [data-reveal="fade"]{ transform:none; }
 
-.hero-line{ display:block; overflow:hidden; }
+.hero-line{ display:block; overflow:hidden; line-height:0; }
 .hero-line > span{
   display:inline-block;
   white-space:nowrap;
@@ -233,13 +233,14 @@ body.is-loaded .hero-line > span{ transform:none; }
 
 /* ---------- hero ---------- */
 .hero{
-  min-height:100svh;
+  /* Not a full screen: the first case study must peek above the fold. */
+  min-height: calc(100svh - 170px);
   display:flex; flex-direction:column; justify-content:flex-end;
   position:relative;
   overflow:hidden;
 }
 .hero > .container{ min-width:0; width:100%; }
-.hero-inner{ padding-top: 108px; padding-bottom: clamp(28px, 5vh, 56px); }
+.hero-inner{ padding-top: 96px; padding-bottom: clamp(20px, 3vh, 36px); }
 .hero-grid-bg{
   position:absolute; inset:0; pointer-events:none;
   background-image:
@@ -252,9 +253,9 @@ body.is-loaded .hero-line > span{ transform:none; }
 .hero-top{
   display:flex; justify-content:space-between; align-items:flex-start;
   gap:30px;
-  margin-bottom: clamp(28px, 5vh, 64px);
+  margin-bottom: clamp(22px, 3.4vh, 42px);
 }
-.hero-meta{ display:flex; flex-direction:column; gap:8px; max-width:320px; }
+.hero-meta{ display:flex; flex-direction:column; gap:8px; max-width:440px; }
 .hero-card{
   display:flex; align-items:center; gap:14px;
   border:1px solid var(--line-hard);
@@ -269,7 +270,7 @@ body.is-loaded .hero-line > span{ transform:none; }
 .hero-card b{ display:block; font-size:.9rem; }
 .hero-card small{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--smoke); }
 
-.hero h1{ margin-bottom: clamp(24px, 4vh, 48px); }
+.hero h1{ margin-bottom: clamp(20px, 2.8vh, 32px); }
 .hero h1 .row{ display:flex; align-items:baseline; gap:.35em; flex-wrap:wrap; }
 
 .hero-sub{
@@ -310,7 +311,7 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 
 /* ---------- proof / metrics strip ---------- */
 .proof{
-  padding: clamp(56px, 9vh, 100px) 0;
+  padding: clamp(40px, 6vh, 76px) 0;
   border-top:1px solid var(--line);
 }
 .proof-grid{
@@ -330,8 +331,12 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
   display:flex; align-items:baseline;
 }
 .proof-cell .num small{ font-size:.45em; margin-left:2px; }
-.proof-cell .what{ margin-top:10px; font-size:.92rem; color:var(--cream-dim); max-width:210px; }
+.proof-cell .what{ margin-top:10px; font-size:.92rem; color:var(--cream-dim); max-width:230px; }
+.proof-cell .how{ margin-top:10px; font-size:.8rem; line-height:1.5; color:var(--smoke); max-width:230px; }
 .proof-cell .src{ display:block; margin-top:14px; }
+.proof-cell .src i{ font-style:normal; color:var(--lime); opacity:0; transition:opacity .3s var(--ease-out); }
+.proof-cell:hover{ background:var(--void-2); }
+.proof-cell:hover .src i{ opacity:1; }
 
 /* ---------- work list (cursor-preview) ---------- */
 .work-list{ border-top:1px solid var(--line); }
@@ -357,10 +362,20 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 .work-row:hover::before{ transform:none; }
 .work-row:hover{ padding-left:14px; padding-right:14px; }
 .work-row .year{ font-family:var(--font-mono); font-size:.75rem; color:var(--smoke); letter-spacing:.1em; }
+.work-row .row-main{ display:flex; flex-direction:column; gap:7px; min-width:0; }
 .work-row h3{
   font-size: clamp(1.15rem, 2.6vw, 2rem);
   font-weight:700; letter-spacing:-.01em;
   transition:color .3s;
+}
+.work-row .outcome{
+  display:inline-flex; align-items:center; gap:9px;
+  font-size:.92rem; color:var(--cream-dim);
+}
+.work-row .outcome::before{
+  content:""; flex:none;
+  width:7px; height:7px; border-radius:50%;
+  background:var(--lime);
 }
 .work-row:hover h3{ color:var(--lime); }
 .work-row .cat{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--smoke); text-align:right; white-space:nowrap; }
@@ -604,16 +619,19 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 
 /* ---------- consent banner ---------- */
 .consent{
+  /* Anchored bottom-left and kept compact so it doesn't sit over the fold,
+     where the first case study peeks. */
   position:fixed; z-index:110;
-  left:18px; right:18px; bottom:18px;
-  max-width:520px; margin:0 auto;
+  right:18px; bottom:18px;
+  width:min(420px, calc(100vw - 36px));
   background:var(--panel);
   border:1px solid var(--line-hard);
-  border-radius:18px;
-  padding:20px 22px;
+  border-radius:16px;
+  padding:16px 18px;
   box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
-  display:flex; flex-direction:column; gap:16px;
+  display:flex; flex-direction:column; gap:12px;
 }
+.consent p{ font-size:.84rem; }
 .consent[hidden]{ display:none; }
 .consent p{ font-size:.9rem; color:var(--cream-dim); line-height:1.55; }
 .consent p a{ color:var(--lime); text-decoration:underline; text-underline-offset:3px; }
@@ -658,8 +676,8 @@ body.has-cursor .cursor-dot{ opacity:1; }
   .nav-toggle{ display:block; }
   .work-preview{ display:none; }
   .work-row{ grid-template-columns: 1fr 44px; grid-template-areas: "thumb thumb" "year year" "title go" "cat cat"; row-gap:8px; }
+  .work-row .row-main{ grid-area:title; }
   .work-row .year{ grid-area:year; }
-  .work-row h3{ grid-area:title; }
   .work-row .cat{ grid-area:cat; text-align:left; white-space:normal; }
   .work-row .go{ grid-area:go; justify-self:end; }
   .work-thumb-inline{
@@ -697,3 +715,21 @@ body.has-cursor .cursor-dot{ opacity:1; }
 .shot figcaption{ padding:14px 16px 16px; font-size:.86rem; color:var(--cream-dim); line-height:1.5; border-top:1px solid var(--line); }
 @media (min-width:1280px){ .shot-grid{ grid-template-columns:repeat(3, minmax(0,1fr)); } }
 @media (max-width:520px){ .shot-grid{ grid-template-columns:1fr; } }
+
+/* ---------- wide artifact gallery + NDA note ---------- */
+.shot-grid.wide{ grid-template-columns:1fr; gap:22px; }
+.shot-grid.wide .shot img{ aspect-ratio:auto; }
+@media (min-width:1280px){ .shot-grid.wide{ grid-template-columns:1fr; } }
+.nda-note{ border-left:2px solid var(--lime); padding-left:20px; }
+.nda-note p{ font-size:.95rem; color:var(--smoke); max-width:66ch; }
+
+/* ---------- authorship note ---------- */
+.authorship{ border-left:2px solid var(--line-hard); padding-left:20px; }
+.authorship p{ font-size:1rem; color:var(--cream-dim); max-width:68ch; }
+
+/* ---------- career figure provenance ---------- */
+.provenance{
+  max-width:44ch; font-size:.92rem; line-height:1.6;
+  color:var(--smoke); border-left:2px solid var(--line-hard); padding-left:18px;
+}
+.provenance a{ color:var(--lime); text-decoration:underline; text-underline-offset:3px; }

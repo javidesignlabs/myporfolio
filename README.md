@@ -27,7 +27,8 @@ completo tipo estudio sobre la identidad lime/dark original.
 ## Estructura
 
 Igual que antes: `index.html`, `projects.html`, `about.html`, `404.html`,
-`projects/*.html` (10 case studies), `assets/`, y el generador en `build/`.
+`projects/*.html` (los casos publicados; el número lo decide `_ORDER` en `build/data.py`),
+`assets/`, y el generador en `build/`.
 
 ## Editar contenido
 
@@ -47,3 +48,28 @@ y actualiza los `cover_img` en `build/data.py` + los avatares en `PROFILE`.
 ## Deploy
 
 Push a `main` → GitHub Pages redeploya solo. Nada más que hacer.
+
+## Curaduría del portfolio (revisión 10/2026)
+
+Decisiones tomadas tras la revisión y por qué, para no deshacerlas sin querer:
+
+- **Las cifras son contrato.** Cada métrica de la home aparece idéntica en su caso,
+  con una línea de cómo se midió. Si cambias un número en `PROOF` (en `build/data.py`),
+  cámbialo también en el `impact` del caso y en el timeline de `CAREER`. El titular
+  "Measured, not claimed" depende de eso.
+  Cifras vigentes: Supply Chain **40%**, Desigual **23%**, renovaciones MotoGP **17%**,
+  partner portals **15%**.
+- **Orden y recorte** viven al final de `build/data.py`, en `_ORDER` y `_RETIRED`.
+  La home muestra `HOME_FEATURED = 4` casos. Primero va trabajo de design system
+  profesional, no el proyecto personal.
+- **Casos retirados** (email marketing, landing pages, store locator de 2014): siguen
+  en `data.py` pero fuera de `_ORDER`, así que no se publican ni entran en el sitemap.
+  Para recuperar uno, basta con añadirlo a `_ORDER` y quitarlo de `_RETIRED`.
+- **Autoría**: cada caso tiene `role` concreto y una línea `authorship` que separa lo
+  tuyo de lo del equipo. El caso de BASF además lleva `nda` con la nota de confidencialidad.
+- **Visuales de BASF y Bolttech** son diagramas SVG propios en `assets/img/<slug>/`,
+  redibujados de forma genérica: no hay interfaz real de cliente. Si algún día puedes
+  enseñar material real, sustituye el `gallery` del caso.
+- **El hero** no ocupa la pantalla completa a propósito: `heroCap()` en `assets/js/main.js`
+  limita el titular por altura disponible para que el primer caso asome. Si cambias el
+  tamaño del hero, revisa esa constante `RESERVE`.

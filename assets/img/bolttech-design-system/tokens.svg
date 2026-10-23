@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="'Instrument Sans',system-ui,sans-serif">
+  <rect width="1200" height="700" fill="#121210"/>
+  <text x="56" y="60" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">TOKENS AS THE CONTRACT BETWEEN FIGMA AND CODE</text>
+
+  <!-- left: figma -->
+  <rect x="56" y="100" width="470" height="420" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <text x="84" y="142" fill="#EFEDE3" font-size="19" font-weight="600">In Figma</text>
+  <text x="84" y="168" fill="#85847A" font-size="14">Designers pick a style, never a hex.</text>
+  <g font-family="'Space Mono',monospace" font-size="13">
+    <rect x="84" y="190" width="414" height="44" rx="8" fill="#0B0B09"/>
+    <circle cx="108" cy="212" r="11" fill="#5B2A8C"/><text x="132" y="217" fill="#C9C7BC">color/action/primary</text>
+    <rect x="84" y="242" width="414" height="44" rx="8" fill="#0B0B09"/>
+    <circle cx="108" cy="264" r="11" fill="#B23A3A"/><text x="132" y="269" fill="#C9C7BC">color/feedback/danger</text>
+    <rect x="84" y="294" width="414" height="44" rx="8" fill="#0B0B09"/>
+    <rect x="98" y="254" width="0" height="0"/><rect x="99" y="310" width="18" height="12" rx="3" fill="#3A3A33"/><text x="132" y="321" fill="#C9C7BC">space/300</text>
+    <rect x="84" y="346" width="414" height="44" rx="8" fill="#0B0B09"/>
+    <rect x="99" y="360" width="18" height="18" rx="6" fill="#3A3A33"/><text x="132" y="373" fill="#C9C7BC">radius/md</text>
+    <rect x="84" y="398" width="414" height="44" rx="8" fill="#0B0B09"/>
+    <text x="100" y="425" fill="#C9C7BC" font-size="15" font-weight="700">Aa</text><text x="132" y="425" fill="#C9C7BC">type/body/md</text>
+  </g>
+  <text x="84" y="482" fill="#6B6A62" font-size="13.5">Change the token once and every</text>
+  <text x="84" y="502" fill="#6B6A62" font-size="13.5">instance updates — in both tools.</text>
+
+  <!-- middle: contract -->
+  <g>
+    <path d="M542 300 h48" stroke="#C8FF4D" stroke-width="2.5"/><path d="M584 293 l10 7 -10 7z" fill="#C8FF4D"/>
+    <rect x="600" y="258" width="76" height="84" rx="12" fill="#C8FF4D"/>
+    <text x="638" y="295" fill="#0B0B09" font-size="12" font-weight="800" text-anchor="middle">SAME</text>
+    <text x="638" y="313" fill="#0B0B09" font-size="12" font-weight="800" text-anchor="middle">NAME</text>
+    <path d="M688 300 h48" stroke="#C8FF4D" stroke-width="2.5"/><path d="M730 293 l10 7 -10 7z" fill="#C8FF4D"/>
+  </g>
+
+  <!-- right: code -->
+  <rect x="748" y="100" width="396" height="420" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <text x="776" y="142" fill="#EFEDE3" font-size="19" font-weight="600">In code</text>
+  <text x="776" y="168" fill="#85847A" font-size="14">Devs consume the same names.</text>
+  <rect x="776" y="190" width="340" height="252" rx="10" fill="#0B0B09"/>
+  <g font-family="'Space Mono',monospace" font-size="12.5">
+    <text x="796" y="220" fill="#6B6A62">:root {</text>
+    <text x="812" y="246" fill="#C8FF4D">--color-action-primary</text><text x="1050" y="246" fill="#85847A">;</text>
+    <text x="812" y="272" fill="#C8FF4D">--color-feedback-danger</text><text x="1060" y="272" fill="#85847A">;</text>
+    <text x="812" y="298" fill="#C8FF4D">--space-300</text><text x="940" y="298" fill="#85847A">;</text>
+    <text x="812" y="324" fill="#C8FF4D">--radius-md</text><text x="940" y="324" fill="#85847A">;</text>
+    <text x="796" y="350" fill="#6B6A62">}</text>
+    <text x="796" y="392" fill="#6B6A62">.btn--primary {</text>
+    <text x="812" y="418" fill="#C9C7BC">background: var(--color-</text>
+    <text x="812" y="438" fill="#C9C7BC">  action-primary);</text>
+  </g>
+  <text x="776" y="482" fill="#6B6A62" font-size="13.5">No translation step, so nothing is</text>
+  <text x="776" y="502" fill="#6B6A62" font-size="13.5">lost between the file and the build.</text>
+
+  <line x1="56" y1="556" x2="1144" y2="556" stroke="rgba(239,237,227,.12)"/>
+  <text x="56" y="596" fill="#C8FF4D" font-size="14" font-family="'Space Mono',monospace">THE DECISION</text>
+  <text x="56" y="630" fill="#85847A" font-size="15">Design and engineering had been describing the same thing in two vocabularies — "the purple one"</text>
+  <text x="56" y="654" fill="#85847A" font-size="15">on one side, a hex value on the other. Making the token name the shared contract meant handoff</text>
+  <text x="56" y="678" fill="#85847A" font-size="15">stopped being a translation exercise.</text>
+</svg>
