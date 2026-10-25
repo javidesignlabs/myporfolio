@@ -110,3 +110,36 @@ Decisiones tomadas tras la revisión y por qué, para no deshacerlas sin querer:
 - **Los títulos de caso se quedan entre ~25 y ~70 caracteres.** El del portal empezó en 90 y
   ocupaba siete líneas de display en desktop. Si escribes uno más largo, míralo renderizado
   antes de darlo por bueno.
+
+## Imágenes de compartir (og:image)
+
+El `og:image` apuntaba a un asset del CDN de Framer que **era la captura de una plantilla**
+("Webstack", de otro diseñador). Al compartir cualquier página salía el portfolio de otro.
+Estaba en las 14 páginas.
+
+Ahora las tarjetas son propias y están autoalojadas en `assets/img/og/`:
+
+- `site.png` para home, projects, about, privacy y 404
+- una por caso publicado, con su título y su outcome
+
+Se generan con:
+
+```bash
+cd build && python3 ogimages.py    # necesita playwright y las woff2 de assets/fonts
+```
+
+Reglas para no repetir el error:
+
+- **El `og:image` siempre absoluto y siempre en tu dominio.** Nunca un CDN que no controles.
+- **Si cambias el título o el `outcome` de un caso, vuelve a correr `ogimages.py`** — la
+  tarjeta lleva el texto quemado en el PNG. `generate.py` avisa si falta alguna tarjeta,
+  pero no detecta que una esté desactualizada.
+- Los PNG van comprimidos a 128 colores (1,4 MB → 500 KB en total). Si regeneras, vuelve a
+  comprimirlos o el repo engorda.
+- Después de desplegar, pasa la URL por el validador de LinkedIn/X; los dos cachean el
+  preview una temporada.
+
+**Pendiente, del mismo problema:** las portadas de los casos antiguos y tus avatares siguen
+servidos desde `framerusercontent.com`. Funcionan, pero el día que cierres Framer desaparecen.
+Hay que descargarlas a `assets/img/` y actualizar los `cover_img` de `data.py` y los avatares
+de `PROFILE`.

@@ -78,9 +78,15 @@ def consent_banner(root=""):
   </div>'''
 
 
-def page_shell(title, description, root, body, active="", bg_word="JAVI", path="", jsonld=""):
+def page_shell(title, description, root, body, active="", bg_word="JAVI", path="", jsonld="",
+               og_image="site"):
+    # og_image is the basename of a card in assets/img/og/ (built by ogimages.py).
+    # It must be an absolute URL and must live on this domain — never point it at a
+    # CDN you don't control: the old Framer asset turned out to be a template
+    # screenshot and every shared link showed someone else's portfolio.
     base = PROFILE["base_url"].rstrip("/")
     canonical = f"{base}/{path}" if path else f"{base}/"
+    og_url = f"{base}/assets/img/og/{og_image}.png"
     clarity_meta = f'<meta name="clarity-id" content="{PROFILE["clarity_id"]}">' if PROFILE.get("clarity_id") else ""
     return f'''<!doctype html>
 <html lang="en">
@@ -99,8 +105,13 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 <meta property="og:description" content="{description}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="https://framerusercontent.com/assets/uS6WF7ZvN6a9RVXQZqkFvQBQIRs.jpg">
+<meta property="og:image" content="{og_url}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{title}">
+<meta property="og:site_name" content="javidesignlabs">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{og_url}">
 <link rel="preload" href="{root}assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/css/style.css">

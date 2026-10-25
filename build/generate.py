@@ -448,7 +448,8 @@ def build_project(p, next_p):
     write(f'projects/{p["slug"]}.html', page_shell(
         f'{p["title"]} — javidesignlabs',
         p["subtitle"],
-        root, body, bg_word="CASE", path=f'projects/{p["slug"]}.html', jsonld=project_jsonld(p)
+        root, body, bg_word="CASE", path=f'projects/{p["slug"]}.html', jsonld=project_jsonld(p),
+        og_image=p["slug"]
     ))
 
 
@@ -600,3 +601,15 @@ if __name__ == "__main__":
     build_redirects()
     build_seo_files()
     print(f"Done — {len(PROJECTS) + 5} pages + sitemap.xml + robots.txt generated.")
+
+    # Share cards are built separately (ogimages.py needs playwright). Warn loudly
+    # if one is missing: a page whose og:image 404s falls back to whatever the
+    # sharing platform guesses, which is how the Framer template screenshot got out.
+    import os as _os
+    og_dir = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                           "assets", "img", "og")
+    missing = [n for n in ["site"] + [p["slug"] for p in PROJECTS]
+               if not _os.path.exists(_os.path.join(og_dir, n + ".png"))]
+    if missing:
+        print("  !! missing share cards: " + ", ".join(missing))
+        print("     run: python3 ogimages.py")
