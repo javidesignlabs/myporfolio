@@ -73,12 +73,13 @@ PROJECTS = [
         "outcome": "One token-based library replacing several legacy systems",
         "nda": "Described at a structural level: diagrams are my own redrawings and no production interface, client data or internal tooling appears. Happy to walk through the real work in a call.",
         "intro": [
-            "I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library that serves a global customer portal, marketing sites and data platforms.",
-            "The job is less about drawing components and more about making one set of decisions hold across teams, countries and codebases — and keeping design and engineering pointed at the same source.",
+            "I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library behind a global customer portal — catalogue, orders, financial documents, service and account, in multiple countries and languages.",
+            "The job is less about drawing components and more about making one set of decisions hold across teams, markets and codebases — and keeping design and engineering pointed at the same source.",
         ],
-        "context": "Different products had grown their own design languages over the years. Each had its own buttons, its own spacing logic, its own idea of what \"error red\" meant. Teams in different regions shipped interfaces that were recognisably from the same company only by the logo. Every new feature started with a round of rebuilding things that already existed somewhere else.",
+        "context": "The portal is one product on paper and a dozen in practice: a catalogue and product pages, a cart and checkout, order visibility, financial documents, a service area and account settings — each with per-market variants, its own language handling and its own consent rules. Those areas had grown their own design languages over the years: their own buttons, their own spacing logic, their own idea of what \"error red\" meant. Teams in different regions shipped interfaces recognisable as the same company only by the logo, and every new feature began by rebuilding something that already existed elsewhere.",
         "problem": [
             "Several parallel design systems, none of them complete, all of them diverging.",
+            "Every pattern has to survive translation, a different market's rules and a different content length — so a component that only works in one language is not finished.",
             "No shared vocabulary between designers and developers — handoff was a conversation, repeated per feature.",
             "Documentation lived in tools engineers did not open, so it was always slightly out of date.",
             "No way to know what was actually in production versus what the library said should be.",
@@ -96,14 +97,18 @@ PROJECTS = [
             ("Density feedback from real users", "Users told us the interface felt oversized on dense data screens. That fed a layout-density initiative — prototyped in HTML so stakeholders could feel the difference rather than judge it from a static frame."),
         ],
         "design_blocks": [
-            ("Three-tier tokens — the decision that made theming possible", "I split tokens into primitives (raw values), semantic (meaning: <b>action.primary</b>, <b>feedback.error</b>) and component-level bindings. Components never reference a raw value. It is more structure up front, and it is the reason a new brand or theme is a remapping job rather than a rebuild — and the reason a colour change does not require hunting through component files."),
-            ("Documentation generated, not written", "Handoff specs are generated from the Figma file and published to the engineering wiki, beside the tickets. Writing them by hand guarantees drift: the doc is accurate the day you write it and wrong a month later. I documented 14 components this way, each with the same five sections — anatomy, states, props, tokens, accessibility — so the shape is learned once and skimmed thereafter."),
+            ("Three-tier tokens — the decision that paid for itself at the first rebrand", "Tokens are split into primitives (the raw palette and scale), semantic names that carry meaning rather than appearance — text, surface, stroke, icon and form roles — and component-level bindings on top. Components never reference a raw value. It is more structure up front, and it stopped being theoretical the first time a brand refresh had to roll across the whole portal: that became a remapping job instead of a hunt through component files."),
+            ("Spacing scoped by where it applies", "The spacing scale is not one global ramp. It is split by context — space inside a component, space between blocks, space across a page — so a designer choosing spacing is choosing the <i>kind</i> of gap, not guessing a number. It is the single change that most reduced the \"why is this 12 and that 16\" conversation in reviews."),
+            ("One interaction pattern instead of four", "Several areas of the portal needed the same move: open a detail layer over a list without losing your place. The tempting route was to solve it locally in each area. I explored it once as a shared pattern and tested it against all of them, because four bespoke solutions would have been four things to maintain and four things for a user to learn."),
+            ("Documentation generated, not written", "Handoff specs are generated from the design file and published to the engineering wiki, beside the tickets. Writing them by hand guarantees drift: the doc is accurate the day you write it and wrong a month later. I documented 14 components this way, each with the same five sections — anatomy, states, props, tokens, accessibility — so the shape is learned once and skimmed thereafter."),
+            ("Decisions recorded next to the work", "Each area of the portal carries its own notes alongside the designs: what was decided, what was rejected and why. Six months later the question is never \"what does this look like\" — it is \"why is it like this\", and that answer is the one that normally walks out of the door with whoever made it."),
             ("Adoption treated as a design problem", "A system nobody uses is a hobby. I ran the component QA myself — checking the built Angular components against the Figma source for visual fidelity, behaviour, accessibility and API — and fixed token bindings where they had come loose. Reviewing the implementation is what keeps the library trustworthy enough to be worth adopting."),
         ],
         "impact": [
-            ("One library across several products", "A single token-based system now backs the customer portal, marketing sites and data platforms, replacing the parallel legacy systems."),
+            ("One library across the whole portal", "A single token-based system now backs the catalogue, ordering, financial, service and account areas, replacing the parallel legacy systems."),
             ("40 components inventoried, 14 fully documented", "The inventory is automated, so the gap between library and production is a report rather than an argument."),
             ("Faster, quieter handoff", "Specs arrive with the ticket instead of being negotiated per feature — the recurring design-to-dev conversation largely disappeared."),
+            ("A brand refresh became a remap", "Rolling a visual refresh across the system meant changing the semantic layer, not reopening every component."),
         ],
         "qualitative": [
             "Designers reach for the system first, because it is now the shortest path rather than the correct-but-slower one.",
@@ -117,7 +122,8 @@ PROJECTS = [
             ("inventory", "The automated inventory: crawl the live product, compare against the library, publish one page per component."),
         ],
         "learnings": [
-            "A semantic layer feels like over-engineering until the first rebrand or theme — then it is the only reason the work is survivable.",
+            "A semantic layer feels like over-engineering right up until the first brand change — then it is the only reason the work is survivable.",
+            "Multi-market is a design-system problem before it is a translation problem. A component that assumes one language\'s word length, one market\'s consent rules or one country\'s checkout has to be rebuilt on contact with the second market.",
             "Documentation that is written by hand will drift; documentation that is generated stays true.",
             "Adoption is not a rollout email. It comes from reviewing implementations and making the system the fastest route.",
         ],
@@ -224,7 +230,7 @@ PROJECTS = [
         ],
         "impact": [
             ("40% increase in operational efficiency", "Measured against the manual Excel-and-email process it replaced: hours spent per weekly update, before vs. after."),
-            ("Significant reduction in search times", "For the Customer Service team, improving customer interactions."),
+            ("Repair-centre lookups moved into the platform", "Customer Service stopped keeping a second window open on an external spreadsheet to answer a routine question."),
             ("Scalable and modular system", "Ready for continuous improvements and optimized loading times."),
         ],
         "qualitative": [
@@ -232,9 +238,9 @@ PROJECTS = [
             "Improved collaboration between teams, eliminating communication inconsistencies.",
         ],
         "learnings": [
-            "Interdisciplinary collaboration was essential to gain a comprehensive understanding of the problem and design a versatile solution.",
-            "Using Bolttech's design system ensured a consistent and functional user experience.",
-            "The system's scalability highlighted the importance of building solutions that evolve with business and user needs.",
+            "Three teams described the same breakdown in three different ways — and none of them had the whole picture. Supply Chain saw a tedious spreadsheet, Customer Service saw slow lookups, the repair centres saw nobody reading their updates. It was one problem wearing three costumes.",
+            "Shadowing beat interviewing here. Customer Service told me the search was \"a bit slow\"; watching them do it showed they had a second window open permanently, because the real tool had never been integrated.",
+            "I let the repair centres keep a file-based workflow instead of pushing them into a portal. A weekly JSON upload fit how they already worked — and a design they would actually use beat the tidier one I had sketched first.",
         ],
     },
     {
@@ -403,8 +409,9 @@ PROJECTS = [
             "Scalable and user-friendly platform that met the needs of both technical and non-technical users.",
         ],
         "learnings": [
-            "Interdisciplinary collaboration was essential for understanding diverse user needs and designing a versatile product.",
-            "AI-driven tools can significantly simplify complex processes, making them more efficient and accessible.",
+            "Reducing the whole thing to three questions — what problem, how would you solve it, who is it for — was the design decision that mattered. Every extra field we considered adding made the blank page harder to start.",
+            "The non-technical users were the real test. A technical analyst can work around a bad tool; a product owner just stops using it and writes the doc in a text file instead.",
+            "AI was good at structure and terrible at judgement. It produced a consistent skeleton in seconds and plausible nonsense in the details, so the interface had to make editing the output as easy as generating it.",
         ],
     },
     {
@@ -530,9 +537,10 @@ PROJECTS = [
         ],
         "context": "Dorna Sports aimed to expand its digital presence by offering a dedicated TV app on the Roku platform. The goal was to provide fans with seamless access to live races, on-demand content, and exclusive features.",
         "problem": [
-            "Lack of a dedicated TV app for Roku users.",
-            "Need for an intuitive interface that could handle live events, past races, and exclusive content.",
-            "Ensuring a high-quality streaming experience for users.",
+            "MotoGP fans on Roku had no app at all — the only route to a race was a browser on another device.",
+            "Three kinds of content had to share one home: a race happening right now, an archive going back years, and extras. They compete for the same space and only one of them is urgent.",
+            "A TV is driven with five buttons from across a room. Patterns that work with a cursor — hover, dense menus, small targets — are unusable there.",
+            "A global audience meant someone always lands mid-season, mid-weekend, in the wrong timezone.",
         ],
         "objective": "Design and develop a Roku TV app with an intuitive interface that provides seamless access to live races, on-demand content, and personalized features.",
         "responsibilities": [
@@ -554,13 +562,13 @@ PROJECTS = [
             ("No funnel data on this one", "Unlike the renewal work, I never got access to the platform analytics — so what follows is qualitative, and I\'d rather say that than dress it up."),
             ("Positive user feedback", "The app was received well for its navigation and how quickly you could get to a race — reported through the support channel, not measured."),
             ("Enhanced digital presence", "The app expanded Dorna Sports' digital offerings, providing fans with a dedicated platform to engage with MotoGP content."),
-            ("Improved user engagement", "Personalized content and high-quality streaming increased user satisfaction and engagement."),
+            ("A shorter path to the race", "Favourite riders and teams turned the common case — \"is my rider on?\" — into one click from the home screen."),
         ],
         "qualitative": [],
         "learnings": [
-            "UX research is essential for understanding user preferences and guiding design decisions.",
-            "Personalization enhances user engagement by tailoring the experience to individual preferences.",
-            "High-quality streaming is critical for delivering an immersive and enjoyable viewing experience.",
+            "Designing for a remote control strips a design back to essentials. With five buttons and no pointer, every extra level of navigation is felt immediately — it taught me more about hierarchy than any desktop project had.",
+            "\"What is on now\" has to win the screen. The archive is bigger and more impressive, and almost nobody opens the app for it.",
+            "Letting fans pick riders and teams was less about personalisation as a feature and more about shortening the path: a favourite turns a browse into a single click.",
         ],
     },
     {
@@ -732,9 +740,11 @@ CAREER = [
 ]
 
 FEEDBACK = [
-    "Javi and I worked together at Inari for 5 months, collaborating on shared design-system issues. He's an experienced designer with great ideas and deep Figma expertise. His friendliness, adaptability, and positive attitude make him a pleasure to work with.",
-    "Javi is a reliable, creative designer who delivers user-centered experiences that drive business goals. A proactive team player, he collaborates seamlessly with teams and takes on challenges with enthusiasm.",
-    "Javi is an exceptional teammate with remarkable Figma skills and expertise in creating mockups. His coordination with front-end teams was outstanding, and his dedication and teamwork make him an invaluable asset to any team.",
+    # Quoted verbatim from the original recommendations — do not paraphrase,
+    # shorten, or "improve" these. They are other people's words.
+    "Javier and I worked together at Inari for 9 months, collaborating on shared design system issues. He's an experienced designer with great ideas and deep Figma expertise. His friendliness, adaptability, and positive attitude make him a pleasure to work with.",
+    "Javier is a reliable, creative designer who delivers user-centered experiences that drive business goals. A proactive team player, he collaborates seamlessly with teams and takes on challenges with enthusiasm.",
+    "Javi is an exceptional teammate with remarkable Figma skills and expertise in creating mockups. His coordination with front-end teams is outstanding, and his dedication and teamwork make him an invaluable asset to any team.",
 ]
 
 PROCESS_STEPS = [

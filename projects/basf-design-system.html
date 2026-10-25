@@ -67,18 +67,19 @@
       <div class="proj-content">
         <div class="pblock" data-reveal>
           <span class="mono">Overview</span>
-          <p>I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library that serves a global customer portal, marketing sites and data platforms.</p>
-<p>The job is less about drawing components and more about making one set of decisions hold across teams, countries and codebases — and keeping design and engineering pointed at the same source.</p>
+          <p>I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library behind a global customer portal — catalogue, orders, financial documents, service and account, in multiple countries and languages.</p>
+<p>The job is less about drawing components and more about making one set of decisions hold across teams, markets and codebases — and keeping design and engineering pointed at the same source.</p>
         </div>
         <div class="pblock authorship" data-reveal><span class="mono">What was mine</span><p>I define the token architecture, build and document the library, and run the component QA. The products themselves are designed by teams across regions — my job is the system they all build on, and reviewing what ships against it.</p></div>
         <div class="pblock nda-note" data-reveal><span class="mono">On confidentiality</span><p>Described at a structural level: diagrams are my own redrawings and no production interface, client data or internal tooling appears. Happy to walk through the real work in a call.</p></div>
         <div class="pblock" data-reveal>
           <span class="mono">Context</span>
-          <p>Different products had grown their own design languages over the years. Each had its own buttons, its own spacing logic, its own idea of what "error red" meant. Teams in different regions shipped interfaces that were recognisably from the same company only by the logo. Every new feature started with a round of rebuilding things that already existed somewhere else.</p>
+          <p>The portal is one product on paper and a dozen in practice: a catalogue and product pages, a cart and checkout, order visibility, financial documents, a service area and account settings — each with per-market variants, its own language handling and its own consent rules. Those areas had grown their own design languages over the years: their own buttons, their own spacing logic, their own idea of what "error red" meant. Teams in different regions shipped interfaces recognisable as the same company only by the logo, and every new feature began by rebuilding something that already existed elsewhere.</p>
         </div>
         <div class="pblock" data-reveal>
           <span class="mono">Problem</span>
           <ul><li>Several parallel design systems, none of them complete, all of them diverging.</li>
+<li>Every pattern has to survive translation, a different market's rules and a different content length — so a component that only works in one language is not finished.</li>
 <li>No shared vocabulary between designers and developers — handoff was a conversation, repeated per feature.</li>
 <li>Documentation lived in tools engineers did not open, so it was always slightly out of date.</li>
 <li>No way to know what was actually in production versus what the library said should be.</li></ul>
@@ -102,8 +103,11 @@
         </div>
         <div class="pblock" data-reveal>
           <span class="mono">Design &amp; implementation</span>
-          <p><b>Three-tier tokens — the decision that made theming possible.</b> I split tokens into primitives (raw values), semantic (meaning: <b>action.primary</b>, <b>feedback.error</b>) and component-level bindings. Components never reference a raw value. It is more structure up front, and it is the reason a new brand or theme is a remapping job rather than a rebuild — and the reason a colour change does not require hunting through component files.</p>
-<p><b>Documentation generated, not written.</b> Handoff specs are generated from the Figma file and published to the engineering wiki, beside the tickets. Writing them by hand guarantees drift: the doc is accurate the day you write it and wrong a month later. I documented 14 components this way, each with the same five sections — anatomy, states, props, tokens, accessibility — so the shape is learned once and skimmed thereafter.</p>
+          <p><b>Three-tier tokens — the decision that paid for itself at the first rebrand.</b> Tokens are split into primitives (the raw palette and scale), semantic names that carry meaning rather than appearance — text, surface, stroke, icon and form roles — and component-level bindings on top. Components never reference a raw value. It is more structure up front, and it stopped being theoretical the first time a brand refresh had to roll across the whole portal: that became a remapping job instead of a hunt through component files.</p>
+<p><b>Spacing scoped by where it applies.</b> The spacing scale is not one global ramp. It is split by context — space inside a component, space between blocks, space across a page — so a designer choosing spacing is choosing the <i>kind</i> of gap, not guessing a number. It is the single change that most reduced the "why is this 12 and that 16" conversation in reviews.</p>
+<p><b>One interaction pattern instead of four.</b> Several areas of the portal needed the same move: open a detail layer over a list without losing your place. The tempting route was to solve it locally in each area. I explored it once as a shared pattern and tested it against all of them, because four bespoke solutions would have been four things to maintain and four things for a user to learn.</p>
+<p><b>Documentation generated, not written.</b> Handoff specs are generated from the design file and published to the engineering wiki, beside the tickets. Writing them by hand guarantees drift: the doc is accurate the day you write it and wrong a month later. I documented 14 components this way, each with the same five sections — anatomy, states, props, tokens, accessibility — so the shape is learned once and skimmed thereafter.</p>
+<p><b>Decisions recorded next to the work.</b> Each area of the portal carries its own notes alongside the designs: what was decided, what was rejected and why. Six months later the question is never "what does this look like" — it is "why is it like this", and that answer is the one that normally walks out of the door with whoever made it.</p>
 <p><b>Adoption treated as a design problem.</b> A system nobody uses is a hobby. I ran the component QA myself — checking the built Angular components against the Figma source for visual fidelity, behaviour, accessibility and API — and fixed token bindings where they had come loose. Reviewing the implementation is what keeps the library trustworthy enough to be worth adopting.</p>
         </div>
         <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-design-system/tokens.svg" alt="Three-tier token architecture" loading="lazy"><figcaption>Three-tier token architecture — components bind to semantic names, never to raw values. Redrawn generically.</figcaption></figure>
@@ -112,16 +116,18 @@
         <div class="pblock" data-reveal>
           <span class="mono">Impact</span>
           <div class="impact-grid">
-<div class="impact-cell" data-reveal><b>One library across several products</b><p>A single token-based system now backs the customer portal, marketing sites and data platforms, replacing the parallel legacy systems.</p></div>
+<div class="impact-cell" data-reveal><b>One library across the whole portal</b><p>A single token-based system now backs the catalogue, ordering, financial, service and account areas, replacing the parallel legacy systems.</p></div>
 <div class="impact-cell" data-reveal><b>40 components inventoried, 14 fully documented</b><p>The inventory is automated, so the gap between library and production is a report rather than an argument.</p></div>
 <div class="impact-cell" data-reveal><b>Faster, quieter handoff</b><p>Specs arrive with the ticket instead of being negotiated per feature — the recurring design-to-dev conversation largely disappeared.</p></div>
+<div class="impact-cell" data-reveal><b>A brand refresh became a remap</b><p>Rolling a visual refresh across the system meant changing the semantic layer, not reopening every component.</p></div>
           </div>
         </div>
         <div class="pblock" data-reveal><span class="mono">Qualitative impact</span><ul><li>Designers reach for the system first, because it is now the shortest path rather than the correct-but-slower one.</li>
 <li>Engineering and design argue about the same artifact instead of about two different ones.</li></ul></div>
         <div class="pblock" data-reveal>
           <span class="mono">Key learnings</span>
-          <ul><li>A semantic layer feels like over-engineering until the first rebrand or theme — then it is the only reason the work is survivable.</li>
+          <ul><li>A semantic layer feels like over-engineering right up until the first brand change — then it is the only reason the work is survivable.</li>
+<li>Multi-market is a design-system problem before it is a translation problem. A component that assumes one language's word length, one market's consent rules or one country's checkout has to be rebuilt on contact with the second market.</li>
 <li>Documentation that is written by hand will drift; documentation that is generated stays true.</li>
 <li>Adoption is not a rollout email. It comes from reviewing implementations and making the system the fastest route.</li></ul>
         </div>
