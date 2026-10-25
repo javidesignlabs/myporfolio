@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="'Instrument Sans',system-ui,sans-serif">
+  <rect width="1200" height="700" fill="#121210"/>
+  <text x="56" y="58" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">WHAT CHANGED ON THE CARD</text>
+
+  <!-- BEFORE -->
+  <text x="56" y="104" fill="#C9C7BC" font-size="18" font-weight="600">Before</text>
+  <rect x="56" y="122" width="330" height="430" rx="14" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+  <rect x="92" y="156" width="258" height="190" rx="8" fill="#0B0B09"/>
+  <rect x="150" y="212" width="140" height="80" rx="4" fill="#2A2A22"/>
+  <text x="221" y="258" fill="#4A4A42" font-size="12" text-anchor="middle" font-family="'Space Mono',monospace">small, flat</text>
+  <rect x="92" y="368" width="150" height="10" rx="5" fill="#3A3A33"/>
+  <rect x="92" y="392" width="90" height="9" rx="4" fill="#2A2A22"/>
+  <rect x="92" y="430" width="96" height="26" rx="6" fill="#2A2A22"/>
+  <text x="140" y="448" fill="#5A5A52" font-size="11.5" text-anchor="middle">Buy</text>
+  <text x="92" y="500" fill="#8C6A6A" font-size="12.5">✕ no zoom · ✕ no colourways</text>
+  <text x="92" y="522" fill="#8C6A6A" font-size="12.5">✕ CTA competes with everything</text>
+
+  <!-- arrow -->
+  <path d="M414 336 h56" stroke="#C8FF4D" stroke-width="2.5"/><path d="M464 329 l11 7 -11 7z" fill="#C8FF4D"/>
+
+  <!-- AFTER -->
+  <text x="504" y="104" fill="#C9C7BC" font-size="18" font-weight="600">After</text>
+  <rect x="504" y="122" width="330" height="430" rx="14" fill="#171713" stroke="#C8FF4D" stroke-opacity=".4"/>
+  <rect x="528" y="146" width="282" height="248" rx="8" fill="#0B0B09"/>
+  <rect x="548" y="166" width="242" height="208" rx="4" fill="#3B2A4A"/>
+  <path d="M560 300 q40 -50 80 -10 q40 40 80 -20 q30 -40 58 -6" stroke="#E07A9B" stroke-width="7" fill="none" opacity=".85"/>
+  <path d="M560 258 q50 -40 96 6 q44 42 92 -16" stroke="#6FC3C9" stroke-width="7" fill="none" opacity=".8"/>
+  <g transform="translate(756,352)"><circle r="18" fill="#0B0B09" fill-opacity=".8" stroke="#EFEDE3" stroke-opacity=".5"/><circle cx="-2" cy="-2" r="7" fill="none" stroke="#EFEDE3" stroke-width="2"/><path d="M3 3 l7 7" stroke="#EFEDE3" stroke-width="2" stroke-linecap="round"/></g>
+  <rect x="528" y="410" width="200" height="12" rx="6" fill="#C9C7BC"/>
+  <rect x="528" y="432" width="128" height="9" rx="4" fill="#5A5A52"/>
+  <g transform="translate(528,460)">
+    <circle cx="11" cy="11" r="11" fill="#3B2A4A" stroke="#C8FF4D" stroke-width="2"/>
+    <circle cx="41" cy="11" r="11" fill="#B23A3A"/><circle cx="71" cy="11" r="11" fill="#3E8E5A"/><circle cx="101" cy="11" r="11" fill="#D9C27E"/>
+  </g>
+  <rect x="528" y="498" width="282" height="34" rx="17" fill="#C8FF4D"/>
+  <text x="669" y="520" fill="#0B0B09" font-size="13.5" font-weight="700" text-anchor="middle">Add to basket</text>
+
+  <!-- notes -->
+  <g font-size="13.5">
+    <text x="880" y="186" fill="#C8FF4D" font-family="'Space Mono',monospace" font-size="12">01</text>
+    <text x="910" y="186" fill="#C9C7BC">Product fills the card</text>
+    <text x="910" y="208" fill="#85847A" font-size="12.5">Pattern is the product. Show it.</text>
+
+    <text x="880" y="266" fill="#C8FF4D" font-family="'Space Mono',monospace" font-size="12">02</text>
+    <text x="910" y="266" fill="#C9C7BC">Zoom in place</text>
+    <text x="910" y="288" fill="#85847A" font-size="12.5">Inspect without leaving the card.</text>
+
+    <text x="880" y="346" fill="#C8FF4D" font-family="'Space Mono',monospace" font-size="12">03</text>
+    <text x="910" y="346" fill="#C9C7BC">Colourways on the card</text>
+    <text x="910" y="368" fill="#85847A" font-size="12.5">Switching was the main reason</text>
+    <text x="910" y="388" fill="#85847A" font-size="12.5">people used to bounce back out.</text>
+
+    <text x="880" y="446" fill="#C8FF4D" font-family="'Space Mono',monospace" font-size="12">04</text>
+    <text x="910" y="446" fill="#C9C7BC">One unmistakable action</text>
+    <text x="910" y="468" fill="#85847A" font-size="12.5">Everything else steps back.</text>
+  </g>
+
+  <text x="56" y="600" fill="#C8FF4D" font-size="14" font-family="'Space Mono',monospace">VALIDATED, NOT ASSUMED</text>
+  <text x="56" y="632" fill="#85847A" font-size="15">This version only shipped because it won an A/B test against the one on the left: +23% conversion.</text>
+  <text x="56" y="672" fill="#6B6A62" font-size="13.5">Illustrative diagram — card structure redrawn generically with placeholder artwork. No production interface or real product shown.</text>
+</svg>

@@ -55,10 +55,13 @@ button{ font-family:inherit; cursor:pointer; background:none; border:none; color
 .container{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); }
 
 /* ---------- type scale ---------- */
-h1,h2,h3{ margin:0; font-family:var(--font-display); font-weight:800; line-height:.94; letter-spacing:-.015em; text-transform:uppercase; overflow-wrap:break-word; }
+h1,h2,h3{ margin:0; font-family:var(--font-display); font-weight:800; line-height:.94;
+  letter-spacing:-.015em; text-transform:uppercase;
+  /* never split a word mid-stem: hyphenate properly or let it be */
+  overflow-wrap:normal; word-break:normal; hyphens:auto; }
 .t-hero { font-size: clamp(2.35rem, 11vw, 10.5rem); }
-.t-giant{ font-size: clamp(1.9rem, 6.4vw, 5.6rem); }
-.t-sect { font-size: clamp(1.8rem, 5vw, 4.2rem); }
+.t-giant{ font-size: clamp(1.25rem, 5.3vw, 5.6rem); }
+.t-sect { font-size: clamp(1.5rem, 4.6vw, 4.2rem); }
 .t-item { font-size: clamp(1.35rem, 3.2vw, 2.6rem); }
 p{ margin:0; }
 
@@ -590,7 +593,7 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 }
 .next-proj a{ display:block; }
 .next-proj .mono{ display:block; margin-bottom:18px; }
-.next-proj h2{ transition:color .3s; max-width:20ch; }
+.next-proj h2{ transition:color .3s; max-width:20ch; font-size: clamp(1.18rem, 4.6vw, 4.2rem); }
 .next-proj a:hover h2{ color:var(--lime); }
 
 /* ---------- about ---------- */
@@ -733,3 +736,18 @@ body.has-cursor .cursor-dot{ opacity:1; }
   color:var(--smoke); border-left:2px solid var(--line-hard); padding-left:18px;
 }
 .provenance a{ color:var(--lime); text-decoration:underline; text-underline-offset:3px; }
+
+
+/* Below 375px a few display words genuinely cannot fit; breaking is the lesser
+   evil versus a sideways-scrolling page. At 375px and up nothing splits. */
+@media (max-width: 374px){
+  h1, h2, h3{ overflow-wrap: break-word; }
+}
+
+
+/* Headings that live in a narrow column must be sized to that column, not to
+   the viewport — otherwise a single long word overflows it. */
+.process-side .t-sect{ font-size: clamp(1.5rem, 3.2vw, 2.6rem); }
+.caps-copy .t-sect{ font-size: clamp(1.5rem, 3.4vw, 3rem); }
+/* Case titles are full sentences; cap them so the longest word still fits. */
+.page-hero h1.t-giant{ font-size: clamp(1.25rem, 5.3vw, 4.4rem); }

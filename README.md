@@ -73,3 +73,18 @@ Decisiones tomadas tras la revisión y por qué, para no deshacerlas sin querer:
 - **El hero** no ocupa la pantalla completa a propósito: `heroCap()` en `assets/js/main.js`
   limita el titular por altura disponible para que el primer caso asome. Si cambias el
   tamaño del hero, revisa esa constante `RESERVE`.
+
+## Segunda pasada de revisión (23/10/2026, noche)
+
+- **Bolttech es una contribución, no un liderazgo.** El caso dice "Product Designer —
+  contributor": componentes, tokens y documentación en Zeroheight; el sistema lo llevaba
+  el equipo de diseño. Tiene que seguir coincidiendo con About, el CV y LinkedIn — si
+  cambias uno, cambia los tres.
+- **BASF no tiene permiso formal**, así que la nota dice "Described at a structural level",
+  no "Shown with permission". No la cambies sin tener el permiso por escrito.
+- **Los titulares no parten palabras a partir de 375px.** Eso depende de tres cosas:
+  `overflow-wrap:normal` en h1/h2/h3, los `clamp()` de `.t-giant` / `.t-sect` y los topes
+  por columna (`.process-side`, `.caps-copy`, `.page-hero h1`). Si agrandas un titular,
+  vuelve a comprobar a 375px con una palabra larga.
+- **Los artefactos de payment-renewal, partner-portals y desigual** son diagramas míos y
+  genéricos, igual que los de BASF y Bolttech.

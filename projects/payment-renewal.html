@@ -78,9 +78,10 @@
         </div>
         <div class="pblock" data-reveal>
           <span class="mono">Problem</span>
-          <ul><li>Users confused by the payment and renewal processes.</li>
-<li>Lack of clarity in system status and error recovery options.</li>
-<li>Low customer satisfaction and potential loss of revenue due to user frustration.</li></ul>
+          <ul><li>Payment and automatic renewal were experienced as one confusing thing — users could not tell which of the two they were agreeing to.</li>
+<li>The flow reported nothing back: after submitting, nothing on screen said where you were or whether it had worked.</li>
+<li>A failed or mistaken payment had no fix in place. The only route was to start again, and the event logs show that is where people left.</li>
+<li>The satisfaction surveys and the event logs pointed at the same two moments, from opposite directions.</li></ul>
         </div>
         <div class="pblock" data-reveal>
           <span class="mono">Objective</span>
@@ -104,21 +105,21 @@
           <p><b>Design.</b> Designed optimized workflows to simplify the payment and renewal processes, and developed high-fidelity prototypes using Sketch, incorporating user-centered design principles such as system status visibility (ensuring users were always aware of their current status in the process) and error recovery capabilities (providing clear options for users to correct mistakes or cancel actions).</p>
 <p><b>Implementation.</b> Collaborated with development teams to implement the redesigned workflows and interfaces, and monitored user behavior and satisfaction post-launch to ensure the changes had the desired impact.</p>
         </div>
-        
+        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/payment-renewal/flow.svg" alt="The two points the event logs and the surveys both pointed at" loading="lazy"><figcaption>The two points the event logs and the surveys both pointed at — and the two changes that answered them.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Impact</span>
           <div class="impact-grid">
 <div class="impact-cell" data-reveal><b>17% increase in renewal retention</b><p>Renewal rate compared before and after the redesign. The clearer status and recovery options kept subscribers who would previously have dropped out mid-flow.</p></div>
 <div class="impact-cell" data-reveal><b>15% more lead conversions</b><p>Measured on the same funnel over the following season.</p></div>
-<div class="impact-cell" data-reveal><b>Fewer support tickets about payments</b><p>Error recovery let users fix their own mistakes instead of writing in — reported qualitatively by the customer service team.</p></div>
+<div class="impact-cell" data-reveal><b>Higher satisfaction after launch</b><p>Usability testing before release and customer feedback after it both reported the flow as clearer — qualitative, not a number.</p></div>
           </div>
         </div>
         
         <div class="pblock" data-reveal>
           <span class="mono">Key learnings</span>
-          <ul><li>User-centered design principles (e.g., system status visibility, error recovery) are critical for improving usability and trust.</li>
-<li>Comprehensive research (e.g., event logs, surveys, interviews) is essential for identifying pain points and designing solutions that meet user needs.</li>
-<li>Usability testing helps validate design choices and gather actionable feedback for further iteration.</li></ul>
+          <ul><li>System status and error recovery read like textbook heuristics until you open an event log and find the drop-offs sitting exactly where the interface stopped telling people anything.</li>
+<li>The surveys said people were unhappy; the logs said where. Either one on its own would have sent me to the wrong screen.</li>
+<li>Renewals are not a checkout problem. People abandon them for a different reason — not knowing what they already agreed to.</li></ul>
         </div>
       </div>
     </div>

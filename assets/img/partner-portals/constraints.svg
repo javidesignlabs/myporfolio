@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="'Instrument Sans',system-ui,sans-serif">
+  <rect width="1200" height="700" fill="#121210"/>
+  <text x="56" y="58" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">DESIGNING AGAINST A CODEBASE WE DIDN'T CONTROL</text>
+
+  <!-- three columns -->
+  <g>
+    <rect x="56" y="100" width="340" height="300" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+    <text x="84" y="140" fill="#EFEDE3" font-size="19" font-weight="600">What users needed</text>
+    <g font-size="14" fill="#85847A">
+      <text x="84" y="178">Fewer steps to the daily task</text>
+      <text x="84" y="206">One consistent flow across</text>
+      <text x="84" y="226">screens built at different times</text>
+      <text x="84" y="254">Faster access, every single day</text>
+      <text x="84" y="282">Status they could trust</text>
+    </g>
+    <text x="84" y="340" fill="#6B6A62" font-size="13">From interviews and workflow</text>
+    <text x="84" y="360" fill="#6B6A62" font-size="13">analysis with Fnac and Orange</text>
+    <text x="84" y="380" fill="#6B6A62" font-size="13">service teams.</text>
+
+    <rect x="430" y="100" width="340" height="300" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
+    <text x="458" y="140" fill="#EFEDE3" font-size="19" font-weight="600">What the code allowed</text>
+    <g font-size="14" fill="#85847A">
+      <text x="458" y="178">Components could be restyled</text>
+      <text x="458" y="206">Some steps could be merged</text>
+      <text x="458" y="234">Data model was fixed</text>
+      <text x="458" y="262">Certain screens could not be</text>
+      <text x="458" y="282">reordered without a rewrite</text>
+    </g>
+    <text x="458" y="340" fill="#6B6A62" font-size="13">Mapped with the developers</text>
+    <text x="458" y="360" fill="#6B6A62" font-size="13">before any design work, not</text>
+    <text x="458" y="380" fill="#6B6A62" font-size="13">discovered during handoff.</text>
+
+    <rect x="804" y="100" width="340" height="300" rx="16" fill="#0B0B09" stroke="#C8FF4D" stroke-opacity=".45"/>
+    <text x="832" y="140" fill="#C8FF4D" font-size="19" font-weight="600">What we shipped</text>
+    <g font-size="14" fill="#C9C7BC">
+      <text x="832" y="178">The overlap — in sprints</text>
+    </g>
+    <g font-size="13.5" fill="#85847A">
+      <text x="832" y="212">Merged the steps that could</text>
+      <text x="832" y="232">be merged</text>
+      <text x="832" y="260">Restyled for one consistent</text>
+      <text x="832" y="280">flow across the portals</text>
+      <text x="832" y="308">Left the data model alone</text>
+    </g>
+    <rect x="832" y="336" width="284" height="42" rx="10" fill="#171713"/>
+    <text x="974" y="362" fill="#C8FF4D" font-size="13" text-anchor="middle" font-family="'Space Mono',monospace">15% faster access times</text>
+  </g>
+
+  <!-- venn-ish arrows -->
+  <path d="M400 250 h22" stroke="#C8FF4D" stroke-width="2"/><path d="M418 244 l9 6 -9 6z" fill="#C8FF4D"/>
+  <path d="M774 250 h22" stroke="#C8FF4D" stroke-width="2"/><path d="M792 244 l9 6 -9 6z" fill="#C8FF4D"/>
+
+  <line x1="56" y1="448" x2="1144" y2="448" stroke="rgba(239,237,227,.12)"/>
+  <text x="56" y="494" fill="#C8FF4D" font-size="14" font-family="'Space Mono',monospace">WHY IT WAS DONE THIS WAY</text>
+  <text x="56" y="530" fill="#85847A" font-size="15">The tempting move was to design the ideal portal and hand it over. That design would have needed a</text>
+  <text x="56" y="554" fill="#85847A" font-size="15">rewrite, and a rewrite was never going to be funded — so the ideal version would have shipped as</text>
+  <text x="56" y="578" fill="#85847A" font-size="15">nothing at all. Mapping the real constraints first meant the redesign went out in ordinary sprints,</text>
+  <text x="56" y="602" fill="#85847A" font-size="15">and the people doing this work every day felt it this quarter rather than hypothetically.</text>
+  <text x="56" y="658" fill="#6B6A62" font-size="13.5">Illustrative diagram — summarises the approach; no production interface or client data shown.</text>
+</svg>

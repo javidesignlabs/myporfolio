@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="'Instrument Sans',system-ui,sans-serif">
   <rect width="1200" height="700" fill="#121210"/>
-  <text x="56" y="60" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">THE DOCUMENTATION SITE — WHAT EACH PAGE ANSWERS</text>
+  <text x="56" y="60" fill="#85847A" font-size="17" letter-spacing="2.4" font-family="'Space Mono',monospace">DOCUMENTING A COMPONENT IN ZEROHEIGHT</text>
 
   <!-- browser frame -->
   <rect x="56" y="98" width="1088" height="470" rx="16" fill="#171713" stroke="rgba(239,237,227,.12)"/>
   <rect x="56" y="98" width="1088" height="48" rx="16" fill="#0B0B09"/><rect x="56" y="130" width="1088" height="16" fill="#0B0B09"/>
   <circle cx="84" cy="122" r="6" fill="#3A3A33"/><circle cx="104" cy="122" r="6" fill="#3A3A33"/><circle cx="124" cy="122" r="6" fill="#3A3A33"/>
   <rect x="152" y="110" width="300" height="24" rx="12" fill="#171713"/>
-  <text x="170" y="127" fill="#6B6A62" font-size="12" font-family="'Space Mono',monospace">design-system / button</text>
+  <text x="170" y="127" fill="#6B6A62" font-size="12" font-family="'Space Mono',monospace">zeroheight · button</text>
 
   <!-- sidebar -->
   <rect x="56" y="146" width="230" height="422" fill="#0B0B09"/>
@@ -60,7 +60,7 @@
   <text x="868" y="488" fill="#85847A" font-size="12.5">Loading announces busy</text>
   <text x="868" y="510" fill="#85847A" font-size="12.5">4.5:1 minimum contrast</text>
 
-  <text x="56" y="616" fill="#C8FF4D" font-size="14" font-family="'Space Mono',monospace">WHY A SEPARATE DOCS SITE</text>
+  <text x="56" y="616" fill="#C8FF4D" font-size="14" font-family="'Space Mono',monospace">WHY DOCUMENT OUTSIDE FIGMA</text>
   <text x="56" y="650" fill="#85847A" font-size="15">Figma shows designers what a component looks like; it does not tell a developer what props exist or</text>
-  <text x="56" y="674" fill="#85847A" font-size="15">what a screen reader should say. The docs site gave both audiences one URL to point at in a review.</text>
+  <text x="56" y="674" fill="#85847A" font-size="15">what a screen reader should say. Zeroheight gave both audiences one URL to point at in a review.</text>
 </svg>
