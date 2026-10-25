@@ -88,3 +88,25 @@ Decisiones tomadas tras la revisión y por qué, para no deshacerlas sin querer:
   vuelve a comprobar a 375px con una palabra larga.
 - **Los artefactos de payment-renewal, partner-portals y desigual** son diagramas míos y
   genéricos, igual que los de BASF y Bolttech.
+
+## Tercera pasada: separar el trabajo de BASF en dos casos (25/10/2026)
+
+- **BASF son ahora dos casos, no uno.** `basf-design-system` es el sistema; el portal
+  multi-mercado se separó en `basf-customer-portal` con su propio eje: **arquitectura
+  multi-mercado**. El caso del sistema se limpió de todo lo que era del portal (el
+  problema multi-mercado y su learning se movieron al caso nuevo) — si vuelves a mezclarlos,
+  los dos casos pierden el foco.
+- **El slug evita el nombre interno del producto a propósito.** Se llama
+  `basf-customer-portal`, no el nombre en clave que aparece en el Figma. El nombre interno
+  no sale en ningún sitio: ni en la URL, ni en el título, ni en el texto. No lo metas.
+- **El caso nuevo lleva el mismo `nda`** que el otro: "Described at a structural level".
+  BASF sigue sin permiso formal.
+- **Los tres SVG de `assets/img/basf-customer-portal/`** (cover, entry, rules) son diagramas
+  míos, redibujados de forma genérica, cada uno con su nota de "no production interface shown".
+  Describen decisiones de estructura (país antes del login; reglas de mercado como datos),
+  no pantallas reales.
+- **`roku-tv-app` está retirado**: era el caso más antiguo y el único sin ningún dato.
+  Como todos los retirados, su página pasa a ser un redirect `noindex` a `projects.html`.
+- **Los títulos de caso se quedan entre ~25 y ~70 caracteres.** El del portal empezó en 90 y
+  ocupaba siete líneas de display en desktop. Si escribes uno más largo, míralo renderizado
+  antes de darlo por bueno.

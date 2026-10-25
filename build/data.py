@@ -73,13 +73,12 @@ PROJECTS = [
         "outcome": "One token-based library replacing several legacy systems",
         "nda": "Described at a structural level: diagrams are my own redrawings and no production interface, client data or internal tooling appears. Happy to walk through the real work in a call.",
         "intro": [
-            "I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library behind a global customer portal — catalogue, orders, financial documents, service and account, in multiple countries and languages.",
+            "I lead the design system work at BASF Digital Solutions, consolidating several legacy systems into a single token-based library used across the company's digital products.",
             "The job is less about drawing components and more about making one set of decisions hold across teams, markets and codebases — and keeping design and engineering pointed at the same source.",
         ],
-        "context": "The portal is one product on paper and a dozen in practice: a catalogue and product pages, a cart and checkout, order visibility, financial documents, a service area and account settings — each with per-market variants, its own language handling and its own consent rules. Those areas had grown their own design languages over the years: their own buttons, their own spacing logic, their own idea of what \"error red\" meant. Teams in different regions shipped interfaces recognisable as the same company only by the logo, and every new feature began by rebuilding something that already existed elsewhere.",
+        "context": "Different products had grown their own design languages over the years: their own buttons, their own spacing logic, their own idea of what \"error red\" meant. Teams in different regions shipped interfaces recognisable as the same company only by the logo, and every new feature began by rebuilding something that already existed elsewhere.",
         "problem": [
             "Several parallel design systems, none of them complete, all of them diverging.",
-            "Every pattern has to survive translation, a different market's rules and a different content length — so a component that only works in one language is not finished.",
             "No shared vocabulary between designers and developers — handoff was a conversation, repeated per feature.",
             "Documentation lived in tools engineers did not open, so it was always slightly out of date.",
             "No way to know what was actually in production versus what the library said should be.",
@@ -123,7 +122,6 @@ PROJECTS = [
         ],
         "learnings": [
             "A semantic layer feels like over-engineering right up until the first brand change — then it is the only reason the work is survivable.",
-            "Multi-market is a design-system problem before it is a translation problem. A component that assumes one language\'s word length, one market\'s consent rules or one country\'s checkout has to be rebuilt on contact with the second market.",
             "Documentation that is written by hand will drift; documentation that is generated stays true.",
             "Adoption is not a rollout email. It comes from reviewing implementations and making the system the fastest route.",
         ],
@@ -241,6 +239,69 @@ PROJECTS = [
             "Three teams described the same breakdown in three different ways — and none of them had the whole picture. Supply Chain saw a tedious spreadsheet, Customer Service saw slow lookups, the repair centres saw nobody reading their updates. It was one problem wearing three costumes.",
             "Shadowing beat interviewing here. Customer Service told me the search was \"a bit slow\"; watching them do it showed they had a second window open permanently, because the real tool had never been integrated.",
             "I let the repair centres keep a file-based workflow instead of pushing them into a portal. A weekly JSON upload fit how they already worked — and a design they would actually use beat the tidier one I had sketched first.",
+        ],
+    },
+    {
+        "slug": "basf-customer-portal",
+        "outcome": "One portal that behaves correctly in every market it opens in",
+        "cover_img": "assets/img/basf-customer-portal/cover.svg",
+        "tag": "Enterprise product",
+        "title": "One Portal, Many Markets: Designing for the Second Country",
+        "subtitle": "Ordering, financial documents and service for a global customer base — where the market is a design constraint, not a translation job",
+        "role": "Lead designer — UX/UI strategy and design of the portal",
+        "authorship": "I lead the UX/UI strategy and design for the portal, working with product owners, engineering and the regional teams who know what their market legally and commercially requires. The market rules are theirs; the structure that absorbs those rules without forking the product is mine.",
+        "category": "Enterprise product · Multi-market",
+        "company": "BASF Digital Solutions",
+        "website": None,
+        "illustration": "portal",
+        "nda": "Described at a structural level: diagrams are my own redrawings and no production interface, customer data or internal tooling appears. Happy to walk through the real work in a call.",
+        "intro": [
+            "A single customer portal covering ordering, order visibility, financial documents, service and account management — used by customers in different countries, in different languages, under different rules.",
+            "The interesting problem was never the screens. It was that almost every screen means something slightly different depending on which market you open it in, and the first version of anything is always designed for one of them.",
+        ],
+        "context": "A portal like this looks like one product and behaves like a dozen. A catalogue, product pages, a cart and a checkout; then order history, financial documents, a service area and account settings. Each of those already has a non-trivial domain behind it. Then each market adds its own layer: what customers may be shown, what they must consent to, how they are identified, which extras exist locally. The company had been solving that the way most companies do at first — per market, per team, in parallel.",
+        "problem": [
+            "Designs kept being built for one market and then discovered on contact with the second: a layout that assumed one language's word length, a flow that assumed one country's rules.",
+            "Country and language were being treated as the same choice. They are not — one country can have two official languages, and one language spans many countries.",
+            "Consent and communication rules differ by market and change over time, so anything hardcoded into a screen is wrong by the next legal update.",
+            "Some markets genuinely need more than others. Without somewhere for that to live, \"this market is different\" becomes a fork, and forks do not get maintained.",
+        ],
+        "objective": "Design the portal so that a new market is a configuration of the same product, not a new version of it — and so the differences that are real are visible in the structure rather than patched into screens.",
+        "responsibilities": [
+            "Own the UX/UI strategy for the portal and the structure the market variations hang from.",
+            "Design the entry, identity and language architecture.",
+            "Work with regional and product stakeholders to separate what genuinely varies from what only looked like it did.",
+            "Keep the whole thing inside the design system rather than beside it.",
+        ],
+        "research": [
+            ("Where it broke, not where it was asked about", "The most useful input was not a research session, it was the pattern in the rework: which designs came back when a second market picked them up. Nearly all of them failed on the same three things — identity, content length and consent."),
+            ("Sessions with the regional teams", "Each market's team knows its own rules and assumes the others work the same way. Getting them in the same conversation is how you find out which differences are legal requirements and which are just habit — and the second group is much bigger than anyone expects."),
+        ],
+        "design_blocks": [
+            ("Decision: country is chosen before login, not after", "The obvious flow is to authenticate and then localise. It does not work here, because the market determines what a customer can even be shown — the catalogue, the terms, and how the account itself is structured. Putting country and region ahead of the login means the whole session is scoped correctly from the first screen instead of being corrected afterwards. It costs a step up front, and it removes an entire category of \"why am I seeing this\"."),
+            ("Decision: country and language are two choices, not one", "Collapsing them is the classic shortcut and it breaks immediately on any bilingual market. Keeping them separate means a customer picks where they are and, independently, how they want to read — and it stops the system from inferring one wrongly from the other."),
+            ("Decision: market rules are data the components take, not logic inside them", "Consent and communication preferences vary by market and keep changing. If those rules live inside the screen, every legal update is a redesign. Designing them as configuration the same components consume means a market change is a change to the rules, not to the product."),
+            ("Decision: local differences are variants, not forks", "Some markets really do need an extra level of navigation or an additional step. Those live as variants of the shared pattern, inside the design system, so they stay maintained. A fork is the version that is correct on the day it ships and quietly rots afterwards."),
+        ],
+        "impact": [
+            ("A new market is a configuration", "Opening in another country exercises the structure that already exists instead of producing a parallel version of the product."),
+            ("Legal changes stop being redesigns", "Consent and preference rules move as data, so a market's update does not reopen the screens it touches."),
+            ("The differences are visible", "What varies by market is now something you can point at in the structure, rather than tribal knowledge held by whoever built that market's screens."),
+        ],
+        "qualitative": [
+            "Regional conversations changed shape: less \"our market is special\", more \"which of these differences is actually a rule\".",
+            "Design reviews stopped rediscovering the same three failure modes on every new flow.",
+        ],
+        "learnings": [
+            "Multi-market is an architecture problem wearing a translation costume. By the time it looks like a copy problem, the structural decision has already been made badly.",
+            "Most claimed market differences are habit, not law — but you only find that out by getting the markets in the same room, and the ones that remain are non-negotiable.",
+            "The cost of the right structure is paid once, up front, by someone who will not see the benefit. The benefit lands on whoever opens the fourth market.",
+        ],
+        "gallery_dir": "basf-customer-portal",
+        "gallery_ext": "svg",
+        "gallery": [
+            ("entry", "Country and region before the login, because the market decides what a customer can be shown at all."),
+            ("rules", "Market rules consumed as configuration, so a legal change is a change to data rather than a redesign."),
         ],
     },
     {
@@ -767,19 +828,20 @@ _RETIRED = {
     "email-marketing-dorna",    # marketing campaigns, off-target for the role
     "landing-pages-dorna",      # marketing/acquisition, overlaps payment-renewal
     "desigual-store-locator",   # 2014, too old to represent current practice
+    "roku-tv-app",              # oldest remaining and the only case with no data
 }
 
 # Deliberate order: design-system work first, then SaaS depth, then the rest.
 _ORDER = [
     "basf-design-system",       # current DS leadership — the lead card
-    "bolttech-design-system",   # DS built end to end
-    "saas-supply-chain",        # SaaS product depth, 40%
+    "basf-customer-portal",                # the product that system runs on, multi-market
+    "bolttech-design-system",   # DS contribution: components, tokens, docs
     "familyhub",                # end-to-end ownership, design + build
+    "saas-supply-chain",        # SaaS product depth, 40%
     "partner-portals",          # B2B/B2C at scale, 15%
     "payment-renewal",          # measured retention work, 17%
     "saas-process-modeling",    # AI-assisted product design
     "desigual-product-card",    # e-commerce conversion, 23%
-    "roku-tv-app",              # platform breadth
 ]
 
 _by_slug = {p["slug"]: p for p in PROJECTS if p["slug"] not in _RETIRED}

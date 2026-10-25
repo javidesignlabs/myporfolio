@@ -9,6 +9,7 @@ OUT = os.path.join(os.path.dirname(__file__), "..")
 
 # Short year labels per project (real eras from the case studies)
 YEARS = {
+    "basf-customer-portal": "2025–now",
     "basf-design-system": "2025–now",
     "familyhub": "Ongoing",
     "saas-supply-chain": "2022–23",

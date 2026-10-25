@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="'Instrument Sans',system-ui,sans-serif">
+  <defs>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15150F"/><stop offset="1" stop-color="#0B0B09"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#og)"/>
+
+  <!-- faint grid -->
+  <g stroke="rgba(239,237,227,.06)">
+    <path d="M0 200h1600M0 400h1600M0 600h1600M0 800h1600"/>
+    <path d="M200 0v1000M400 0v1000M600 0v1000M800 0v1000M1000 0v1000M1200 0v1000M1400 0v1000"/>
+  </g>
+
+  <text x="800" y="120" fill="#85847A" font-size="17" letter-spacing="3" text-anchor="middle" font-family="'Space Mono',monospace">ONE PORTAL · MANY MARKETS</text>
+
+  <!-- stacked market layers behind the portal -->
+  <rect x="404" y="152" width="600" height="460" rx="22" fill="#14140F" stroke="rgba(239,237,227,.16)"/>
+  <rect x="452" y="182" width="600" height="460" rx="22" fill="#15150F" stroke="rgba(239,237,227,.2)"/>
+  <text x="426" y="178" fill="#5A5A52" font-size="14" font-family="'Space Mono',monospace">MARKET C</text>
+  <text x="474" y="208" fill="#6B6A62" font-size="14" font-family="'Space Mono',monospace">MARKET B</text>
+
+  <!-- the portal itself -->
+  <rect x="500" y="212" width="600" height="460" rx="22" fill="#171713" stroke="rgba(239,237,227,.18)"/>
+  <rect x="500" y="212" width="600" height="56" rx="22" fill="#0B0B09"/><rect x="500" y="246" width="600" height="22" fill="#0B0B09"/>
+  <circle cx="530" cy="240" r="6" fill="#3A3A33"/><circle cx="550" cy="240" r="6" fill="#3A3A33"/><circle cx="570" cy="240" r="6" fill="#3A3A33"/>
+
+  <!-- the scope bar: the one decision the whole session hangs on -->
+  <rect x="616" y="226" width="300" height="28" rx="14" fill="#0B0B09" stroke="#C8FF4D" stroke-width="1.6"/>
+  <circle cx="636" cy="240" r="5" fill="#C8FF4D"/>
+  <text x="652" y="245" fill="#C8FF4D" font-size="13" font-family="'Space Mono',monospace">country · region · language</text>
+
+  <!-- portal body: sidebar + content -->
+  <rect x="500" y="268" width="150" height="404" fill="#0B0B09"/>
+  <g fill="#2A2A22">
+    <rect x="522" y="306" width="106" height="10" rx="5"/>
+    <rect x="522" y="340" width="86" height="10" rx="5"/>
+    <rect x="522" y="374" width="98" height="10" rx="5"/>
+    <rect x="522" y="408" width="78" height="10" rx="5"/>
+    <rect x="522" y="442" width="92" height="10" rx="5"/>
+  </g>
+  <rect x="508" y="294" width="134" height="34" rx="8" fill="#1B1B16"/>
+  <rect x="522" y="306" width="106" height="10" rx="5" fill="#C8FF4D" opacity=".8"/>
+
+  <rect x="682" y="300" width="186" height="12" rx="6" fill="#3A3A33"/>
+  <rect x="682" y="330" width="386" height="92" rx="12" fill="#0B0B09"/>
+  <rect x="704" y="356" width="150" height="10" rx="5" fill="#2A2A22"/>
+  <rect x="704" y="382" width="104" height="10" rx="5" fill="#222219"/>
+  <rect x="946" y="372" width="100" height="30" rx="8" fill="#2B6CB0" opacity=".85"/>
+
+  <rect x="682" y="440" width="186" height="92" rx="12" fill="#0B0B09"/>
+  <rect x="882" y="440" width="186" height="92" rx="12" fill="#0B0B09"/>
+  <rect x="704" y="466" width="120" height="10" rx="5" fill="#2A2A22"/>
+  <rect x="904" y="466" width="96" height="10" rx="5" fill="#2A2A22"/>
+  <rect x="704" y="492" width="70" height="10" rx="5" fill="#222219"/>
+  <rect x="904" y="492" width="86" height="10" rx="5" fill="#222219"/>
+
+  <rect x="682" y="552" width="386" height="86" rx="12" fill="#0B0B09"/>
+  <g fill="#1F1F19">
+    <rect x="704" y="574" width="342" height="9" rx="4.5"/>
+    <rect x="704" y="594" width="300" height="9" rx="4.5"/>
+    <rect x="704" y="614" width="226" height="9" rx="4.5"/>
+  </g>
+
+  <!-- rules feeding in from the left -->
+  <g stroke="#C8FF4D" stroke-width="2" opacity=".5" fill="none">
+    <path d="M330 420 C 400 420, 420 356, 498 340"/>
+    <path d="M330 452 C 410 452, 430 470, 498 476"/>
+    <path d="M330 484 C 400 484, 420 572, 498 596"/>
+  </g>
+  <rect x="120" y="376" width="212" height="152" rx="14" fill="#0B0B09" stroke="rgba(239,237,227,.14)"/>
+  <text x="144" y="410" fill="#C8FF4D" font-size="13" font-family="'Space Mono',monospace">MARKET RULES</text>
+  <g font-size="14" fill="#85847A">
+    <text x="144" y="442">consents</text>
+    <text x="144" y="472">channels</text>
+    <text x="144" y="502">extra steps</text>
+  </g>
+  <text x="120" y="560" fill="#6B6A62" font-size="13.5">configuration, not new screens</text>
+
+  <!-- what stays the same / what changes -->
+  <g transform="translate(1160,376)">
+    <rect width="320" height="72" rx="12" fill="#141A14" stroke="#3E8E5A"/>
+    <text x="24" y="31" fill="#8FCBA4" font-size="14" font-weight="600">Same everywhere</text>
+    <text x="24" y="54" fill="#6A8C76" font-size="13">components, structure, patterns</text>
+    <g transform="translate(0,88)">
+      <rect width="320" height="72" rx="12" fill="#171713" stroke="rgba(239,237,227,.16)"/>
+      <text x="24" y="31" fill="#C9C7BC" font-size="14" font-weight="600">Different by market</text>
+      <text x="24" y="54" fill="#85847A" font-size="13">rules, catalogue, language, terms</text>
+    </g>
+  </g>
+  <path d="M1104 440 h40" stroke="#3A3A33" stroke-width="2"/>
+  <path d="M1104 500 h40" stroke="#3A3A33" stroke-width="2"/>
+
+  <text x="800" y="712" fill="#C9C7BC" font-size="15" text-anchor="middle" font-family="'Space Mono',monospace">MARKET A — the one on screen</text>
+  <text x="800" y="900" fill="#EFEDE3" font-size="24" text-anchor="middle" font-weight="600">Designing a customer portal so the second market is a configuration, not a rebuild</text>
+  <text x="800" y="936" fill="#6B6A62" font-size="16" text-anchor="middle">Illustrative — structure only, no production interface shown</text>
+</svg>
