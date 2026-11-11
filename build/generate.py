@@ -2,7 +2,7 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 
-from data import PROJECTS, CAREER, FEEDBACK, PROCESS_STEPS, PROFILE, CLIENTS, PROOF, CAPABILITIES, HOME_FEATURED
+from data import PROJECTS, CAREER, FEEDBACK, FEEDBACK_AUTHORS, PROCESS_STEPS, PROFILE, CLIENTS, PROOF, CAPABILITIES, HOME_FEATURED
 from templates import page_shell, ARROW, PLUS
 
 OUT = os.path.join(os.path.dirname(__file__), "..")
@@ -68,6 +68,24 @@ def work_rows(projects, root):
     return "\n".join(rows)
 
 
+def feature_cards(projects, root):
+    """Home only: the work has to be visible without hovering."""
+    cards = []
+    for p in projects:
+        cards.append(f'''<a class="feature" href="{root}projects/{p["slug"]}.html" data-reveal>
+  <span class="feature-media"><img src="{img_src(p, root)}" alt="" loading="lazy"></span>
+  <span class="feature-meta"><span class="mono">{YEARS[p["slug"]]}</span><span class="mono">{p["tag"]} · {p["company"]}</span></span>
+  <span class="feature-main">
+    <span class="row-main">
+      <h3>{p["title"]}</h3>
+      <span class="outcome">{p["outcome"]}</span>
+    </span>
+    <span class="go">{ARROW}</span>
+  </span>
+</a>''')
+    return "\n".join(cards)
+
+
 # ----------------------------------------------------------------
 # HOME
 # ----------------------------------------------------------------
@@ -95,10 +113,15 @@ def build_home():
   </div>
 </div>''' for name, num, text in PROCESS_STEPS)
 
+    def _who(i):
+        a = FEEDBACK_AUTHORS[i] if i < len(FEEDBACK_AUTHORS) else None
+        if a:
+            return f'<span class="quote-who"><b>{a["name"]}</b><span class="mono">{a["role"]}</span></span>'
+        return '<span class="mono">LinkedIn recommendation</span>'
     quotes = "\n".join(f'''<div class="quote-cell" data-reveal>
   <blockquote>{q}</blockquote>
-  <span class="mono">Feedback from my team</span>
-</div>''' for q in FEEDBACK)
+  {_who(i)}
+</div>''' for i, q in enumerate(FEEDBACK))
 
     body = f'''
   <section class="hero" style="padding-top:0;padding-bottom:0;">
@@ -153,8 +176,8 @@ def build_home():
         </div>
         <a href="projects.html" class="btn btn--ghost"><span>All projects</span>{ARROW}</a>
       </div>
-      <div class="work-list">
-{work_rows(featured, root)}
+      <div class="feature-grid">
+{feature_cards(featured, root)}
       </div>
     </div>
   </section>
@@ -193,6 +216,7 @@ def build_home():
           <span class="mono">People I've shipped with</span>
           <h2 class="t-sect">Team <span class="outline">feedback</span></h2>
         </div>
+        <a href="{PROFILE['linkedin_recs']}" target="_blank" rel="noopener" class="btn btn--ghost"><span>Read them on LinkedIn</span>{ARROW}</a>
       </div>
       <div class="quote-rail">
 {quotes}
@@ -343,6 +367,7 @@ def build_project(p, next_p):
     intro = "\n".join(f"<p>{t}</p>" for t in p["intro"])
 
     gallery = ""
+    lead_shot = ""
     if p.get("gallery"):
         gdir = p.get("gallery_dir", p["slug"])
         ext = p.get("gallery_ext", "webp")
@@ -354,6 +379,42 @@ def build_project(p, next_p):
         label = "Artifacts" if wide else "Screens"
         cls = "shot-grid wide" if wide else "shot-grid"
         gallery = f'<div class="pblock"><span class="mono">{label}</span><div class="{cls}">{shots}</div></div>'
+        # Diagram cases: pull the first artifact up beside the problem it answers,
+        # so the page is not a thousand words before the first picture.
+        if wide and len(p["gallery"]) > 1:
+            k, cap = p["gallery"][0]
+            lead_shot = (f'<div class="pblock"><div class="shot-grid wide"><figure class="shot" data-reveal>'
+                         f'<img src="{root}assets/img/{gdir}/{k}.{ext}" alt="{cap.split(" — ")[0]}" loading="lazy">'
+                         f'<figcaption>{cap}</figcaption></figure></div></div>')
+            rest = "\n".join(
+                f'<figure class="shot" data-reveal><img src="{root}assets/img/{gdir}/{k}.{ext}" alt="{cap.split(" — ")[0]}" loading="lazy"><figcaption>{cap}</figcaption></figure>'
+                for k, cap in p["gallery"][1:])
+            gallery = f'<div class="pblock"><span class="mono">{label}</span><div class="{cls}">{rest}</div></div>'
+
+    # Phone-screen cases can play their screens as a reel (real UI only).
+    reel = ""
+    if p.get("reel") and p.get("gallery"):
+        gdir = p.get("gallery_dir", p["slug"])
+        frames = "\n".join(
+            f'<img src="{root}assets/img/{gdir}/{k}.webp" alt="{cap.split(" — ")[0]}" data-cap="{cap}" width="510" height="963"{"" if i else " class=\"on\""} loading="{"eager" if i == 0 else "lazy"}">'
+            for i, (k, cap) in enumerate(p["gallery"]))
+        dots = "".join(f'<button type="button" aria-label="Screen {i+1}"{" class=\"on\"" if i == 0 else ""}></button>' for i in range(len(p["gallery"])))
+        reel = f'''<div class="reel" data-reel data-reveal>
+        <div class="reel-phone">{frames}</div>
+        <div class="reel-side">
+          <span class="mono">The product, screen by screen</span>
+          <p class="reel-cap" aria-live="polite">{p["gallery"][0][1]}</p>
+          <div class="reel-dots">{dots}</div>
+          <button type="button" class="reel-toggle mono" aria-pressed="false">Pause</button>
+        </div>
+      </div>'''
+
+    glance_out = "".join(f"<li>{t}</li>" for t, _ in p["impact"][:3])
+    glance = f'''<div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>{p["objective"]}</p></div>
+        <div><span class="mono">My part</span><p>{p["role"]}</p></div>
+        <div><span class="mono">What came out</span><ul>{glance_out}</ul></div>
+      </div>'''
 
     authorship = ""
     if p.get("authorship"):
@@ -377,6 +438,8 @@ def build_project(p, next_p):
       <div class="proj-cover" data-reveal>
         <img src="{img_src(p, root)}" alt="{p["title"]}">
       </div>
+      {glance}
+      {reel}
     </div>
   </section>
 
@@ -408,6 +471,7 @@ def build_project(p, next_p):
           <span class="mono">Objective</span>
           <p>{p["objective"]}</p>
         </div>
+        {lead_shot}
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul>{resp_li}</ul>
@@ -455,6 +519,15 @@ def build_project(p, next_p):
 
 
 
+def build_system():
+    from system_page import system_body
+    write("system.html", page_shell(
+        "The design system behind this site — javidesignlabs",
+        "Colour, type and motion tokens, live components and the rules they enforce: the design system this portfolio is built on, in a dark and a light theme.",
+        "", system_body(ARROW, work_rows), active="system.html", bg_word="SYSTEM", path="system.html"
+    ))
+
+
 # ----------------------------------------------------------------
 # SEO: JSON-LD, sitemap, robots
 # ----------------------------------------------------------------
@@ -499,7 +572,7 @@ def project_jsonld(p):
 
 def build_seo_files():
     base = PROFILE["base_url"].rstrip("/")
-    urls = ["", "projects.html", "about.html", "privacy.html"] + [f'projects/{p["slug"]}.html' for p in PROJECTS]
+    urls = ["", "projects.html", "about.html", "system.html", "privacy.html"] + [f'projects/{p["slug"]}.html' for p in PROJECTS]
     entries = "\n".join(
         f"  <url><loc>{base}/{u}</loc></url>" for u in urls
     )
@@ -530,6 +603,7 @@ def build_privacy():
           <span class="mono">Cookies &amp; analytics</span>
           <p>This site uses <b>Microsoft Clarity</b> to understand how visitors use it (heatmaps and anonymized session recordings) — but <b>only if you accept</b> in the consent banner. If you decline or ignore the banner, no analytics script is loaded and no cookies are set. Clarity masks typed text by default.</p>
           <p>Your choice is stored locally in your browser (not on any server). You can change it at any time: <a href="#" data-consent-reset style="color:var(--lime);text-decoration:underline;text-underline-offset:3px;">manage consent</a>.</p>
+          <p>If you switch between the dark and light theme, that preference is also saved in your browser, and nowhere else.</p>
         </div>
         <div class="pblock">
           <span class="mono">What Clarity collects (with your consent)</span>
@@ -594,13 +668,14 @@ if __name__ == "__main__":
     build_projects()
     build_about()
     build_404()
+    build_system()
     for i, p in enumerate(PROJECTS):
         build_project(p, PROJECTS[(i + 1) % len(PROJECTS)])
     favicon()
     build_privacy()
     build_redirects()
     build_seo_files()
-    print(f"Done — {len(PROJECTS) + 5} pages + sitemap.xml + robots.txt generated.")
+    print(f"Done — {len(PROJECTS) + 6} pages + sitemap.xml + robots.txt generated.")
 
     # Share cards are built separately (ogimages.py needs playwright). Warn loudly
     # if one is missing: a page whose og:image 404s falls back to whatever the

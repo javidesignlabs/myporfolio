@@ -25,6 +25,7 @@
 <link rel="preload" href="../assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Redesigning Desigual's Product Card on the PDP", "description": "Optimizing Product Presentation to Boost Conversion Rates", "url": "https://javidesignlabs.github.io/myporfolio/projects/desigual-product-card.html", "image": "https://framerusercontent.com/images/vzJyFGpXcQ9lR7XsRFRhBVqv4Zc.jpg", "author": {"@type": "Person", "name": "Javier de la Cruz", "url": "https://javidesignlabs.github.io/myporfolio/"}, "about": "Ecommerce"}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="../index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="../projects.html">Projects</a>
+        <a href="../system.html">System</a>
         <a href="../about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="../index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="../projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="../about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="../system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="../about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -57,6 +63,12 @@
       <div class="proj-cover" data-reveal>
         <img src="https://framerusercontent.com/images/vzJyFGpXcQ9lR7XsRFRhBVqv4Zc.jpg" alt="Redesigning Desigual's Product Card on the PDP">
       </div>
+      <div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>Redesign the product card to improve visual appeal, usability, and user engagement, ultimately increasing conversion rates.</p></div>
+        <div><span class="mono">My part</span><p>Lead designer — product card redesign</p></div>
+        <div><span class="mono">What came out</span><ul><li>Increased user interaction</li><li>23% increase in conversion rates</li><li>Improved user satisfaction</li></ul></div>
+      </div>
+      
     </div>
   </section>
 
@@ -92,6 +104,7 @@
           <span class="mono">Objective</span>
           <p>Redesign the product card to improve visual appeal, usability, and user engagement, ultimately increasing conversion rates.</p>
         </div>
+        
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul><li>Conduct user research to identify pain points and gather insights.</li>

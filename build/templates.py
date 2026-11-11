@@ -22,7 +22,10 @@ def header(root="", active=""):
       <nav class="main-nav" aria-label="Primary">
 {nav_links}
       </nav>
-      <a href="{PROFILE['cal']}" target="_blank" rel="noopener" class="btn"><span>Book a call</span>{ARROW}</a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="{PROFILE['cal']}" target="_blank" rel="noopener" class="btn"><span>Book a call</span>{ARROW}</a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
@@ -115,6 +118,7 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 <link rel="preload" href="{root}assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{root}assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}assets/css/style.css">
+<script src="{root}assets/js/theme.js"></script>
 {jsonld}
 </head>
 <body id="top">

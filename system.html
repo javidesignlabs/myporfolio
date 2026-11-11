@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The design system behind this site — javidesignlabs</title>
+<meta name="description" content="Colour, type and motion tokens, live components and the rules they enforce: the design system this portfolio is built on, in a dark and a light theme.">
+<link rel="canonical" href="https://javidesignlabs.github.io/myporfolio/system.html">
+<meta name="clarity-id" content="xja19yd80b">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://framerusercontent.com https://*.clarity.ms; connect-src 'self' https://*.clarity.ms; base-uri 'self'; form-action 'none'; object-src 'none'">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="The design system behind this site — javidesignlabs">
+<meta property="og:description" content="Colour, type and motion tokens, live components and the rules they enforce: the design system this portfolio is built on, in a dark and a light theme.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://javidesignlabs.github.io/myporfolio/system.html">
+<meta property="og:image" content="https://javidesignlabs.github.io/myporfolio/assets/img/og/site.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The design system behind this site — javidesignlabs">
+<meta property="og:site_name" content="javidesignlabs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://javidesignlabs.github.io/myporfolio/assets/img/og/site.png">
+<link rel="preload" href="assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/theme.js"></script>
+
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><i></i>javidesignlabs</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="projects.html">Projects</a>
+        <a href="system.html">System</a>
+        <a href="about.html">About & Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav" aria-label="Mobile">
+      <a href="index.html"><span>Home</span><span class="mono">00</span></a>
+      <a href="projects.html"><span>Projects</span><span class="mono">01</span></a>
+      <a href="system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="about.html"><span>About & Contact</span><span class="mono">03</span></a>
+      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
+      <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
+  </nav>
+  <a class="fab-call" href="https://cal.com/jdlct81" target="_blank" rel="noopener">Book a call <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+<main>
+
+  <section class="page-hero" style="padding-bottom:0;">
+    <div class="container">
+      <span class="mono">Design system · this site</span>
+      <h1 class="t-giant">The system <span class="accent">behind</span> this site</h1>
+      <p class="lede" data-reveal>Most of my design-system work sits behind an NDA. This one does not: the site you are reading is built on its own small system, and this page is rendered from the same tokens and components as every other page.</p>
+      <div class="theme-demo" data-reveal>
+        <div>
+          <span class="mono">Try it</span>
+          <p>Switch the theme. The colour tokens change; no component is restyled.</p>
+        </div>
+        <button type="button" class="btn" data-theme-toggle><span data-theme-label>Switch to light</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sect-head"><div><span class="mono">01 · Tokens</span><h2 class="t-sect">Colour</h2></div>
+        <p class="sys-note">Values are read live from the page, so they follow the theme.</p></div>
+      <div class="token-grid">
+<div class="token" data-token="--void">
+  <span class="token-chip" style="background:var(--void)"></span>
+  <span class="token-name mono">--void</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Page background</span>
+</div>
+<div class="token" data-token="--void-2">
+  <span class="token-chip" style="background:var(--void-2)"></span>
+  <span class="token-name mono">--void-2</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Raised background</span>
+</div>
+<div class="token" data-token="--panel">
+  <span class="token-chip" style="background:var(--panel)"></span>
+  <span class="token-name mono">--panel</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Panels and hover fills</span>
+</div>
+<div class="token" data-token="--cream">
+  <span class="token-chip" style="background:var(--cream)"></span>
+  <span class="token-name mono">--cream</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Primary text</span>
+</div>
+<div class="token" data-token="--cream-dim">
+  <span class="token-chip" style="background:var(--cream-dim)"></span>
+  <span class="token-name mono">--cream-dim</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Secondary text</span>
+</div>
+<div class="token" data-token="--smoke">
+  <span class="token-chip" style="background:var(--smoke)"></span>
+  <span class="token-name mono">--smoke</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Labels and metadata</span>
+</div>
+<div class="token" data-token="--lime">
+  <span class="token-chip" style="background:var(--lime)"></span>
+  <span class="token-name mono">--lime</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Accent: actions, figures, emphasis</span>
+</div>
+<div class="token" data-token="--lime-deep">
+  <span class="token-chip" style="background:var(--lime-deep)"></span>
+  <span class="token-name mono">--lime-deep</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Accent for small marks</span>
+</div>
+<div class="token" data-token="--line">
+  <span class="token-chip" style="background:var(--line)"></span>
+  <span class="token-name mono">--line</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Hairlines</span>
+</div>
+<div class="token" data-token="--line-hard">
+  <span class="token-chip" style="background:var(--line-hard)"></span>
+  <span class="token-name mono">--line-hard</span>
+  <span class="token-val mono" data-token-val></span>
+  <span class="token-use">Borders on controls</span>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="caps">
+    <div class="container">
+      <div class="sect-head"><div><span class="mono">02 · Tokens</span><h2 class="t-sect">Type</h2></div>
+        <p class="sys-note">Three families, each with one job: display, reading, data.</p></div>
+      <div class="spec-list">
+<div class="spec-row">
+  <div class="spec-meta"><span class="mono">Display · hero</span><span class="mono dim">Syne 800 · fitted to the line width</span></div>
+  <div class="spec-sample sys-hero">Design that ships</div>
+</div>
+<div class="spec-row">
+  <div class="spec-meta"><span class="mono">Display · section</span><span class="mono dim">Syne 800 · clamp(1.5rem, 4.6vw, 4.2rem)</span></div>
+  <div class="spec-sample t-sect">Case <span class="outline">studies</span></div>
+</div>
+<div class="spec-row">
+  <div class="spec-meta"><span class="mono">Heading · row</span><span class="mono dim">Syne 700 · clamp(1.15rem, 2.6vw, 2rem)</span></div>
+  <div class="spec-sample sys-h3">One portal, many markets</div>
+</div>
+<div class="spec-row">
+  <div class="spec-meta"><span class="mono">Body</span><span class="mono dim">Instrument Sans 400 · 1rem / 1.6</span></div>
+  <div class="spec-sample sys-body">Scope is a design decision, so I make it deliberately and early.</div>
+</div>
+<div class="spec-row">
+  <div class="spec-meta"><span class="mono">Label</span><span class="mono dim">Space Mono 400 · .72rem · tracked .14em · uppercase</span></div>
+  <div class="spec-sample mono">Selected work · 2013 — today</div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sect-head"><div><span class="mono">03 · Tokens</span><h2 class="t-sect">Motion</h2></div>
+        <p class="sys-note">Two curves. Hover or focus a row to play it.</p></div>
+      <div class="ease-list">
+<div class="ease" tabindex="0">
+  <span class="mono">--ease-out</span><span class="mono dim">cubic-bezier(.16,1,.3,1)</span>
+  <span class="ease-track"><i style="transition-timing-function:cubic-bezier(.16,1,.3,1)"></i></span>
+</div>
+<div class="ease" tabindex="0">
+  <span class="mono">--ease-snap</span><span class="mono dim">cubic-bezier(.6,0,.2,1)</span>
+  <span class="ease-track"><i style="transition-timing-function:cubic-bezier(.6,0,.2,1)"></i></span>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="caps">
+    <div class="container">
+      <div class="sect-head"><div><span class="mono">04 · Components</span><h2 class="t-sect">Built from the <span class="outline">tokens</span></h2></div>
+        <p class="sys-note">These are the live components, not pictures of them.</p></div>
+      <div class="comp-grid">
+        <div class="comp"><span class="mono">Button · primary and ghost</span>
+          <div class="comp-stage"><a href="projects.html" class="btn"><span>Explore the work</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+          <a href="about.html" class="btn btn--ghost"><span>About</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a></div></div>
+        <div class="comp"><span class="mono">Metric cell</span>
+          <div class="comp-stage"><a class="proof-cell" href="projects/saas-supply-chain.html"><div class="num">40<small>%</small></div><p class="what">more operational efficiency in the Bolttech supply-chain SaaS</p><p class="how">Measured against the manual Excel process it replaced.</p><span class="mono src">Bolttech · 2022–23 <i>Read the case →</i></span></a></div></div>
+        <div class="comp comp--wide"><span class="mono">Work row</span>
+          <div class="comp-stage"><div class="work-list" style="width:100%">
+<a class="work-row" href="projects/basf-design-system.html" data-img="assets/img/basf-design-system/cover.svg" data-reveal>
+  <span class="work-thumb-inline"><img src="assets/img/basf-design-system/cover.svg" alt="" loading="lazy"></span>
+  <span class="year">2025–now</span>
+  <span class="row-main">
+    <h3>Consolidating Legacy Design Systems into One Token-Based Library</h3>
+    <span class="outcome">One token-based library replacing several legacy systems</span>
+  </span>
+  <span class="cat">Design system · BASF Digital Solutions</span>
+  <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
+</a>
+          </div></div></div>
+        <div class="comp"><span class="mono">Impact cell</span>
+          <div class="comp-stage"><div class="impact-cell" style="border:1px solid var(--line)"><b>One library across the whole portal</b><p>A single token-based system now backs the catalogue, ordering, financial, service and account areas, replacing the parallel legacy systems.</p></div></div></div>
+        <div class="comp"><span class="mono">Label, accent and outline</span>
+          <div class="comp-stage comp-stage--col"><span class="mono">Measured, not claimed</span>
+          <span class="sys-h3">Complex in, <span class="accent">clear</span> <span class="outline">out</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sect-head"><div><span class="mono">05 · Rules</span><h2 class="t-sect">What the system <span class="outline">enforces</span></h2></div></div>
+      <ul class="rule-list">
+<li data-reveal><b>Tokens first</b><span>Every text, surface and border colour on the site resolves to a custom property. The light theme is those values swapped; no component has a light-mode rule of its own.</span></li>
+<li data-reveal><b>Headlines never break a word</b><span>Display type is sized per column so a long word fits from 375px up, instead of being hyphenated or clipped.</span></li>
+<li data-reveal><b>Motion is optional</b><span>Reveals, the cursor and the screen reel all stand down under prefers-reduced-motion.</span></li>
+<li data-reveal><b>Nothing tracks before consent</b><span>Fonts are self-hosted and analytics is injected only after an explicit accept.</span></li>
+<li data-reveal><b>No framework in the browser</b><span>Plain HTML, one stylesheet and two small scripts, generated from a single content file.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+  <footer class="site-footer">
+    <span class="big-bg-word" aria-hidden="true">SYSTEM</span>
+    <div class="container footer-cta fit-bound">
+      <span class="mono">Available for new projects — Las Palmas ↔ Madrid</span>
+      <h2 class="t-hero"><a href="mailto:hello@javidesignlabs.com"><span class="fit" data-max="200">Let's work</span><br><span class="fit outline" data-max="200">together</span></a></h2>
+      <a class="footer-email" href="mailto:hello@javidesignlabs.com">hello@javidesignlabs.com</a>
+    </div>
+    <div class="container footer-meta">
+      <div class="footer-person">
+        <img src="https://framerusercontent.com/images/P6TXEOXYaHG6z5IeGjc5TZIwFXM.jpg" alt="Javier de la Cruz">
+        <div>
+          <b>Javier de la C.</b>
+          <small>Senior Product Designer</small>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/jdelacruztel/?locale=en_US" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/bynneh" target="_blank" rel="noopener">X</a>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener">Book a call</a>
+        <a href="https://www.dropbox.com/scl/fi/cnsw0qy0hy00ilttjgrl9/Resume_2025.pdf?rlkey=vtqt9nx7dcgjkg0xly9ipgd5j&st=5209p04e&dl=0" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <a href="#top" class="to-top">Back to top ↑</a>
+    </div>
+    <div class="container footer-meta" style="border-top:none;padding-top:0;">
+      <span class="mono">© <span id="year"></span> Javi de la Cruz — javidesignlabs</span>
+      <a class="mono" href="privacy.html" style="color:var(--smoke);">Privacy</a>
+    </div>
+  </footer>
+  <div class="consent" id="consent" role="dialog" aria-label="Cookie consent" hidden>
+    <p>I use <b>Microsoft Clarity</b> (heatmaps &amp; session recordings) to understand how this site is used. It sets cookies only if you accept. <a href="privacy.html">Privacy</a></p>
+    <div class="consent-actions">
+      <button class="btn" data-consent="granted"><span>Accept</span></button>
+      <button class="btn btn--ghost" data-consent="denied"><span>Decline</span></button>
+    </div>
+  </div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

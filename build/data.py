@@ -16,6 +16,7 @@ PROFILE = {
     "avatar_footer": "https://framerusercontent.com/images/P6TXEOXYaHG6z5IeGjc5TZIwFXM.jpg",
     "hero_graphic": "https://framerusercontent.com/images/EMwh8pAhkhVzPNPRsoohSuFfQ.jpeg",
     "linkedin": "https://www.linkedin.com/in/jdelacruztel/?locale=en_US",
+    "linkedin_recs": "https://www.linkedin.com/in/jdelacruztel/details/recommendations/",
     "x": "https://x.com/bynneh",
     "cal": "https://cal.com/jdlct81",
     "resume": "https://www.dropbox.com/scl/fi/cnsw0qy0hy00ilttjgrl9/Resume_2025.pdf?rlkey=vtqt9nx7dcgjkg0xly9ipgd5j&st=5209p04e&dl=0",
@@ -25,6 +26,7 @@ PROFILE = {
 
 NAV = [
     ("Projects", "projects.html"),
+    ("System", "system.html"),
     ("About & Contact", "about.html"),
 ]
 
@@ -128,6 +130,7 @@ PROJECTS = [
     },
     {
         "slug": "familyhub",
+        "reel": True,
         "outcome": "One design system across PWA, iOS and Android",
         "cover_img": "assets/img/familyhub/cover.webp",
         "gallery": [
@@ -799,6 +802,11 @@ CAREER = [
     ("2006 / 2011", "TeleToledo TV / Post Production",
      "In my first year at TeleToledo, I worked as a graphic designer, creating impactful online and offline campaigns. As my expertise grew, I transitioned to motion graphics, leading post-production and graphic editing projects for television. I also managed all visual content, including bumpers, sketches, and the company's graphic production."),
 ]
+
+# Who wrote each recommendation, in the same order as FEEDBACK. They are public
+# on LinkedIn, but a name only goes here once Javi has confirmed it — never guess.
+# Fill a slot with {"name": "...", "role": "..."}; None shows "LinkedIn recommendation".
+FEEDBACK_AUTHORS = [None, None, None]
 
 FEEDBACK = [
     # Quoted verbatim from the original recommendations — do not paraphrase,

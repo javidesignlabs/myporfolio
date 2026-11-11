@@ -208,4 +208,54 @@
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
   });
+  /* ---- theme: ten colour tokens swap, nothing else ---- */
+  const rootEl = document.documentElement;
+  const currentTheme = () => rootEl.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  function paintTokens() {
+    const cs = getComputedStyle(rootEl);
+    document.querySelectorAll('[data-token]').forEach(el => {
+      const out = el.querySelector('[data-token-val]');
+      if (out) out.textContent = cs.getPropertyValue(el.dataset.token).trim();
+    });
+    document.querySelectorAll('[data-theme-label]').forEach(el => {
+      el.textContent = currentTheme() === 'light' ? 'Switch to dark' : 'Switch to light';
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach(el => {
+      el.setAttribute('aria-pressed', String(currentTheme() === 'light'));
+    });
+  }
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = currentTheme() === 'light' ? 'dark' : 'light';
+      rootEl.setAttribute('data-theme', next);
+      try { localStorage.setItem('jdl-theme', next); } catch (e) {}
+      paintTokens();
+    });
+  });
+  paintTokens();
+
+  /* ---- reel: real product screens, played one at a time ---- */
+  document.querySelectorAll('[data-reel]').forEach(reel => {
+    const frames = [...reel.querySelectorAll('.reel-phone img')];
+    const dots = [...reel.querySelectorAll('.reel-dots button')];
+    const cap = reel.querySelector('.reel-cap');
+    const toggle = reel.querySelector('.reel-toggle');
+    if (frames.length < 2) return;
+    let i = 0, timer = null, playing = !reduced;
+    const show = n => {
+      i = (n + frames.length) % frames.length;
+      frames.forEach((f, k) => f.classList.toggle('on', k === i));
+      dots.forEach((d, k) => d.classList.toggle('on', k === i));
+      if (cap) cap.textContent = frames[i].dataset.cap || '';
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const start = () => { stop(); if (playing) timer = setInterval(() => show(i + 1), 3200); };
+    const sync = () => { if (toggle) { toggle.textContent = playing ? 'Pause' : 'Play'; toggle.setAttribute('aria-pressed', String(!playing)); } };
+    dots.forEach((d, k) => d.addEventListener('click', () => { show(k); start(); }));
+    if (toggle) toggle.addEventListener('click', () => { playing = !playing; sync(); start(); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop()), { threshold: .3 }).observe(reel);
+    } else start();
+    sync();
+  });
 })();

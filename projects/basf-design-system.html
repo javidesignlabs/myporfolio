@@ -25,6 +25,7 @@
 <link rel="preload" href="../assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Consolidating Legacy Design Systems into One Token-Based Library", "description": "Connecting Product, Design and Engineering across a global agricultural platform", "url": "https://javidesignlabs.github.io/myporfolio/projects/basf-design-system.html", "image": "https://javidesignlabs.github.io/myporfolio/assets/img/basf-design-system/cover.svg", "author": {"@type": "Person", "name": "Javier de la Cruz", "url": "https://javidesignlabs.github.io/myporfolio/"}, "about": "Design system · Enterprise"}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="../index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="../projects.html">Projects</a>
+        <a href="../system.html">System</a>
         <a href="../about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="../index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="../projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="../about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="../system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="../about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -57,6 +63,12 @@
       <div class="proj-cover" data-reveal>
         <img src="../assets/img/basf-design-system/cover.svg" alt="Consolidating Legacy Design Systems into One Token-Based Library">
       </div>
+      <div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>Build one token-based design system that teams adopt because it is faster than not adopting it — and keep it honest by generating its documentation from the design files themselves.</p></div>
+        <div><span class="mono">My part</span><p>Senior Product Designer — I own the design system</p></div>
+        <div><span class="mono">What came out</span><ul><li>One library across the whole portal</li><li>40 components inventoried, 14 fully documented</li><li>Faster, quieter handoff</li></ul></div>
+      </div>
+      
     </div>
   </section>
 
@@ -92,6 +104,7 @@
           <span class="mono">Objective</span>
           <p>Build one token-based design system that teams adopt because it is faster than not adopting it — and keep it honest by generating its documentation from the design files themselves.</p>
         </div>
+        <div class="pblock"><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-design-system/tokens.svg" alt="Three-tier token architecture" loading="lazy"><figcaption>Three-tier token architecture — components bind to semantic names, never to raw values. Redrawn generically.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul><li>Define the token architecture and the naming that holds it together.</li>
@@ -114,8 +127,7 @@
 <p><b>Decisions recorded next to the work.</b> Each area of the portal carries its own notes alongside the designs: what was decided, what was rejected and why. Six months later the question is never "what does this look like" — it is "why is it like this", and that answer is the one that normally walks out of the door with whoever made it.</p>
 <p><b>Adoption treated as a design problem.</b> A system nobody uses is a hobby. I ran the component QA myself — checking the built Angular components against the Figma source for visual fidelity, behaviour, accessibility and API — and fixed token bindings where they had come loose. Reviewing the implementation is what keeps the library trustworthy enough to be worth adopting.</p>
         </div>
-        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-design-system/tokens.svg" alt="Three-tier token architecture" loading="lazy"><figcaption>Three-tier token architecture — components bind to semantic names, never to raw values. Redrawn generically.</figcaption></figure>
-<figure class="shot" data-reveal><img src="../assets/img/basf-design-system/handoff.svg" alt="Every handoff page has the same five sections, generated from the Figma file and published where engineers already work." loading="lazy"><figcaption>Every handoff page has the same five sections, generated from the Figma file and published where engineers already work.</figcaption></figure>
+        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-design-system/handoff.svg" alt="Every handoff page has the same five sections, generated from the Figma file and published where engineers already work." loading="lazy"><figcaption>Every handoff page has the same five sections, generated from the Figma file and published where engineers already work.</figcaption></figure>
 <figure class="shot" data-reveal><img src="../assets/img/basf-design-system/inventory.svg" alt="The automated inventory: crawl the live product, compare against the library, publish one page per component." loading="lazy"><figcaption>The automated inventory: crawl the live product, compare against the library, publish one page per component.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Impact</span>

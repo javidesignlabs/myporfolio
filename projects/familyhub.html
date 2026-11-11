@@ -25,6 +25,7 @@
 <link rel="preload" href="../assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "FamilyHub: Designing and Building a Self-Hosted Family Platform", "description": "From a single recipe tool to a PWA and native iOS/Android apps — designed, built and hosted end to end", "url": "https://javidesignlabs.github.io/myporfolio/projects/familyhub.html", "image": "https://javidesignlabs.github.io/myporfolio/assets/img/familyhub/cover.webp", "author": {"@type": "Person", "name": "Javier de la Cruz", "url": "https://javidesignlabs.github.io/myporfolio/"}, "about": "PWA · iOS · Android"}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="../index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="../projects.html">Projects</a>
+        <a href="../system.html">System</a>
         <a href="../about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="../index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="../projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="../about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="../system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="../about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -56,6 +62,27 @@
       <p class="lede" data-reveal>From a single recipe tool to a PWA and native iOS/Android apps — designed, built and hosted end to end</p>
       <div class="proj-cover" data-reveal>
         <img src="../assets/img/familyhub/cover.webp" alt="FamilyHub: Designing and Building a Self-Hosted Family Platform">
+      </div>
+      <div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>Design and build one coherent platform for family life — consistent across web, iOS and Android — with all data self-hosted on our own hardware.</p></div>
+        <div><span class="mono">My part</span><p>Everything — design, build and infrastructure</p></div>
+        <div><span class="mono">What came out</span><ul><li>One system, three platforms</li><li>Fully self-hosted</li><li>End-to-end ownership</li></ul></div>
+      </div>
+      <div class="reel" data-reel data-reveal>
+        <div class="reel-phone"><img src="../assets/img/familyhub/home.webp" alt="Home" data-cap="Home — today's menu for the baby and the family, plus pending tasks and voice input." width="510" height="963" class="on" loading="eager">
+<img src="../assets/img/familyhub/cocina.webp" alt="Kitchen hub" data-cap="Kitchen hub — baby recipes, batch cooking, the weekly planner and the shopping list." width="510" height="963" loading="lazy">
+<img src="../assets/img/familyhub/recetas.webp" alt="Baby-led weaning recipes filtered by age range and meal, with favourites." data-cap="Baby-led weaning recipes filtered by age range and meal, with favourites." width="510" height="963" loading="lazy">
+<img src="../assets/img/familyhub/batch.webp" alt="Batch cooking" data-cap="Batch cooking — a weekly menu generated with AI in one tap." width="510" height="963" loading="lazy">
+<img src="../assets/img/familyhub/lista.webp" alt="Shopping list grouped by who it's for, with progress tracking." data-cap="Shopping list grouped by who it's for, with progress tracking." width="510" height="963" loading="lazy">
+<img src="../assets/img/familyhub/tareas.webp" alt="Shared tasks with owners, urgency, filters and a live activity banner." data-cap="Shared tasks with owners, urgency, filters and a live activity banner." width="510" height="963" loading="lazy">
+<img src="../assets/img/familyhub/nueva.webp" alt="New task" data-cap="New task — a bottom sheet with assignee and urgency in three taps." width="510" height="963" loading="lazy">
+<img src="../assets/img/familyhub/perfil.webp" alt="Profile" data-cap="Profile — personal stats and push notifications for partner updates." width="510" height="963" loading="lazy"></div>
+        <div class="reel-side">
+          <span class="mono">The product, screen by screen</span>
+          <p class="reel-cap" aria-live="polite">Home — today's menu for the baby and the family, plus pending tasks and voice input.</p>
+          <div class="reel-dots"><button type="button" aria-label="Screen 1" class="on"></button><button type="button" aria-label="Screen 2"></button><button type="button" aria-label="Screen 3"></button><button type="button" aria-label="Screen 4"></button><button type="button" aria-label="Screen 5"></button><button type="button" aria-label="Screen 6"></button><button type="button" aria-label="Screen 7"></button><button type="button" aria-label="Screen 8"></button></div>
+          <button type="button" class="reel-toggle mono" aria-pressed="false">Pause</button>
+        </div>
       </div>
     </div>
   </section>
@@ -91,6 +118,7 @@
           <span class="mono">Objective</span>
           <p>Design and build one coherent platform for family life — consistent across web, iOS and Android — with all data self-hosted on our own hardware.</p>
         </div>
+        
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul><li>Product definition and scoping each new module.</li>

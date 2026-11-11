@@ -25,6 +25,7 @@
 <link rel="preload" href="../assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "One Portal, Many Markets: Designing for the Second Country", "description": "Ordering, financial documents and service for a global customer base — where the market is a design constraint, not a translation job", "url": "https://javidesignlabs.github.io/myporfolio/projects/basf-customer-portal.html", "image": "https://javidesignlabs.github.io/myporfolio/assets/img/basf-customer-portal/cover.svg", "author": {"@type": "Person", "name": "Javier de la Cruz", "url": "https://javidesignlabs.github.io/myporfolio/"}, "about": "Enterprise product · Multi-market"}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="../index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="../projects.html">Projects</a>
+        <a href="../system.html">System</a>
         <a href="../about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="../index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="../projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="../about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="../system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="../about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -57,6 +63,12 @@
       <div class="proj-cover" data-reveal>
         <img src="../assets/img/basf-customer-portal/cover.svg" alt="One Portal, Many Markets: Designing for the Second Country">
       </div>
+      <div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>Design the portal so that a new market is a configuration of the same product, not a new version of it — and so the differences that are real are visible in the structure rather than patched into screens.</p></div>
+        <div><span class="mono">My part</span><p>Lead designer — UX/UI strategy and design of the portal</p></div>
+        <div><span class="mono">What came out</span><ul><li>A new market is a configuration</li><li>Legal changes stop being redesigns</li><li>The differences are visible</li></ul></div>
+      </div>
+      
     </div>
   </section>
 
@@ -92,6 +104,7 @@
           <span class="mono">Objective</span>
           <p>Design the portal so that a new market is a configuration of the same product, not a new version of it — and so the differences that are real are visible in the structure rather than patched into screens.</p>
         </div>
+        <div class="pblock"><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-customer-portal/entry.svg" alt="Country and region before the login, because the market decides what a customer can be shown at all." loading="lazy"><figcaption>Country and region before the login, because the market decides what a customer can be shown at all.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul><li>Own the UX/UI strategy for the portal and the structure the market variations hang from.</li>
@@ -111,8 +124,7 @@
 <p><b>Decision: market rules are data the components take, not logic inside them.</b> Consent and communication preferences vary by market and keep changing. If those rules live inside the screen, every legal update is a redesign. Designing them as configuration the same components consume means a market change is a change to the rules, not to the product.</p>
 <p><b>Decision: local differences are variants, not forks.</b> Some markets really do need an extra level of navigation or an additional step. Those live as variants of the shared pattern, inside the design system, so they stay maintained. A fork is the version that is correct on the day it ships and quietly rots afterwards.</p>
         </div>
-        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-customer-portal/entry.svg" alt="Country and region before the login, because the market decides what a customer can be shown at all." loading="lazy"><figcaption>Country and region before the login, because the market decides what a customer can be shown at all.</figcaption></figure>
-<figure class="shot" data-reveal><img src="../assets/img/basf-customer-portal/rules.svg" alt="Market rules consumed as configuration, so a legal change is a change to data rather than a redesign." loading="lazy"><figcaption>Market rules consumed as configuration, so a legal change is a change to data rather than a redesign.</figcaption></figure></div></div>
+        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/basf-customer-portal/rules.svg" alt="Market rules consumed as configuration, so a legal change is a change to data rather than a redesign." loading="lazy"><figcaption>Market rules consumed as configuration, so a legal change is a change to data rather than a redesign.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Impact</span>
           <div class="impact-grid">

@@ -25,6 +25,7 @@
 <link rel="preload" href="../assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Redesigning Payment and Renewal Experiences", "description": "Optimizing User Journeys for Better Conversion Rates and Customer Satisfaction", "url": "https://javidesignlabs.github.io/myporfolio/projects/payment-renewal.html", "image": "https://framerusercontent.com/images/cD4x3P1lTyys2SAT5dwR7XDFHc.jpg", "author": {"@type": "Person", "name": "Javier de la Cruz", "url": "https://javidesignlabs.github.io/myporfolio/"}, "about": "UX UI"}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="../index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="../projects.html">Projects</a>
+        <a href="../system.html">System</a>
         <a href="../about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="../index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="../projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="../about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="../system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="../about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -57,6 +63,12 @@
       <div class="proj-cover" data-reveal>
         <img src="https://framerusercontent.com/images/cD4x3P1lTyys2SAT5dwR7XDFHc.jpg" alt="Redesigning Payment and Renewal Experiences">
       </div>
+      <div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>Redesign the payment and automatic renewal processes to improve user clarity, satisfaction, and conversion rates.</p></div>
+        <div><span class="mono">My part</span><p>Lead designer — payment and renewal flows</p></div>
+        <div><span class="mono">What came out</span><ul><li>17% increase in renewal retention</li><li>15% more lead conversions</li><li>Higher satisfaction after launch</li></ul></div>
+      </div>
+      
     </div>
   </section>
 
@@ -92,6 +104,7 @@
           <span class="mono">Objective</span>
           <p>Redesign the payment and automatic renewal processes to improve user clarity, satisfaction, and conversion rates.</p>
         </div>
+        
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul><li>Conduct a comprehensive assessment of user behavior and pain points.</li>

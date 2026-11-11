@@ -25,6 +25,7 @@
 <link rel="preload" href="../assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Contributing to Bolttech's Design System: Components and Tokens", "description": "Building the pieces of a shared library for an insurtech scaling across markets", "url": "https://javidesignlabs.github.io/myporfolio/projects/bolttech-design-system.html", "image": "https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png", "author": {"@type": "Person", "name": "Javier de la Cruz", "url": "https://javidesignlabs.github.io/myporfolio/"}, "about": "Design system"}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="../index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="../projects.html">Projects</a>
+        <a href="../system.html">System</a>
         <a href="../about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="../index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="../projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="../about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="../system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="../about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -57,6 +63,12 @@
       <div class="proj-cover" data-reveal>
         <img src="https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png" alt="Contributing to Bolttech's Design System: Components and Tokens">
       </div>
+      <div class="glance" data-reveal>
+        <div><span class="mono">The goal</span><p>Give the team a shared library with tokens that worked the same way in Figma and in code, so handoff stopped being a translation exercise.</p></div>
+        <div><span class="mono">My part</span><p>Product Designer — contributor to the design system</p></div>
+        <div><span class="mono">What came out</span><ul><li>Nine button styles collapsed into one set</li><li>Handoff stopped being a conversation</li><li>A foundation the team kept building on</li></ul></div>
+      </div>
+      
     </div>
   </section>
 
@@ -91,6 +103,7 @@
           <span class="mono">Objective</span>
           <p>Give the team a shared library with tokens that worked the same way in Figma and in code, so handoff stopped being a translation exercise.</p>
         </div>
+        <div class="pblock"><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/bolttech-design-system/components.svg" alt="The components I owned, specified in all five states" loading="lazy"><figcaption>The components I owned, specified in all five states — where the consistency actually came from.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Responsibilities</span>
           <ul><li>Design components and every one of their states.</li>
@@ -110,8 +123,7 @@
 <p><b>What I learned from the documentation.</b> I documented my components in Zeroheight — usage, props and accessibility, the things a Figma file cannot tell a developer. Writing them taught me how much of a component's behaviour I had been holding in my head and never writing down.</p>
 <p><b>Reviewing the build.</b> I checked early implementations of my components against the library. A component that is published but never reviewed quietly becomes a suggestion.</p>
         </div>
-        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/bolttech-design-system/components.svg" alt="The components I owned, specified in all five states" loading="lazy"><figcaption>The components I owned, specified in all five states — where the consistency actually came from.</figcaption></figure>
-<figure class="shot" data-reveal><img src="../assets/img/bolttech-design-system/tokens.svg" alt="Tokens named identically in Figma and in code, so handoff stopped being a translation step." loading="lazy"><figcaption>Tokens named identically in Figma and in code, so handoff stopped being a translation step.</figcaption></figure>
+        <div class="pblock"><span class="mono">Artifacts</span><div class="shot-grid wide"><figure class="shot" data-reveal><img src="../assets/img/bolttech-design-system/tokens.svg" alt="Tokens named identically in Figma and in code, so handoff stopped being a translation step." loading="lazy"><figcaption>Tokens named identically in Figma and in code, so handoff stopped being a translation step.</figcaption></figure>
 <figure class="shot" data-reveal><img src="../assets/img/bolttech-design-system/docs.svg" alt="Documentation in Zeroheight: usage, props and accessibility" loading="lazy"><figcaption>Documentation in Zeroheight: usage, props and accessibility — what a Figma file can't tell a developer.</figcaption></figure></div></div>
         <div class="pblock" data-reveal>
           <span class="mono">Impact</span>

@@ -143,3 +143,26 @@ Reglas para no repetir el error:
 servidos desde `framerusercontent.com`. Funcionan, pero el día que cierres Framer desaparecen.
 Hay que descargarlas a `assets/img/` y actualizar los `cover_img` de `data.py` y los avatares
 de `PROFILE`.
+
+## v19 — home con imagen, resumen de caso, reel, página del sistema y tema claro (11/2026)
+
+- **La home enseña el trabajo sin hover.** Los cuatro destacados son tarjetas con portada
+  (`feature_cards()` en `generate.py`). `projects.html` sigue con filas y preview flotante.
+- **Cada caso abre con "at a glance"**: objetivo, mi parte y lo que salió. Se compone solo con
+  campos que ya existían (`objective`, `role`, los tres primeros títulos de `impact`) — no hay
+  texto nuevo que mantener.
+- **En los casos con diagramas, el primer artefacto sube** junto al problema; el resto sigue
+  tras "Design & implementation".
+- **FamilyHub tiene un reel** (`"reel": True` en `data.py`): las capturas reales del caso
+  pasando en un marco de móvil, con pausa y respetando `prefers-reduced-motion`.
+- **`system.html`** (contenido en `build/system_page.py`) documenta el sistema del propio
+  sitio con los componentes reales. Las reglas que lista son cosas que el código hace de
+  verdad: si cambias el comportamiento, cambia la regla.
+- **Tema claro** = `:root[data-theme="light"]` en `style.css`, solo valores de token. Si un
+  componente necesita una regla propia para el tema claro, el fallo está en los tokens.
+  `assets/js/theme.js` va en el `<head>` para aplicar el tema guardado antes del primer pintado
+  (la CSP no permite script inline). Los diagramas SVG son siempre oscuros, a propósito.
+- **Testimonios**: son recomendaciones de LinkedIn. La sección enlaza a ellas y cada cita
+  dice "LinkedIn recommendation". Para poner nombre y cargo, rellena `FEEDBACK_AUTHORS` en
+  `data.py` — solo con nombres confirmados.
+- **Botón flotante móvil**: la flecha no tenía tamaño y partía el texto en tres líneas.

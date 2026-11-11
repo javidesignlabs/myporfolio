@@ -25,6 +25,7 @@
 <link rel="preload" href="assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/theme.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Javier de la Cruz", "alternateName": "Javi de la Cruz", "jobTitle": "Senior Product Designer", "url": "https://javidesignlabs.github.io/myporfolio/", "image": "https://framerusercontent.com/images/UdHGJxJMIvCQPbsnF3793NhTyzw.jpg", "email": "mailto:hello@javidesignlabs.com", "sameAs": ["https://www.linkedin.com/in/jdelacruztel/?locale=en_US", "https://x.com/bynneh"], "worksFor": {"@type": "Organization", "name": "BASF Digital Solutions"}, "address": [{"@type": "PostalAddress", "addressLocality": "Las Palmas de Gran Canaria", "addressCountry": "ES"}, {"@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES"}], "knowsAbout": ["Design Systems", "Component Libraries", "Design Tokens", "DesignOps", "Product Design", "UX/UI Design", "SaaS", "Figma", "User Research"]}</script>
 </head>
 <body id="top">
@@ -33,16 +34,21 @@
       <a href="index.html" class="brand"><i></i>javidesignlabs</a>
       <nav class="main-nav" aria-label="Primary">
         <a href="projects.html">Projects</a>
+        <a href="system.html">System</a>
         <a href="about.html">About & Contact</a>
       </nav>
-      <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between dark and light theme"><i></i></button>
+        <a href="https://cal.com/jdlct81" target="_blank" rel="noopener" class="btn"><span>Book a call</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
+      </div>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" aria-label="Mobile">
       <a href="index.html"><span>Home</span><span class="mono">00</span></a>
       <a href="projects.html"><span>Projects</span><span class="mono">01</span></a>
-      <a href="about.html"><span>About & Contact</span><span class="mono">02</span></a>
+      <a href="system.html"><span>System</span><span class="mono">02</span></a>
+      <a href="about.html"><span>About & Contact</span><span class="mono">03</span></a>
       <a href="https://cal.com/jdlct81" target="_blank" rel="noopener"><span>Book a call</span><span class="mono">↗</span></a>
       <a href="mailto:hello@javidesignlabs.com"><span>Say hello</span><span class="mono">→</span></a>
   </nav>
@@ -126,46 +132,50 @@
         </div>
         <a href="projects.html" class="btn btn--ghost"><span>All projects</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
       </div>
-      <div class="work-list">
-<a class="work-row" href="projects/basf-design-system.html" data-img="assets/img/basf-design-system/cover.svg" data-reveal>
-  <span class="work-thumb-inline"><img src="assets/img/basf-design-system/cover.svg" alt="" loading="lazy"></span>
-  <span class="year">2025–now</span>
-  <span class="row-main">
-    <h3>Consolidating Legacy Design Systems into One Token-Based Library</h3>
-    <span class="outcome">One token-based library replacing several legacy systems</span>
+      <div class="feature-grid">
+<a class="feature" href="projects/basf-design-system.html" data-reveal>
+  <span class="feature-media"><img src="assets/img/basf-design-system/cover.svg" alt="" loading="lazy"></span>
+  <span class="feature-meta"><span class="mono">2025–now</span><span class="mono">Design system · BASF Digital Solutions</span></span>
+  <span class="feature-main">
+    <span class="row-main">
+      <h3>Consolidating Legacy Design Systems into One Token-Based Library</h3>
+      <span class="outcome">One token-based library replacing several legacy systems</span>
+    </span>
+    <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
   </span>
-  <span class="cat">Design system · BASF Digital Solutions</span>
-  <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
 </a>
-<a class="work-row" href="projects/basf-customer-portal.html" data-img="assets/img/basf-customer-portal/cover.svg" data-reveal>
-  <span class="work-thumb-inline"><img src="assets/img/basf-customer-portal/cover.svg" alt="" loading="lazy"></span>
-  <span class="year">2025–now</span>
-  <span class="row-main">
-    <h3>One Portal, Many Markets: Designing for the Second Country</h3>
-    <span class="outcome">One portal that behaves correctly in every market it opens in</span>
+<a class="feature" href="projects/basf-customer-portal.html" data-reveal>
+  <span class="feature-media"><img src="assets/img/basf-customer-portal/cover.svg" alt="" loading="lazy"></span>
+  <span class="feature-meta"><span class="mono">2025–now</span><span class="mono">Enterprise product · BASF Digital Solutions</span></span>
+  <span class="feature-main">
+    <span class="row-main">
+      <h3>One Portal, Many Markets: Designing for the Second Country</h3>
+      <span class="outcome">One portal that behaves correctly in every market it opens in</span>
+    </span>
+    <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
   </span>
-  <span class="cat">Enterprise product · BASF Digital Solutions</span>
-  <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
 </a>
-<a class="work-row" href="projects/bolttech-design-system.html" data-img="https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png" data-reveal>
-  <span class="work-thumb-inline"><img src="https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png" alt="" loading="lazy"></span>
-  <span class="year">2021–23</span>
-  <span class="row-main">
-    <h3>Contributing to Bolttech's Design System: Components and Tokens</h3>
-    <span class="outcome">Components and tokens for the first shared library</span>
+<a class="feature" href="projects/bolttech-design-system.html" data-reveal>
+  <span class="feature-media"><img src="https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png" alt="" loading="lazy"></span>
+  <span class="feature-meta"><span class="mono">2021–23</span><span class="mono">Design system · Bolttech</span></span>
+  <span class="feature-main">
+    <span class="row-main">
+      <h3>Contributing to Bolttech's Design System: Components and Tokens</h3>
+      <span class="outcome">Components and tokens for the first shared library</span>
+    </span>
+    <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
   </span>
-  <span class="cat">Design system · Bolttech</span>
-  <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
 </a>
-<a class="work-row" href="projects/familyhub.html" data-img="assets/img/familyhub/cover.webp" data-reveal>
-  <span class="work-thumb-inline"><img src="assets/img/familyhub/cover.webp" alt="" loading="lazy"></span>
-  <span class="year">Ongoing</span>
-  <span class="row-main">
-    <h3>FamilyHub: Designing and Building a Self-Hosted Family Platform</h3>
-    <span class="outcome">One design system across PWA, iOS and Android</span>
+<a class="feature" href="projects/familyhub.html" data-reveal>
+  <span class="feature-media"><img src="assets/img/familyhub/cover.webp" alt="" loading="lazy"></span>
+  <span class="feature-meta"><span class="mono">Ongoing</span><span class="mono">PWA & Native apps · Personal project</span></span>
+  <span class="feature-main">
+    <span class="row-main">
+      <h3>FamilyHub: Designing and Building a Self-Hosted Family Platform</h3>
+      <span class="outcome">One design system across PWA, iOS and Android</span>
+    </span>
+    <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
   </span>
-  <span class="cat">PWA & Native apps · Personal project</span>
-  <span class="go"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></span>
 </a>
       </div>
     </div>
@@ -251,19 +261,20 @@
           <span class="mono">People I've shipped with</span>
           <h2 class="t-sect">Team <span class="outline">feedback</span></h2>
         </div>
+        <a href="https://www.linkedin.com/in/jdelacruztel/details/recommendations/" target="_blank" rel="noopener" class="btn btn--ghost"><span>Read them on LinkedIn</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 2M12 2H4M12 2v8"/></svg></a>
       </div>
       <div class="quote-rail">
 <div class="quote-cell" data-reveal>
   <blockquote>Javier and I worked together at Inari for 9 months, collaborating on shared design system issues. He's an experienced designer with great ideas and deep Figma expertise. His friendliness, adaptability, and positive attitude make him a pleasure to work with.</blockquote>
-  <span class="mono">Feedback from my team</span>
+  <span class="mono">LinkedIn recommendation</span>
 </div>
 <div class="quote-cell" data-reveal>
   <blockquote>Javier is a reliable, creative designer who delivers user-centered experiences that drive business goals. A proactive team player, he collaborates seamlessly with teams and takes on challenges with enthusiasm.</blockquote>
-  <span class="mono">Feedback from my team</span>
+  <span class="mono">LinkedIn recommendation</span>
 </div>
 <div class="quote-cell" data-reveal>
   <blockquote>Javi is an exceptional teammate with remarkable Figma skills and expertise in creating mockups. His coordination with front-end teams is outstanding, and his dedication and teamwork make him an invaluable asset to any team.</blockquote>
-  <span class="mono">Feedback from my team</span>
+  <span class="mono">LinkedIn recommendation</span>
 </div>
       </div>
     </div>
