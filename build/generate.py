@@ -133,7 +133,7 @@ def build_home():
           <span class="mono">Las Palmas ↔ Madrid · Since 2011</span>
         </div>
         <div class="hero-card">
-          <img src="{PROFILE['avatar_hero']}" alt="Javier de la Cruz">
+          <img src="{root}{PROFILE['avatar_hero']}" alt="Javier de la Cruz" width="204" height="156">
           <div>
             <b>Javier de la Cruz</b>
             <small>Open to collaborate</small>
@@ -285,7 +285,7 @@ def build_about():
   <section>
     <div class="container about-grid">
       <div class="about-photo" data-reveal>
-        <img src="{PROFILE['avatar_about']}" alt="Javier de la Cruz">
+        <img src="{root}{PROFILE['avatar_about']}" alt="Javier de la Cruz" width="432" height="430">
         <div class="strip">
           <span class="mono">Javier de la Cruz</span>
           <span class="mono"><b>●</b> Available</span>
@@ -542,7 +542,7 @@ def person_jsonld():
         "alternateName": "Javi de la Cruz",
         "jobTitle": "Senior Product Designer",
         "url": base + "/",
-        "image": PROFILE["avatar_about"],
+        "image": PROFILE["base_url"] + "/" + PROFILE["avatar_about"],
         "email": "mailto:" + PROFILE["mailto"],
         "sameAs": [PROFILE["linkedin"], PROFILE["x"]],
         "worksFor": {"@type": "Organization", "name": "BASF Digital Solutions"},
@@ -615,7 +615,7 @@ def build_privacy():
         </div>
         <div class="pblock">
           <span class="mono">Third-party content</span>
-          <p>Project images and photos on this site are served from Framer's content delivery network (framerusercontent.com). When your browser loads those images, it makes a standard HTTP request to that CDN, which — like any web request — includes your IP address. No other data is transmitted.</p>
+          <p>Project images and photos are self-hosted on this site. No image is loaded from a third-party content delivery network.</p>
           <p>External links (LinkedIn, X, Cal.com, Dropbox, client websites) take you to third-party sites governed by their own privacy policies.</p>
         </div>
         <div class="pblock">

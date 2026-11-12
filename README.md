@@ -41,9 +41,9 @@ cd build && python3 generate.py
 
 ## Imágenes
 
-Enlazadas en vivo desde tu CDN de Framer (framerusercontent.com) y el CV desde
-tu Dropbox. Si algún día cierras Framer, descarga esas imágenes a `assets/img/`
-y actualiza los `cover_img` en `build/data.py` + los avatares en `PROFILE`.
+Todas autoalojadas en `assets/img/` (portadas en `assets/img/<slug>/cover.webp`,
+tus fotos en `assets/img/profile/`). El sitio ya no pide nada a Framer y la CSP
+no lo permite. El CV sigue enlazado desde tu Dropbox.
 
 ## Deploy
 
@@ -139,10 +139,15 @@ Reglas para no repetir el error:
 - Después de desplegar, pasa la URL por el validador de LinkedIn/X; los dos cachean el
   preview una temporada.
 
-**Pendiente, del mismo problema:** las portadas de los casos antiguos y tus avatares siguen
-servidos desde `framerusercontent.com`. Funcionan, pero el día que cierres Framer desaparecen.
-Hay que descargarlas a `assets/img/` y actualizar los `cover_img` de `data.py` y los avatares
-de `PROFILE`.
+**Resuelto (11/2026):** las portadas de los casos antiguos y tus avatares también están ya
+en `assets/img/`, convertidos a WebP. Los avatares van redimensionados a su tamaño de uso
+(el del hero pesaba 440 KB para una miniatura de 52px; ahora 7 KB). Si cambias una foto,
+vuelve a exportarla pequeña. Queda un único enlace a Framer en `data.py`: `hero_graphic`,
+que no usa ninguna página.
+
+**Reduced motion y titulares ajustados:** la regla global de `prefers-reduced-motion` da
+transición a todas las propiedades, así que `.fit` lleva `transition:none` dentro de ese
+bloque. Sin eso `fitAll()` mide el tamaño anterior y los titulares salen descuadrados.
 
 ## v19 — home con imagen, resumen de caso, reel, página del sistema y tema claro (11/2026)
 

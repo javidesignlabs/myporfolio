@@ -127,6 +127,10 @@ body.is-loaded .hero-line > span{ transform:none; }
   *,*::before,*::after{ transition-duration:.001s !important; animation-duration:.001s !important; animation-iteration-count:1 !important; }
   [data-reveal]{ opacity:1; transform:none; }
   .hero-line > span{ transform:none; }
+  /* The rule above gives every property a transition, font-size included.
+     fitAll() sets a size and measures in the same frame, so a transitioning
+     font-size makes it read the old width and size the headline wrong. */
+  .fit, .fit *{ transition:none !important; }
 }
 
 /* ---------- header ---------- */
@@ -517,7 +521,8 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 .footer-email:hover{ color:var(--lime); }
 .footer-meta{
   display:flex; justify-content:space-between; align-items:center; gap:24px;
-  padding: 26px 0;
+  /* vertical only: this sits on the same element as .container, whose gutter must survive */
+  padding-top: 26px; padding-bottom: 26px;
   border-top:1px solid var(--line);
   flex-wrap:wrap;
 }

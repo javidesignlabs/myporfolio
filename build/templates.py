@@ -48,7 +48,7 @@ def footer(root="", bg_word="JAVI"):
     </div>
     <div class="container footer-meta">
       <div class="footer-person">
-        <img src="{PROFILE['avatar_footer']}" alt="Javier de la Cruz">
+        <img src="{root}{PROFILE['avatar_footer']}" alt="Javier de la Cruz" width="132" height="162" loading="lazy">
         <div>
           <b>Javier de la C.</b>
           <small>Senior Product Designer</small>
@@ -102,7 +102,7 @@ def page_shell(title, description, root, body, active="", bg_word="JAVI", path="
 {clarity_meta}
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://framerusercontent.com https://*.clarity.ms; connect-src 'self' https://*.clarity.ms; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://*.clarity.ms; connect-src 'self' https://*.clarity.ms; base-uri 'self'; form-action 'none'; object-src 'none'">
 <link rel="icon" href="{root}assets/img/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">

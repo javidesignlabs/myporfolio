@@ -11,9 +11,9 @@ PROFILE = {
     # Microsoft Clarity: paste your project ID from clarity.microsoft.com (Settings → Overview).
     # Leave empty ("") to disable analytics entirely (no banner will be shown).
     "clarity_id": "xja19yd80b",
-    "avatar_hero": "https://framerusercontent.com/images/Bv3kCGt7CVS9r8dtdbxDJa5hHY.jpeg",
-    "avatar_about": "https://framerusercontent.com/images/UdHGJxJMIvCQPbsnF3793NhTyzw.jpg",
-    "avatar_footer": "https://framerusercontent.com/images/P6TXEOXYaHG6z5IeGjc5TZIwFXM.jpg",
+    "avatar_hero": "assets/img/profile/hero.webp",
+    "avatar_about": "assets/img/profile/about.webp",
+    "avatar_footer": "assets/img/profile/footer.webp",
     "hero_graphic": "https://framerusercontent.com/images/EMwh8pAhkhVzPNPRsoohSuFfQ.jpeg",
     "linkedin": "https://www.linkedin.com/in/jdelacruztel/?locale=en_US",
     "linkedin_recs": "https://www.linkedin.com/in/jdelacruztel/details/recommendations/",
@@ -195,7 +195,7 @@ PROJECTS = [
     {
         "slug": "saas-supply-chain",
         "outcome": "40% more operational efficiency",
-        "cover_img": "https://framerusercontent.com/images/BpCaafId9OJ1JASCegLAJX3k.jpg",
+        "cover_img": "assets/img/saas-supply-chain/cover.webp",
         "tag": "SaaS",
         "title": "SaaS Supply Chain Service",
         "subtitle": "Optimizing Repair Center Management: A User-Centered Approach to Streamline Operations and Enhance Customer Experience",
@@ -310,7 +310,7 @@ PROJECTS = [
     {
         "slug": "bolttech-design-system",
         "outcome": "Components and tokens for the first shared library",
-        "cover_img": "https://framerusercontent.com/images/frKhVknw8YUYEnhirTjNLuXz3e4.png",
+        "cover_img": "assets/img/bolttech-design-system/cover.webp",
         "tag": "Design system",
         "title": "Contributing to Bolttech's Design System: Components and Tokens",
         "subtitle": "Building the pieces of a shared library for an insurtech scaling across markets",
@@ -372,7 +372,7 @@ PROJECTS = [
     {
         "slug": "partner-portals",
         "outcome": "15% faster access times",
-        "cover_img": "https://framerusercontent.com/images/wvmDSEbjdRvEPLWhtyWIUhJrjnM.jpg",
+        "cover_img": "assets/img/partner-portals/cover.webp",
         "tag": "Desktop and Mobile",
         "title": "Enhancing Partner Portals: A User-Centered Redesign for Bolttech",
         "subtitle": "Optimizing B2B and B2C Interfaces to Improve User Experience and Operational Efficiency",
@@ -428,7 +428,7 @@ PROJECTS = [
     {
         "slug": "saas-process-modeling",
         "outcome": "Technical specs written by non-technical users",
-        "cover_img": "https://framerusercontent.com/images/LdMym2jStT80OZnoQwnKx2fViQ.png",
+        "cover_img": "assets/img/saas-process-modeling/cover.webp",
         "tag": "SaaS",
         "title": "SaaS Process Modeling: Transforming ideas into technical specifications",
         "subtitle": "Leveraging AI to bridge the gap between concept and implementation",
@@ -481,7 +481,7 @@ PROJECTS = [
     {
         "slug": "payment-renewal",
         "outcome": "17% more renewal retention",
-        "cover_img": "https://framerusercontent.com/images/cD4x3P1lTyys2SAT5dwR7XDFHc.jpg",
+        "cover_img": "assets/img/payment-renewal/cover.webp",
         "tag": "UX UI",
         "title": "Redesigning Payment and Renewal Experiences",
         "subtitle": "Optimizing User Journeys for Better Conversion Rates and Customer Satisfaction",
@@ -537,7 +537,7 @@ PROJECTS = [
     },
     {
         "slug": "landing-pages-dorna",
-        "cover_img": "https://framerusercontent.com/images/fZ1pkS8agnYCFJxMfCpxOBApYHM.jpg",
+        "cover_img": "assets/img/landing-pages-dorna/cover.webp",
         "tag": "Ecommerce",
         "title": "Designing High-Conversion Landing Pages for Dorna Sports",
         "subtitle": "Enhancing User Engagement and Subscription Rates for MotoGP and WorldSBK",
@@ -585,7 +585,7 @@ PROJECTS = [
     {
         "slug": "roku-tv-app",
         "outcome": "VideoPass brought to living-room TV",
-        "cover_img": "https://framerusercontent.com/images/ZRTgPOqsEFBPpnqCdGGu0cRdo.jpg",
+        "cover_img": "assets/img/roku-tv-app/cover.webp",
         "tag": "TV App",
         "title": "Designing the Dorna Sports TV App for Roku",
         "subtitle": "Enhancing the Viewing Experience for MotoGP Fans",
@@ -637,7 +637,7 @@ PROJECTS = [
     },
     {
         "slug": "email-marketing-dorna",
-        "cover_img": "https://framerusercontent.com/images/d4nXOdOgdBcjb1Dp11Nynt8zWwU.png",
+        "cover_img": "assets/img/email-marketing-dorna/cover.webp",
         "tag": "Marketing and Social",
         "title": "Optimizing Email Marketing Campaigns for Dorna Sports",
         "subtitle": "User Engagement and Conversion Rates through Strategic Design",
@@ -685,7 +685,7 @@ PROJECTS = [
     {
         "slug": "desigual-product-card",
         "outcome": "23% conversion lift, A/B tested",
-        "cover_img": "https://framerusercontent.com/images/vzJyFGpXcQ9lR7XsRFRhBVqv4Zc.jpg",
+        "cover_img": "assets/img/desigual-product-card/cover.webp",
         "tag": "Ecommerce",
         "title": "Redesigning Desigual's Product Card on the PDP",
         "subtitle": "Optimizing Product Presentation to Boost Conversion Rates",
@@ -739,7 +739,7 @@ PROJECTS = [
     },
     {
         "slug": "desigual-store-locator",
-        "cover_img": "https://framerusercontent.com/images/YaBCZWUNg2hxXOIdxZWP6XhA2g.jpg",
+        "cover_img": "assets/img/desigual-store-locator/cover.webp",
         "tag": "Ecommerce",
         "title": "Designing Desigual's Store Locator to Improve Accessibility",
         "subtitle": "How to integrate a new store locator into the mobile App.",
