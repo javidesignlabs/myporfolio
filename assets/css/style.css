@@ -511,7 +511,9 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 .footer-cta .t-hero a{ display:inline-block; transition: color .3s; }
 .footer-email{
   font-family:var(--font-display); font-weight:700;
-  font-size: clamp(1.2rem, 3.4vw, 2.4rem);
+  /* sized so a 30-character address still fits one line at 320px */
+  font-size: clamp(.9rem, 4.9vw, 2.4rem);
+  max-width:100%; overflow-wrap:anywhere;
   text-transform:none; letter-spacing:-.01em;
   border-bottom:2px solid var(--lime);
   padding-bottom:4px;
@@ -623,6 +625,10 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 .about-copy p + p{ margin-top:22px; }
 .about-copy p b{ color:var(--cream); }
 .about-ctas{ display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; }
+/* the email button carries a 30-character address: keep it inside narrow phones */
+.about-ctas .btn{ max-width:100%; }
+.about-ctas .btn span{ min-width:0; overflow-wrap:anywhere; }
+@media (max-width:400px){ .about-ctas .btn{ letter-spacing:.03em; padding-left:16px; padding-right:16px; gap:8px; } }
 
 /* ---------- 404 ---------- */
 .err{ min-height:100svh; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }

@@ -20,8 +20,8 @@ PROFILE = {
     "x": "https://x.com/bynneh",
     "cal": "https://cal.com/jdlct81",
     "resume": "https://www.dropbox.com/scl/fi/cnsw0qy0hy00ilttjgrl9/Resume_2025.pdf?rlkey=vtqt9nx7dcgjkg0xly9ipgd5j&st=5209p04e&dl=0",
-    "mailto": "hello@javidesignlabs.com",
-    "email_display": "hello@javidesignlabs.com",
+    "mailto": "javierdelacruztellez@gmail.com",
+    "email_display": "javierdelacruztellez@gmail.com",
 }
 
 NAV = [
