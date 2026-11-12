@@ -806,14 +806,35 @@ CAREER = [
 # Who wrote each recommendation, in the same order as FEEDBACK. They are public
 # on LinkedIn, but a name only goes here once Javi has confirmed it — never guess.
 # Fill a slot with {"name": "...", "role": "..."}; None shows "LinkedIn recommendation".
-FEEDBACK_AUTHORS = [None, None, None]
+# Roles describe the relationship as LinkedIn states it, not the person's current headline.
+FEEDBACK_AUTHORS = [
+    {"name": "Diogo Melo", "role": "Managed Javier directly at Bolttech"},
+    {"name": "Anna Witteveen", "role": "Product Manager · Managed Javier directly at i-surance (later Bolttech)"},
+    {"name": "Ana Martín Domínguez", "role": "UX-UI Designer · Same team at Inari · Translated from Spanish"},
+    {"name": "Sergio de Candelario Delgado", "role": "Senior Backend Engineer · Same team at Bolttech"},
+]
 
 FEEDBACK = [
-    # Quoted verbatim from the original recommendations — do not paraphrase,
-    # shorten, or "improve" these. They are other people's words.
-    "Javier and I worked together at Inari for 9 months, collaborating on shared design system issues. He's an experienced designer with great ideas and deep Figma expertise. His friendliness, adaptability, and positive attitude make him a pleasure to work with.",
-    "Javier is a reliable, creative designer who delivers user-centered experiences that drive business goals. A proactive team player, he collaborates seamlessly with teams and takes on challenges with enthusiasm.",
-    "Javi is an exceptional teammate with remarkable Figma skills and expertise in creating mockups. His coordination with front-end teams is outstanding, and his dedication and teamwork make him an invaluable asset to any team.",
+    # Other people's words, taken from the LinkedIn recommendations Javi pasted in 11/2026.
+    # Do not paraphrase or "improve" them. Two honest exceptions, both labelled on the page:
+    #  - Diogo's is an excerpt of whole sentences; "[…]" marks what was left out.
+    #  - Ana wrote hers in Spanish; this is a close translation, and her role line says so.
+    # The home shows these four (two managers, a design-system peer, an engineer) in a 2x2
+    # grid. To swap one in from FEEDBACK_RESERVE, replace the text and its author together.
+    "I had the privilege of working with Javier during the merger between i-surance and bolttech, and I can confidently say he is a fantastic colleague. […] After joining the bolttech design team, Javier seamlessly became part of the daily activities within the EU squad. He adapted quickly, contributing with insight, creativity, and a strong work ethic. He consistently met his goals, always demonstrating his passion for design and delivering value to the team.",
+    "Javier is a designer who isn’t afraid to take on big challenges. He’s reliable, capable, creative and always keen to generate a consistent and delightful user experience. He’s happy to take ownership, collaborating with product management and engineering to plan and deliver user experiences that deliver value, helping drive business objectives and establishing and improving user metrics. He’s a great team player and fun to work with!",
+    "Javier and I worked at Inari for 9 months and, although we weren't on the same project, we shared common topics around our design system. Throughout that time we always collaborated smoothly and very pleasantly. Javier has very good ideas, is a highly experienced designer and knows Figma in depth. I would also like to highlight his friendliness, adaptability and positive attitude. It's a pleasure to have someone like that on the team.",
+    "I've had the pleasure of collaborating with Javi, an exceptional colleague with remarkable skills. He's skilled in Figma and creating mockups, and his ability to coordinate with the front-end team is unparalleled. He's dedicated and team-oriented, and his work ethic has propelled us to incredible heights. Javi is an invaluable asset to any team.",
+]
+
+# Recommendations kept verbatim but not shown on the site. Not rendered anywhere.
+FEEDBACK_RESERVE = [
+    {"name": "Marta Jurado", "relation": "Senior to Javier, not his direct manager (04/2024)",
+     "text": "Based on my interaction with Javier, I can confidently recommend him for any role requiring collaboration and teamwork. He's really easy to work with and highly collaborative, fitting into team dynamics while also capable of working independently when needed.\n\nOne of Javier's qualities is his proactive approach to problem-solving. He's always striving to improve processes and suggests innovative solutions to challenges. Additionally, his ability to quickly grasp business rules and operate autonomously is remarkable, showing that he doesn't require constant supervision."},
+    {"name": "Xesca Alabart", "relation": "Managed Javier directly (04/2019)",
+     "text": "Javier loves to design. If you give him time he for sure will surprise you with neat design for your web or advertisement. Was a pleasure to work with him."},
+    {"name": "Maria Rovira Cisa", "relation": "Same team (04/2015) — original in Spanish",
+     "text": "Javi es un gran team player. Trabajar con él es siempre sinónimo de buen ambiente y entendimiento. Es un diseñador altamente imaginativo y gran retocador de imágenes, rápido en el aporte de ideas, siempre está al tanto de las últimas tecnologías del sector, y nunca se cansa de aprender y reciclarse. Tenerle en el equipo es gratificante."},
 ]
 
 PROCESS_STEPS = [

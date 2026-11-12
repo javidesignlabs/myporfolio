@@ -456,7 +456,7 @@ section{ padding: clamp(72px, 12vh, 140px) 0; position:relative; }
 /* ---------- testimonials ---------- */
 .quotes{ background:var(--void-2); border-top:1px solid var(--line); }
 .quote-rail{
-  display:grid; grid-template-columns: repeat(3, 1fr);
+  display:grid; grid-template-columns: repeat(2, 1fr);
   gap:1px; background:var(--line);
   border:1px solid var(--line);
 }

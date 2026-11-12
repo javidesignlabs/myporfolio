@@ -170,4 +170,8 @@ bloque. Sin eso `fitAll()` mide el tamaño anterior y los titulares salen descua
 - **Testimonios**: son recomendaciones de LinkedIn. La sección enlaza a ellas y cada cita
   dice "LinkedIn recommendation". Para poner nombre y cargo, rellena `FEEDBACK_AUTHORS` en
   `data.py` — solo con nombres confirmados.
+  *Actualizado 11/2026:* la home muestra cuatro, con nombre y relación, en rejilla 2×2. Son
+  texto literal de LinkedIn salvo dos casos marcados en la propia página: la de Diogo es un
+  extracto (el "[…]") y la de Ana Martín está traducida del español. Las otras tres
+  recomendaciones están guardadas en `FEEDBACK_RESERVE`, sin publicar.
 - **Botón flotante móvil**: la flecha no tenía tamaño y partía el texto en tres líneas.
